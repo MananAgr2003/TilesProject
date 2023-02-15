@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     flexDirection: "row",
-    height: "87vh",
+    height: "650px",
 
     width: "99vw",
     marginLeft: "1vw",
