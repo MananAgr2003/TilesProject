@@ -111,7 +111,7 @@ export default function Products() {
             fontSize: "3rem",
           }}
         >
-          Feel The Product
+          Similar Products
         </Typography>
         <div className={classes.root}>
           <Grid container spacing={4}>
