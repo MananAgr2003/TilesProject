@@ -1,4 +1,6 @@
 import {React , props} from 'react';
+import { Link } from 'react-router-dom';
+
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -27,6 +29,8 @@ const useStyles = makeStyles({
  
 
   },
+ 
+
   media: {
     height: "100%",
     width:"100%",
@@ -75,10 +79,15 @@ const useStyles = makeStyles({
 
 export default function ProductCard(props) {
   const classes = useStyles();
+
+ 
+
+
   
 
   return (
-    <Card className={classes.root} elevation={0}>
+    <Link to="/product" style={{ textDecoration: 'none' }}>
+    <Card className={classes.root}  elevation={0}>
       <CardActionArea>
         <div 
           className={classes.mediaDiv}>
@@ -111,5 +120,6 @@ export default function ProductCard(props) {
         </Button>
       </CardActions>
     </Card>
+    </Link>
   );
 }

@@ -1,11 +1,18 @@
-import React from 'react';
+import React  ,{ useEffect} from "react";
+
 import ProductDetailSection from './Productpage/Details';
 import ProductDetailsText from './Productpage/DetailsText';
 
 import Products from './Productpage/Products';
+const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
 
-
-function Productpage() {
+  
+  function Productpage() {
+    useEffect(() => {
+        scrollToTop();
+      },[]);
   return (
     <>
 

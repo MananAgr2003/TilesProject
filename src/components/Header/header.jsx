@@ -2,6 +2,8 @@ import React from "react";
 
 import { Paper, Box } from "@mui/material";
 
+import { Link } from "react-router-dom";
+
 import SearchIcon from "@mui/icons-material/Search";
 import TextField from "@mui/material/TextField";
 
@@ -49,6 +51,7 @@ export default function () {
           display: "flex",
         }}
       >
+        <Link to="/">
         <Box
           sx={{
             height: "10vh",
@@ -64,6 +67,8 @@ export default function () {
         >
           <img src={logo} alt="" />
         </Box>
+
+        </Link>
 
         <Box
           sx={{
@@ -136,6 +141,8 @@ export default function () {
         </Box>
 
         <div className={classes.buttonContainer}>
+
+        <Link to="/"style={{textDecoration:"none"}}>
           <IconButton className={classes.button} aria-label="Home Screen">
             <img src={icon1} alt="" />
             <p className={classes.p}>
@@ -152,6 +159,7 @@ export default function () {
               Screen
             </p>
           </IconButton>
+          </Link>
           <IconButton className={classes.button} aria-label="About Us">
             <img src={icon2} alt="" />
             <p className={classes.p}>

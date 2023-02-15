@@ -1,4 +1,4 @@
-import React from "react";
+import React  ,{ useEffect} from "react";
 
 
 
@@ -13,7 +13,15 @@ import Categories from "./Homepage/Categories";
 import FadeInWrapper from "../AnimationWrapper/FadeIn";
 import FadeInBottom from "../AnimationWrapper/FadeBottom";
 
-export default function Homepage() {
+const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
+  
+  export default function Homepage() {
+    useEffect(() => {
+        scrollToTop();
+      }, []);
   return (
     <>
       <Caraousel></Caraousel>
