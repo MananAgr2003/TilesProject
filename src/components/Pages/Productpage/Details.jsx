@@ -232,6 +232,17 @@ const ProductDetailSection = () => {
               100 x 1000 MM
             </Button>
           </Box>
+          <Box className={classes.buttonGroup}>
+            <Button className={classes.buttonGroupTwo}>
+              200 x 3000 MM
+            </Button>
+            <Button className={classes.buttonGroupTwo}>
+              200 x 3000 MM
+            </Button>
+            <Button className={classes.buttonGroupTwo}>
+              200 x 3000 MM
+            </Button>
+          </Box>
         </Box>
       </Box>
     </Box>
