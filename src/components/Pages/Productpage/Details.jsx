@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     flexDirection: "row",
-    height: "650px",
+    height: "680px",
 
     width: "99vw",
     marginLeft: "1vw",
@@ -135,8 +135,9 @@ const useStyles = makeStyles((theme) => ({
     border:"2px color #89A963",
     height:"1px",
     position:"relative",
-    top:"0.7rem",
-    opacity:"0.5"
+   
+    opacity:"0.5",
+    margin:"30px 0px 30px 0px"
 
 
   }
