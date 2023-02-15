@@ -115,7 +115,7 @@ const useStyles = makeStyles((theme) => ({
 function App() {
   const classes = useStyles();
   const [selectedImage, setSelectedImage] = useState(image1);
-  const [clicked, setClicked] = useState(0);
+  const [clicked, setClicked] = useState(1);
 
   const handleClick = (index) => {
     let imageName = "image" + index;
