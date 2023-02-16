@@ -3,8 +3,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import Link from "@material-ui/core/Link";
 import banner from "../assets/banner4.png";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -12,8 +12,10 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "100% 100%",
     color: "#FFFFFF",
     padding: "50px 0",
-   
+
     marginTop: "80px",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
   },
 
   heading: {
@@ -34,6 +36,19 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "montserrat",
 
     filter: "brightness(100%)",
+    cursor: "pointer",
+    textDecoration: "none",
+  },
+  Link: {
+    fontWeight: "bold",
+
+    color: "#FFFFFF",
+    marginBottom: "15px",
+    fontFamily: "montserrat",
+
+    filter: "brightness(100%)",
+    cursor: "pointer",
+    textDecoration: "none",
   },
   links: {
     display: "flex",
@@ -43,13 +58,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const handleClick = (index) => {
+  console.log(index);
+};
+
 const Footer = () => {
   const classes = useStyles();
 
   const elements = [
     {
       heading: "Company Info",
-      options: ["About Us", "Career", "We Are Hiring", "Blog"],
+      options: ["Site Map", "Catalouge", "We Are Hiring", "Blog"],
     },
     {
       heading: "Legal",
@@ -89,11 +108,49 @@ const Footer = () => {
               </Typography>
               <div className={classes.links}>
                 {element.options.map((option, index) => (
-                  <Link href="#" key={index} className={classes.link} sx={{
-                    filter : "brightness(100%)"
-                  }}>
-                    {option}
-                  </Link>
+                  <div>
+                    {option === "Site Map" ? (
+                      <Link
+                        to="/sitemap"
+                        className={classes.Link}
+
+                      >
+                        <p
+                          key={index}
+                          onClick={handleClick(index)}
+                          className={classes.link}
+                        >
+                          {option}
+                        </p>
+                      </Link>
+                    ) : option === "Catalouge" ? (
+                      <Link
+                      to="/catalouge"
+                      className={classes.Link}
+
+                    >
+                      <p
+                        key={index}
+                        onClick={handleClick(index)}
+                        className={classes.link}
+                      >
+                        {option}
+                      </p>
+                    </Link>
+                    ) : (
+                      <p
+                        href="#"
+                        key={index}
+                        onClick={handleClick(index)}
+                        className={classes.link}
+                        sx={{
+                          filter: "brightness(100%)",
+                        }}
+                      >
+                        {option}
+                      </p>
+                    )}
+                  </div>
                 ))}
               </div>
             </Grid>

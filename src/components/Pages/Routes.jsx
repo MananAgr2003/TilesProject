@@ -4,6 +4,8 @@ import Homepage from './Homepage';
 import Productlist from './Productlist';
 import Product from './Productpage';
 import Aboutus from './Aboutus';
+import Sitemap from './Sitemap';
+import Catalouge from './Catalouge';
 
 
 
@@ -14,6 +16,8 @@ const RoutesFunc = () => {
       <Route path="/product" element={<Product/>} />
       <Route path="/productlist" element={<Productlist/>} />
       <Route path="/aboutus" element={<Aboutus/>} />
+      <Route path="/sitemap" element={<Sitemap/>} />
+      <Route path="/catalouge" element={<Catalouge/>} />
     </Routes>
   );
 };

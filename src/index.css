@@ -5,3 +5,7 @@
   .MuiMobileStepper-dot{
     display:none;
   }
+
+  .MuiContainer-maxWidthLg {
+    max-width: 100000px;
+}
