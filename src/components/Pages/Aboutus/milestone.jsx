@@ -6,12 +6,16 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+    marginTop: "4rem",
+    position:"relative"
+
   },
   heading: {
     textAlign: "center",
-    fontSize: "2rem",
+    fontSize: "3rem",
     fontWeight: "bold",
-    marginTop: "2rem",
+    marginTop: "0rem",
+    color:"#89A963"
   },
   mainDiv: {
     width: "100vw",
@@ -22,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
   },
   line: {
     height: "5px",
-    width: "80vw",
+    width: "85vw",
     backgroundColor: "#5F5E55",
     position: "relative",
   },
@@ -38,16 +42,20 @@ const useStyles = makeStyles((theme) => ({
     width: "183px",
     height: "158px",
     backgroundColor: "#89A963",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
+     padding:"15px",
     marginTop: "2rem",
     position:"absolute"
   },
   text: {
     color: "white",
-    fontSize: "1.2rem",
+    fontSize: "1.4rem",
     fontWeight: "bold",
+  },
+  text1: {
+    color: "white",
+    fontSize: "1.2rem",
+    fontWeight: "light",
+    marginTop:"15px"
   },
 }));
 
@@ -69,52 +77,65 @@ const Milestone = () => {
         </div>
         <div className={classes.box} style={{
 
-            top:"2550px",
+            top:"8rem",
             left:"56px"
         }}>
-          <p className={classes.text}>Text 1</p>
+          <p className={classes.text}>Maya Kyon</p>
+          <p className={classes.text1}>We develop creative solutions for small and big brands</p>
         </div>
         <div className={classes.box} style={{
 
-            top:"2780px",
+            top:"23rem",
             left:"18%"
         }}>
-          <p className={classes.text}>Text 2</p>
+          <p className={classes.text}>Maya Kyon</p>
+          <p className={classes.text1}>We develop creative solutions for small and big brands</p>
+
         </div>
         <div className={classes.box} style={{
 
-            top:"2550px",
+            top:"8rem",
             left:"32%"
         }}>
-          <p className={classes.text}>Text 3</p>
+          <p className={classes.text}>Maya Kyon</p>
+          <p className={classes.text1}>We develop creative solutions for small and big brands</p>
+
         </div>
         <div className={classes.box} style={{
 
-            top:"2780px",
+            top:"23rem",
             left:"45%"
         }}>
-          <p className={classes.text}>Text 2</p>
+          <p className={classes.text}>Maya Kyon</p>
+          <p className={classes.text1}>We develop creative solutions for small and big brands</p>
+
         </div>
         <div className={classes.box} style={{
 
-            top:"2550px",
+            top:"8rem",
             left:"58%"
         }}>
-          <p className={classes.text}>Text 3</p>
+          <p className={classes.text}>Maya Kyon</p>
+          <p className={classes.text1}>We develop creative solutions for small and big brands</p>
+
         </div>
         <div className={classes.box} style={{
 
-            top:"2780px",
+            top:"23rem",
             left:"72%"
         }}>
-          <p className={classes.text}>Text 2</p>
+          <p className={classes.text}>Maya Kyon</p>
+          <p className={classes.text1}>We develop creative solutions for small and big brands</p>
+
         </div>
         <div className={classes.box} style={{
 
-            top:"2550px",
+            top:"8rem",
             left:"85%"
         }}>
-          <p className={classes.text}>Text 3</p>
+          <p className={classes.text}>Maya Kyon</p>
+          <p className={classes.text1}>We develop creative solutions for small and big brands</p>
+
         </div>
       </div>
     </div>

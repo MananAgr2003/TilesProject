@@ -49,11 +49,16 @@ export default function Textsection() {
           sx={{
             display: "flex",
             flexDirection: "row",
+            justifyContent:"center",
+             alignItems:"center"
           }}
         >
           <div
             style={{
               width: "45vw",
+               height:"550px" ,
+               position:"relative",
+               top:"50px"
             }}
           >
 
@@ -99,30 +104,12 @@ Hardware nearshoring due to its location and time zone.
               nulla hac nulla interdum sapien lacus sit.
             </Typography>
             <br></br>
-            <Typography
-              variant="body2"
-              sx={{
-                textAlign: { md: "left", xs: "center" },
-
-                marginLeft: { md: "1.5rem", xs: "0rem" },
-                lineHeight: "1.8rem",
-                fontSize: "1.3rem",
-                fontFamily: "unna",
-                color:"#243659",
-
-              }}
-            >
-              Dui lorem sapien pulvinar vel. Montes viverra tincidunt platea
-              dictum justo tincidunt suspendisse. Aenean tellus sed metus
-              malesuada. At cras amet feugiat nisl volutpat dignissim. Cras
-              tempus facilisis nullam enim nullam nisl blandit. Donec cursus
-              vitae luctus donec nisl feugiat lectus
-            </Typography>
-            <br></br>
+           
+         
 
           
           </div>
-          <div style={{ width: "36.5vw" , height:"550px" , marginLeft: "8rem" }}>
+          <div style={{ width: "39vw" , height:"550px" , marginLeft: "8rem" }}>
             <img src={banner1} alt="" style={{ width: "100%"  , height:"100%"}} />
           </div>
         </Box>

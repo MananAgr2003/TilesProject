@@ -8,6 +8,7 @@ import IconButton from "@material-ui/core/IconButton";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import ArrowDropDown from "@material-ui/icons/ArrowDropDown";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -75,10 +76,12 @@ const Navbar = () => {
               >
                 {element}
                 <ArrowDropDown
-                  style={
-                    ({ display: element === "Catalouge" || element === "Tile Visualizer" ? "none" : "block" }
-                    )
-                  }
+                  style={{
+                    display:
+                      element === "Catalouge" || element === "Tile Visualizer"
+                        ? "none"
+                        : "block",
+                  }}
                 />
               </Button>
               <Menu
@@ -98,11 +101,13 @@ const Navbar = () => {
                   horizontal: "center",
                 }}
               >
-                <MenuItem
-                  onClick={(event) => handleMenuItemClick(event, index)}
-                >
-                  Option 1
-                </MenuItem>
+                <Link to="/productlist" style={{ textDecoration: "none" }}>
+                  <MenuItem
+                    onClick={(event) => handleMenuItemClick(event, index)}
+                  >
+                    Option 1
+                  </MenuItem>
+                </Link>
                 <MenuItem
                   onClick={(event) => handleMenuItemClick(event, index)}
                 >

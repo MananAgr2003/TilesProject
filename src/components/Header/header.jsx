@@ -28,9 +28,9 @@ const useStyles = makeStyles({
     fontSize: "18px",
     margin: "20px",
     fontStyle: "normal",
-    '&:hover': {
-      boxShadow: '0px 0px 0px rgba(0, 0, 0, 0.3)',
-      backgroundColor:"white"
+    "&:hover": {
+      boxShadow: "0px 0px 0px rgba(0, 0, 0, 0.3)",
+      backgroundColor: "white",
     },
   },
   p: {
@@ -52,22 +52,21 @@ export default function () {
         }}
       >
         <Link to="/">
-        <Box
-          sx={{
-            height: "10vh",
-            width: "20vw",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
+          <Box
+            sx={{
+              height: "10vh",
+              width: "20vw",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
 
-            img: {
-              height: "100%",
-            },
-          }}
-        >
-          <img src={logo} alt="" />
-        </Box>
-
+              img: {
+                height: "100%",
+              },
+            }}
+          >
+            <img src={logo} alt="" />
+          </Box>
         </Link>
 
         <Box
@@ -96,8 +95,8 @@ export default function () {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                color:"white",
-                paddingLeft:"4rem",
+                color: "white",
+                paddingLeft: "4rem",
                 fontSize: "18px",
                 fontWeight: "400",
 
@@ -105,20 +104,17 @@ export default function () {
                   color: "white",
                   fontSize: "18px",
                   position: "relative",
-              
+
                   top: "0rem",
-                  
                 },
 
-                "&:focus":{
-                  border:"0px solid white"
+                "&:focus": {
+                  border: "0px solid white",
                 },
 
-                "&:focus::placeholder":{
+                "&:focus::placeholder": {
                   opacity: 0,
-
                 },
-                
               },
             },
           }}
@@ -141,33 +137,31 @@ export default function () {
         </Box>
 
         <div className={classes.buttonContainer}>
-
-        <Link to="/"style={{textDecoration:"none"}}>
-          <IconButton className={classes.button} aria-label="Home Screen">
-            <img src={icon1} alt="" />
-            <p className={classes.p}>
-              {" "}
-              <i
-                style={{
-                  color: "black",
-    fontStyle: "normal",
-
-                }}
-              >
-                Home{" "}
-              </i>
-              Screen
-            </p>
-          </IconButton>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <IconButton className={classes.button} aria-label="Home Screen">
+              <img src={icon1} alt="" />
+              <p className={classes.p}>
+                {" "}
+                <i
+                  style={{
+                    color: "black",
+                    fontStyle: "normal",
+                  }}
+                >
+                  Home{" "}
+                </i>
+                Screen
+              </p>
+            </IconButton>
           </Link>
+          <Link to="/aboutus" style={{ textDecoration: "none" }}>
           <IconButton className={classes.button} aria-label="About Us">
             <img src={icon2} alt="" />
             <p className={classes.p}>
               <i
                 style={{
                   color: "black",
-    fontStyle: "normal",
-
+                  fontStyle: "normal",
                 }}
               >
                 About{" "}
@@ -175,14 +169,15 @@ export default function () {
               Us
             </p>
           </IconButton>
+
+          </Link>
           <IconButton className={classes.button} aria-label="Contact Us">
             <img src={icon3} alt="" />
             <p className={classes.p}>
               <i
                 style={{
                   color: "black",
-    fontStyle: "normal",
-
+                  fontStyle: "normal",
                 }}
               >
                 Contact{" "}

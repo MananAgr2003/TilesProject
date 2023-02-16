@@ -4,6 +4,7 @@ import Who from './Aboutus/who'
 import Textsection from './Aboutus/textsection'
 import Banner2 from './Aboutus/banner2'
 import Milestone from './Aboutus/milestone'
+import Chat from './Aboutus/chat'
 
 export default function Aboutus() {
   return (
@@ -14,6 +15,7 @@ export default function Aboutus() {
     <Banner2></Banner2>
     <Textsection></Textsection>
     <Milestone></Milestone>
+    <Chat></Chat>
     </>
   )
 }
