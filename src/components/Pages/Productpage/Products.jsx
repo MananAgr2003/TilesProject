@@ -3,7 +3,7 @@ import React from "react";
 import { Paper, Typography, Container, Button, Box } from "@mui/material";
 import banner from "../../assets/banner3.png";
 import brand from "../../assets/brand.png";
-import ProductCard from "../../cards/ProductCard";
+import ProductCardSqre from "../../cards/ProductCardSqre";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import FadeInBottom from "../../AnimationWrapper/FadeBottom";
@@ -121,7 +121,7 @@ export default function Products() {
               
                 <div className={classes.paper}>
                 
-                 <ProductCard name={item.name} image={item.image} description={item.description}></ProductCard>
+                 <ProductCardSqre name={item.name} image={item.image} description={item.description}></ProductCardSqre>
                 </div>
          
             </Grid>))}
