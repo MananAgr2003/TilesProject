@@ -155,7 +155,7 @@ export default function () {
             </IconButton>
           </Link>
           <Link to="/aboutus" style={{ textDecoration: "none" }}>
-          <IconButton className={classes.button} aria-label="About Us">
+          <IconButton className={classes.button} aria-label="About Us" >
             <img src={icon2} alt="" />
             <p className={classes.p}>
               <i

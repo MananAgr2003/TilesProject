@@ -178,15 +178,7 @@ function ProductFilter() {
               label={brand}
             />
           ))}
-          <Typography
-            sx={{
-              fontSize: "0.8rem",
-              color: "red",
-              margin: "10px 0px 0px 20px",
-            }}
-          >
-            +234 more
-          </Typography>
+         
         </Box>
         <Box sx={{ mt: "1rem", display: "flex", flexDirection: "column" }}>
           <Typography
@@ -229,15 +221,7 @@ function ProductFilter() {
               label={location}
             />
           ))}
-          <Typography
-            sx={{
-              fontSize: "0.8rem",
-              color: "red",
-              margin: "10px 0px 0px 20px",
-            }}
-          >
-            +4 more
-          </Typography>
+        
         </Box>
         <Box sx={{ mt: "1rem", display: "flex", flexDirection: "column" }}>
           <Typography

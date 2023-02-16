@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "top",
     alignItems: "center",
     flexDirection: "column",
-    height: 700,
+    height: 600,
     width: "100vw",
   },
   heading: {
@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     marginBottom: theme.spacing(2),
     fontFamily: "unna",
-    marginTop: "12rem",
+    marginTop: "5rem",
   },
   subHeading: {
     fontSize: "27px",
@@ -48,9 +48,9 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "18px",
     marginBottom: theme.spacing(2),
     "&:hover": {
-      backgroundColor: "transparent",
+      backgroundColor: "white",
 
-      color: "#fff",
+      color: "#89A963",
     },
     margin: "auto",
     position: "relative",

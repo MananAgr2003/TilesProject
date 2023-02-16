@@ -1,6 +1,6 @@
 import React from "react";
 import { Box , Button, Typography } from "@mui/material";
-import banner from "../../assets/banner.png"
+import banner from "../../assets/newBanner2.png"
 
 
 export default function Banner() {
