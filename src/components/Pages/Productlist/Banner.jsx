@@ -25,7 +25,7 @@ export default function Banner() {
 
           width: "100%",
           position: "absolute",
-          top: "12rem",
+          top: "15rem",
           paddingLeft: "7rem",
         }}
       >
@@ -41,7 +41,7 @@ export default function Banner() {
 
           width: "100%",
           position: "absolute",
-          top: "18rem",
+          top: "21rem",
           paddingLeft: "7rem",
           fontWeight: "550",
         }}
