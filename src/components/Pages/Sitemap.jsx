@@ -27,9 +27,10 @@ export default function Sitemap() {
     <Banner></Banner>
     <Largecategory></Largecategory>
 
-    <div style={{
+    <div  style={{
         display:"flex",
-        flexDirection:"horizontal"
+        flexDirection:"horizontal",
+        width:"96vw"
     }}>
     <Sc1></Sc1>
     <Sc2></Sc2>

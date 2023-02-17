@@ -38,7 +38,7 @@ export default function AboutUs() {
             md: "100vw",
             xs: "100vw",
           },
-          margin: "80px 4rem 0rem 4rem",
+          margin: "60px 4rem 0rem 4rem",
 
           zIndex: "1000",
           fontWeight: 700,

@@ -80,9 +80,9 @@ export default function ProductList() {
           width: {
             md: "100vw",
             xs: "100vw",
-            marginTop: "5rem",
           },
-
+          marginTop: "80px",
+          
           zIndex: "1000",
           fontWeight: 700,
           justifyContent: "center",

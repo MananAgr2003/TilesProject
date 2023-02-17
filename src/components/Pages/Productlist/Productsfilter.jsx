@@ -169,7 +169,7 @@ function ProductFilter() {
                     },
                     "&.Mui-checked": {
                       "&, & + .MuiFormControlLabel-label": {
-                        color: "red",
+                        color: "#89A963",
                       },
                     },
                   }}

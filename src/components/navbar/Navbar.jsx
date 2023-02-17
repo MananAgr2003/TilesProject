@@ -30,6 +30,10 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "22px",
     textTransform: "none",
     fontWeight: "450",
+    "&:hover": {
+      boxShadow: "0px 0px 0px rgba(0, 0, 0, 0.3)",
+      backgroundColor: "#5F5E55",
+    },
   },
 }));
 
