@@ -10,6 +10,7 @@ import ToolTip2 from "./components/ToolTip2";
 import Homepage from "./components/Pages/Homepage";
 import Productpage from "./components/Pages/Productpage";
 import RoutesFunc from "./components/Pages/Routes";
+import Navbartest from "./components/navbar/Navbartest";
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
       <ToolTip2></ToolTip2>
       <Header></Header>
 
-      <Navbar></Navbar>
+      
+      <Navbartest></Navbartest>
 
       <RoutesFunc />
 

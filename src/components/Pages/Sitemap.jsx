@@ -30,7 +30,7 @@ export default function Sitemap() {
     <div  style={{
         display:"flex",
         flexDirection:"horizontal",
-        width:"96vw"
+      
     }}>
     <Sc1></Sc1>
     <Sc2></Sc2>

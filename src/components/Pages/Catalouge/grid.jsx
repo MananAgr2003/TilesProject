@@ -16,11 +16,12 @@ import icon from "../../assets/catalouge/dicon.png"
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: "100vw",
+    Width: "100vw",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "column",
+    overflow:"hidden"
   },
   gridHead: {
     color: "green",
