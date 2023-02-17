@@ -171,6 +171,9 @@ export default function () {
           </IconButton>
 
           </Link>
+
+          <Link to="/contactus" style={{ textDecoration: "none" }}>
+
           <IconButton className={classes.button} aria-label="Contact Us">
             <img src={icon3} alt="" />
             <p className={classes.p}>
@@ -185,6 +188,7 @@ export default function () {
               Us
             </p>
           </IconButton>
+          </Link>
         </div>
       </Box>
     </>

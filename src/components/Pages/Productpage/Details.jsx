@@ -216,7 +216,7 @@ const ProductDetailSection = () => {
             </Typography>
           </Box>
           <Box className={classes.buttonGroup}>
-            <Button className={classes.buttonGroupOne}>Download</Button>
+         
 
             <Button className={classes.buttonGroupOne}>Inquiry</Button>
           </Box>
