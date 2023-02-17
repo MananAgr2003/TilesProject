@@ -1,6 +1,7 @@
 import "./App.css";
 import Header from "./components/Header/header";
 import Navbar from "./components/navbar/Navbar";
+import { useLocation } from "react-router-dom";
 
 import Footer from "./components/footer";
 import FooterFoot from "./components/FooterFoot";
@@ -13,13 +14,23 @@ import RoutesFunc from "./components/Pages/Routes";
 import Navbartest from "./components/navbar/Navbartest";
 
 function App() {
+  const location = useLocation();
+  const displayTooltip = location.pathname !== "/contactus";
+  const displayTooltip1 = location.pathname !== "/catalouge";
+  const displayTooltip2 = location.pathname !== "/sitemap";
+  const displayTooltip3 = (displayTooltip && displayTooltip1 && displayTooltip2);
+
   return (
     <>
-      <Tooltip></Tooltip>
-      <ToolTip2></ToolTip2>
+      {displayTooltip3 && (
+        <>
+          <Tooltip></Tooltip>
+          <ToolTip2></ToolTip2>
+        </>
+      )}
+
       <Header></Header>
 
-      
       <Navbartest></Navbartest>
 
       <RoutesFunc />
