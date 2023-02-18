@@ -42,17 +42,31 @@ export default function Faucets() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [selectedIndex, setSelectedIndex] = React.useState(1);
 
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
 
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
 
   const handleMenuItemClick = (event, index) => {
     setAnchorEl(null);
    
+  };
+  const handleMouseOver = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  
+  const handleMouseOut = () => {
+    setAnchorEl(null);
+  };
+  
+  const handleClick = (event) => {
+    // Prevent the menu from opening on click
+    event.preventDefault();
+  };
+  
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const handleMouseLeave = () => {
+    setAnchorEl(null);
   };
 
   const elements = [
@@ -70,6 +84,8 @@ export default function Faucets() {
         <Button
           aria-controls="simple-menu"
           aria-haspopup="true"
+          onMouseOver={handleMouseOver}
+          
           onClick={handleClick}
           className={classes.button}
         >
@@ -81,6 +97,8 @@ export default function Faucets() {
           anchorEl={anchorEl}
           keepMounted
           open={Boolean(anchorEl)}
+     
+
           onClose={handleClose}
           className={classes.menu}
           getContentAnchorEl={null}
@@ -92,21 +110,34 @@ export default function Faucets() {
             vertical: "top",
             horizontal: "center",
           }}
+
+          
         >
+
+          <div onMouseLeave={handleMouseLeave}>
           <Link to="/productlist" style={{ textDecoration: "none" }}>
-            <MenuItem onClick={(event) => handleMenuItemClick(event, index)}>
+            <MenuItem onClick={(event) => handleMenuItemClick(event, index)}  
+          
+          >
               Option 1
             </MenuItem>
           </Link>
-          <MenuItem onClick={(event) => handleMenuItemClick(event, index)}>
+          <MenuItem onClick={(event) => handleMenuItemClick(event, index)}
+          
+          >
             Option 2
           </MenuItem>
-          <MenuItem onClick={(event) => handleMenuItemClick(event, index)}>
+          <MenuItem onClick={(event) => handleMenuItemClick(event, index)}
+          
+          >
             Option 3
           </MenuItem>
-          <MenuItem onClick={(event) => handleMenuItemClick(event, index)}>
+          <MenuItem onClick={(event) => handleMenuItemClick(event, index)}
+          
+          >
             Option 4
           </MenuItem>
+          </div>
         </Menu>
       </div>
     </>

@@ -42,21 +42,35 @@ export default function Sanitaryware() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [selectedIndex, setSelectedIndex] = React.useState(1);
 
-  const handleClick = (event) => {
+
+
+  const handleMenuItemClick = (event, index) => {
+    setAnchorEl(null);
+   
+  };
+  const handleMouseOver = (event) => {
     setAnchorEl(event.currentTarget);
   };
-
+  
+  const handleMouseOut = () => {
+    setAnchorEl(null);
+  };
+  
+  const handleClick = (event) => {
+    // Prevent the menu from opening on click
+    event.preventDefault();
+  };
+  
   const handleClose = () => {
     setAnchorEl(null);
   };
 
-  const handleMenuItemClick = (event, index) => {
-    setSelectedIndex(index);
+  const handleMouseLeave = () => {
     setAnchorEl(null);
   };
 
   const elements = [
-    "Faucets",
+    "Sanitaryware",
     "Shower",
     "Sanitaryware",
     "Accessories",
@@ -66,10 +80,12 @@ export default function Sanitaryware() {
   ];
   return (
     <>
-      <div key={2}>
+      <div key={1}>
         <Button
           aria-controls="simple-menu"
           aria-haspopup="true"
+          onMouseOver={handleMouseOver}
+          
           onClick={handleClick}
           className={classes.button}
         >
@@ -81,6 +97,8 @@ export default function Sanitaryware() {
           anchorEl={anchorEl}
           keepMounted
           open={Boolean(anchorEl)}
+     
+
           onClose={handleClose}
           className={classes.menu}
           getContentAnchorEl={null}
@@ -92,19 +110,32 @@ export default function Sanitaryware() {
             vertical: "top",
             horizontal: "center",
           }}
+
+          
         >
-            <MenuItem onClick={(event) => handleMenuItemClick(event, index)}>
+
+          <div onMouseLeave={handleMouseLeave}>
+            <MenuItem onClick={(event) => handleMenuItemClick(event, index)}  
+          
+          >
               Option 1
             </MenuItem>
-          <MenuItem onClick={(event) => handleMenuItemClick(event, index)}>
+          <MenuItem onClick={(event) => handleMenuItemClick(event, index)}
+          
+          >
             Option 2
           </MenuItem>
-          <MenuItem onClick={(event) => handleMenuItemClick(event, index)}>
+          <MenuItem onClick={(event) => handleMenuItemClick(event, index)}
+          
+          >
             Option 3
           </MenuItem>
-          <MenuItem onClick={(event) => handleMenuItemClick(event, index)}>
+          <MenuItem onClick={(event) => handleMenuItemClick(event, index)}
+          
+          >
             Option 4
           </MenuItem>
+          </div>
         </Menu>
       </div>
     </>

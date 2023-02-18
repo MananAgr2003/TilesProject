@@ -39,6 +39,7 @@ const brands = [
   "ACPL",
   "artist",
   "pare",
+ 
 ];
 const filter = ["Floor Tiles", "Wall Tiles"];
 const locations = ["livingroom", "bedroom", "bathroom", "outdoor", "parking"];
@@ -152,10 +153,14 @@ function ProductFilter() {
     const lastPage = Math.ceil(products / 20);
     if (pageNumber < lastPage) setPageNumber(pageNumber + 1);
   };
-  const [expanded, setExpanded] = useState("panel1");
+  const [expanded, setExpanded] = useState([]);
 
   const handleChange = (panel) => (event, isExpanded) => {
-    setExpanded(isExpanded ? panel : false);
+    if (isExpanded) {
+      setExpanded([...expanded, panel]);
+    } else {
+      setExpanded(expanded.filter((p) => p !== panel));
+    }
   };
   return (
     <Box
@@ -194,7 +199,7 @@ function ProductFilter() {
         </Typography>
 
         <Accordion
-          expanded={expanded === "panel1"}
+          expanded={expanded.includes('panel1')}
           onChange={handleChange("panel1")}
           elevation={0}
           sx={{
@@ -206,7 +211,7 @@ function ProductFilter() {
           className={classes.acc}
         >
           <AccordionSummary
-            expandIcon={expanded === "panel1"  ? <RemoveIcon className={classes.icon2}></RemoveIcon> : <AddIcon className={classes.icon}  /> }
+            expandIcon={expanded.includes('panel1')  ? <RemoveIcon className={classes.icon2}></RemoveIcon> : <AddIcon className={classes.icon}  /> }
             aria-controls="panel1a-content"
             id="panel1a-header"
             className={classes.acc1}
@@ -238,7 +243,7 @@ function ProductFilter() {
                       "&, & + .MuiFormControlLabel-label": {
                         fontFamily: "unna",
                         fontWeight: "bold",
-                        fontSize: "1.4rem",
+                        fontSize: "1.2rem",
                       },
                       "&.Mui-checked": {
                         "&, & + .MuiFormControlLabel-label": {
@@ -254,7 +259,7 @@ function ProductFilter() {
           ))}
         </Accordion>
         <Accordion
-          expanded={expanded === "panel2"}
+          expanded={expanded.includes('panel2')}
           onChange={handleChange("panel2")}
           elevation={0}
           sx={{
@@ -266,7 +271,7 @@ function ProductFilter() {
           className={classes.acc}
         >
           <AccordionSummary
-            expandIcon={expanded === "panel2"  ? <RemoveIcon className={classes.icon}></RemoveIcon> : <AddIcon className={classes.icon}  /> }
+            expandIcon={expanded.includes('panel2')  ? <RemoveIcon className={classes.icon2}></RemoveIcon> : <AddIcon className={classes.icon}  /> }
             aria-controls="panel1a-content"
             id="panel1a-header"
             className={classes.acc1}
@@ -298,7 +303,7 @@ function ProductFilter() {
                       "&, & + .MuiFormControlLabel-label": {
                         fontFamily: "unna",
                         fontWeight: "bold",
-                        fontSize: "1.4rem",
+                        fontSize: "1.2rem",
                       },
                       "&.Mui-checked": {
                         "&, & + .MuiFormControlLabel-label": {
@@ -314,7 +319,7 @@ function ProductFilter() {
           ))}
         </Accordion>
         <Accordion
-          expanded={expanded === "panel3"}
+          expanded={expanded.includes('panel3')}
           onChange={handleChange("panel3")}
           elevation={0}
           sx={{
@@ -326,7 +331,7 @@ function ProductFilter() {
           className={classes.acc}
         >
           <AccordionSummary
-            expandIcon={expanded === "panel3"  ? <RemoveIcon className={classes.icon}></RemoveIcon> : <AddIcon className={classes.icon}  /> }
+            expandIcon={expanded.includes('panel3')  ? <RemoveIcon className={classes.icon2}></RemoveIcon> : <AddIcon className={classes.icon}  /> }
             aria-controls="panel1a-content"
             id="panel1a-header"
             className={classes.acc1}
@@ -358,7 +363,7 @@ function ProductFilter() {
                       "&, & + .MuiFormControlLabel-label": {
                         fontFamily: "unna",
                         fontWeight: "bold",
-                        fontSize: "1.4rem",
+                        fontSize: "1.2rem",
                       },
                       "&.Mui-checked": {
                         "&, & + .MuiFormControlLabel-label": {
@@ -395,7 +400,7 @@ function ProductFilter() {
                     "&, & + .MuiFormControlLabel-label": {
                       fontFamily: "unna",
                       fontWeight: "bold",
-                      fontSize: "1.4rem",
+                      fontSize: "1.2rem",
                     },
                     "&.Mui-checked": {
                       "&, & + .MuiFormControlLabel-label": {
