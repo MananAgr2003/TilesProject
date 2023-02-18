@@ -46,7 +46,6 @@ const scrollToTop = () => {
         <Categories></Categories>
       </FadeInBottom>
 
-      <AccordionsExample></AccordionsExample>
     </>
   );
 }

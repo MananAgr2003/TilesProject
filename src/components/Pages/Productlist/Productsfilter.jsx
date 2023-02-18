@@ -15,10 +15,10 @@ import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
-
 } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import AddIcon from '@material-ui/icons/Add';
+import AddIcon from "@material-ui/icons/Add";
+import RemoveIcon from '@material-ui/icons/Remove';
 import product1 from "../../assets/products/product1.png";
 import product2 from "../../assets/products/product2.png";
 import product3 from "../../assets/products/product3.png";
@@ -107,18 +107,36 @@ const useStyles = makeStyles((theme) => ({
   gridMain: {
     backgroundColor: "black",
   },
-  acc:{
+  acc: {
     backgroundColor: "#F9FAFB",
-    border:"none",
-    position:"relative",
-    right:"10px"
-
+    border: "none",
+    position: "relative",
+    right: "5px",
+    border:"5px solid #F9FAFB",
+    '&::before': {
+      display: 'none' // hides the default border on the AccordionSummary component
+    },
+    '&$expanded': {
+      margin: 'auto',
+    },
 
   },
-  icon:{
-    position:"relative",
-    bottom:"7px"
-  }
+  acc1: {
+    padding: "0px 0px",
+    height: "50px",
+  },
+  acc2: {
+    padding: "0px 0px",
+    border:"5px solid transparent"
+  },
+  icon: {
+    position: "relative",
+    bottom: "6px",
+  },
+  icon2: {
+    position: "relative",
+    top: "4px",
+  },
 }));
 
 function ProductFilter() {
@@ -134,7 +152,7 @@ function ProductFilter() {
     const lastPage = Math.ceil(products / 20);
     if (pageNumber < lastPage) setPageNumber(pageNumber + 1);
   };
-  const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = useState("panel1");
 
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
@@ -175,192 +193,187 @@ function ProductFilter() {
           {Math.min(pageNumber * 20, products)} out of {products} Products
         </Typography>
 
-
         <Accordion
           expanded={expanded === "panel1"}
           onChange={handleChange("panel1")}
           elevation={0}
-
-          sx={{ mt: "1rem", display: "flex", flexDirection: "column" ,  backgroundColor: "#F9FAFB",}}
-
+          sx={{
+            mt: "1rem",
+            display: "flex",
+            flexDirection: "column",
+            backgroundColor: "#F9FAFB",
+          }}
           className={classes.acc}
         >
-
-            <AccordionSummary
-              expandIcon={<AddIcon className={classes.icon}/>}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-              className={classes.acc}
-          elevation={0}
-
+          <AccordionSummary
+            expandIcon={expanded === "panel1"  ? <RemoveIcon className={classes.icon2}></RemoveIcon> : <AddIcon className={classes.icon}  /> }
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+            className={classes.acc1}
+            elevation={0}
+          >
+            <Typography
+              sx={{
+                fontSize: "1rem",
+                fontWeight: "bold",
+                fontFamily: "unna",
+                marginBottom: "30px",
+                marginTop: "20px",
+              }}
             >
-              <Typography
+              BRANDS
+            </Typography>
+          </AccordionSummary>
+
+          {brands.map((brand, index) => (
+            <AccordionDetails className={classes.acc2}>
+              <FormControlLabel
                 sx={{
-                  fontSize: "1rem",
-                  fontWeight: "bold",
                   fontFamily: "unna",
-                  marginBottom: "30px",
-                  marginTop: "20px",
                 }}
-              >
-                BRANDS
-              </Typography>
-            </AccordionSummary>
-          
-              {brands.map((brand, index) => (
-             
-                  <AccordionDetails  className={classes.acc}>
-                <FormControlLabel
-                  sx={{
-                    fontFamily: "unna",
-                  }}
-                  key={index}
-                  control={
-                    <Checkbox
-                      sx={{
+                key={index}
+                control={
+                  <Checkbox
+                    sx={{
+                      "&, & + .MuiFormControlLabel-label": {
+                        fontFamily: "unna",
+                        fontWeight: "bold",
+                        fontSize: "1.4rem",
+                      },
+                      "&.Mui-checked": {
                         "&, & + .MuiFormControlLabel-label": {
-                          fontFamily: "unna",
-                          fontWeight: "bold",
-                          fontSize: "1.4rem",
+                          color: "#89A963",
                         },
-                        "&.Mui-checked": {
-                          "&, & + .MuiFormControlLabel-label": {
-                            color: "#89A963",
-                          },
-                        },
-                      }}
-                    />
-                  }
-                  label={brand}
-                />
+                      },
+                    }}
+                  />
+                }
+                label={brand}
+              />
             </AccordionDetails>
-              ))}
-          
+          ))}
         </Accordion>
         <Accordion
           expanded={expanded === "panel2"}
           onChange={handleChange("panel2")}
           elevation={0}
-
-          sx={{ mt: "1rem", display: "flex", flexDirection: "column" ,  backgroundColor: "#F9FAFB",}}
-
+          sx={{
+            mt: "1rem",
+            display: "flex",
+            flexDirection: "column",
+            backgroundColor: "#F9FAFB",
+          }}
           className={classes.acc}
         >
-
-            <AccordionSummary
-              expandIcon={<AddIcon className={classes.icon}/>}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-              className={classes.acc}
-          elevation={0}
-
+          <AccordionSummary
+            expandIcon={expanded === "panel2"  ? <RemoveIcon className={classes.icon}></RemoveIcon> : <AddIcon className={classes.icon}  /> }
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+            className={classes.acc1}
+            elevation={0}
+          >
+            <Typography
+              sx={{
+                fontSize: "1rem",
+                fontWeight: "bold",
+                fontFamily: "unna",
+                marginBottom: "30px",
+                marginTop: "20px",
+              }}
             >
-              <Typography
+              LOCATIONS
+            </Typography>
+          </AccordionSummary>
+
+          {locations.map((brand, index) => (
+            <AccordionDetails className={classes.acc2}>
+              <FormControlLabel
                 sx={{
-                  fontSize: "1rem",
-                  fontWeight: "bold",
                   fontFamily: "unna",
-                  marginBottom: "30px",
-                  marginTop: "20px",
                 }}
-              >
-                LOCATIONS
-              </Typography>
-            </AccordionSummary>
-          
-              {locations.map((brand, index) => (
-             
-                  <AccordionDetails  className={classes.acc}>
-                <FormControlLabel
-                  sx={{
-                    fontFamily: "unna",
-                  }}
-                  key={index}
-                  control={
-                    <Checkbox
-                      sx={{
+                key={index}
+                control={
+                  <Checkbox
+                    sx={{
+                      "&, & + .MuiFormControlLabel-label": {
+                        fontFamily: "unna",
+                        fontWeight: "bold",
+                        fontSize: "1.4rem",
+                      },
+                      "&.Mui-checked": {
                         "&, & + .MuiFormControlLabel-label": {
-                          fontFamily: "unna",
-                          fontWeight: "bold",
-                          fontSize: "1.4rem",
+                          color: "#89A963",
                         },
-                        "&.Mui-checked": {
-                          "&, & + .MuiFormControlLabel-label": {
-                            color: "#89A963",
-                          },
-                        },
-                      }}
-                    />
-                  }
-                  label={brand}
-                />
+                      },
+                    }}
+                  />
+                }
+                label={brand}
+              />
             </AccordionDetails>
-              ))}
-          
+          ))}
         </Accordion>
         <Accordion
           expanded={expanded === "panel3"}
           onChange={handleChange("panel3")}
           elevation={0}
-
-          sx={{ mt: "1rem", display: "flex", flexDirection: "column" ,  backgroundColor: "#F9FAFB",}}
-
+          sx={{
+            mt: "1rem",
+            display: "flex",
+            flexDirection: "column",
+            backgroundColor: "#F9FAFB",
+          }}
           className={classes.acc}
         >
-
-            <AccordionSummary
-              expandIcon={<AddIcon className={classes.icon}/>}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-              className={classes.acc}
-          elevation={0}
-
+          <AccordionSummary
+            expandIcon={expanded === "panel3"  ? <RemoveIcon className={classes.icon}></RemoveIcon> : <AddIcon className={classes.icon}  /> }
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+            className={classes.acc1}
+            elevation={0}
+          >
+            <Typography
+              sx={{
+                fontSize: "1rem",
+                fontWeight: "bold",
+                fontFamily: "unna",
+                marginBottom: "30px",
+                marginTop: "20px",
+              }}
             >
-              <Typography
+              SIZES
+            </Typography>
+          </AccordionSummary>
+
+          {sizes.map((brand, index) => (
+            <AccordionDetails className={classes.acc2}>
+              <FormControlLabel
                 sx={{
-                  fontSize: "1rem",
-                  fontWeight: "bold",
                   fontFamily: "unna",
-                  marginBottom: "30px",
-                  marginTop: "20px",
                 }}
-              >
-                SIZES
-              </Typography>
-            </AccordionSummary>
-          
-              {sizes.map((brand, index) => (
-             
-                  <AccordionDetails  className={classes.acc}>
-                <FormControlLabel
-                  sx={{
-                    fontFamily: "unna",
-                  }}
-                  key={index}
-                  control={
-                    <Checkbox
-                      sx={{
+                key={index}
+                control={
+                  <Checkbox
+                    sx={{
+                      "&, & + .MuiFormControlLabel-label": {
+                        fontFamily: "unna",
+                        fontWeight: "bold",
+                        fontSize: "1.4rem",
+                      },
+                      "&.Mui-checked": {
                         "&, & + .MuiFormControlLabel-label": {
-                          fontFamily: "unna",
-                          fontWeight: "bold",
-                          fontSize: "1.4rem",
+                          color: "#89A963",
                         },
-                        "&.Mui-checked": {
-                          "&, & + .MuiFormControlLabel-label": {
-                            color: "#89A963",
-                          },
-                        },
-                      }}
-                    />
-                  }
-                  label={brand}
-                />
+                      },
+                    }}
+                  />
+                }
+                label={brand}
+              />
             </AccordionDetails>
-              ))}
-          
+          ))}
         </Accordion>
-        
-       
+
         <Box
           sx={{
             mt: "1rem",
