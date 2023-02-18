@@ -12,7 +12,7 @@ import GptVisualizer from "./Homepage/GptVisualizer";
 import Categories from "./Homepage/Categories";
 import FadeInWrapper from "../AnimationWrapper/FadeIn";
 import FadeInBottom from "../AnimationWrapper/FadeBottom";
-import AccordionsExample from "../cards/accordion";
+import MovingLine from "../cards/line";
 
 const scrollToTop = () => {
     window.scrollTo(0, 0);
@@ -45,6 +45,8 @@ const scrollToTop = () => {
       <FadeInBottom>
         <Categories></Categories>
       </FadeInBottom>
+
+      <MovingLine></MovingLine>
 
     </>
   );

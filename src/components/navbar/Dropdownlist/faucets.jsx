@@ -80,11 +80,12 @@ export default function Faucets() {
   ];
   return (
     <>
-      <div key={1}>
+      <div key={1}   onMouseLeave={handleMouseLeave}>
         <Button
           aria-controls="simple-menu"
           aria-haspopup="true"
           onMouseOver={handleMouseOver}
+        
           
           onClick={handleClick}
           className={classes.button}
@@ -114,7 +115,7 @@ export default function Faucets() {
           
         >
 
-          <div onMouseLeave={handleMouseLeave}>
+          <div onMouseLeave={handleMouseLeave} >
           <Link to="/productlist" style={{ textDecoration: "none" }}>
             <MenuItem onClick={(event) => handleMenuItemClick(event, index)}  
           
