@@ -10,8 +10,8 @@ function Number({ n }) {
   const [inView, setInview] = useState(false);
   const { number } = useSpring({
     from: { number: 0 },
-   
-      number: inView ? 800 : 0,
+
+    number: inView ? 800 : 0,
 
     delay: 200,
     config: { mass: 1, tension: 20, friction: 10 },
@@ -55,22 +55,23 @@ export default function who() {
               width: "53vw",
             }}
           >
-
             <FadeInWrapper>
-            <Typography
-              variant="body2"
-              sx={{
-                textAlign: { md: "left", xs: "center" },
-                fontSize: "2.5rem",
-                marginLeft: "1.5rem",
-                fontFamily: "unna",
-                      color:"#89A963"
-                     
-              }}
-            >
-              Who Are We
-            </Typography>
-            <br></br>
+              <Typography
+                variant="body2"
+                sx={{
+                  textAlign: { md: "left", xs: "center" },
+                  fontSize: "2.5rem",
+                  marginLeft: "1.5rem",
+                  fontFamily: "unna",
+                  color: "black",
+                  span: {
+                    color: "#89A963",
+                  },
+                }}
+              >
+                Who <span>Are We</span>
+              </Typography>
+              <br></br>
             </FadeInWrapper>
 
             <Typography
@@ -135,8 +136,7 @@ export default function who() {
                     flexDirection: "column",
                     justifyContent: "center",
                     alignItems: "center",
-                    color:"#89A963"
-
+                    color: "#89A963",
                   }}
                 >
                   <div
@@ -145,7 +145,7 @@ export default function who() {
                       flexDirection: "row",
                       justifyContent: "center",
                       alignItems: "center",
-                      color:"#89A963"
+                      color: "#89A963",
                     }}
                   >
                     <Number n={961} /> +
@@ -175,8 +175,7 @@ export default function who() {
                     flexDirection: "column",
                     justifyContent: "center",
                     alignItems: "center",
-                    color:"#89A963"
-
+                    color: "#89A963",
                   }}
                 >
                   <div
@@ -185,8 +184,7 @@ export default function who() {
                       flexDirection: "row",
                       justifyContent: "center",
                       alignItems: "center",
-                      color:"#89A963"
-
+                      color: "#89A963",
                     }}
                   >
                     <Number n={961} /> +
@@ -216,8 +214,7 @@ export default function who() {
                     flexDirection: "column",
                     justifyContent: "center",
                     alignItems: "center",
-                    color:"#89A963"
-
+                    color: "#89A963",
                   }}
                 >
                   <div
@@ -226,8 +223,7 @@ export default function who() {
                       flexDirection: "row",
                       justifyContent: "center",
                       alignItems: "center",
-                      color:"#89A963"
-
+                      color: "#89A963",
                     }}
                   >
                     <Number n={961} /> +
@@ -257,8 +253,7 @@ export default function who() {
                     flexDirection: "column",
                     justifyContent: "center",
                     alignItems: "center",
-                    color:"#89A963"
-
+                    color: "#89A963",
                   }}
                 >
                   <div
@@ -267,8 +262,7 @@ export default function who() {
                       flexDirection: "row",
                       justifyContent: "center",
                       alignItems: "center",
-                      color:"#89A963"
-
+                      color: "#89A963",
                     }}
                   >
                     <Number n={961} /> +
@@ -285,8 +279,12 @@ export default function who() {
               </Box>
             </Box>
           </div>
-          <div style={{ width: "28vw" , height:"550px" , marginLeft: "8rem" }}>
-            <img src={banner} alt="" style={{ width: "100%"  , height:"100%"}} />
+          <div style={{ width: "28vw", height: "550px", marginLeft: "8rem" }}>
+            <img
+              src={banner}
+              alt=""
+              style={{ width: "100%", height: "100%" }}
+            />
           </div>
         </Box>
       </Paper>

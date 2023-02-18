@@ -69,7 +69,7 @@ export default function AboutUs() {
                 }
               }}
             >
-              Who <span>are we</span>
+              Who <span>Are We</span>
             </Typography>
             <br></br>
             </FadeInWrapper>

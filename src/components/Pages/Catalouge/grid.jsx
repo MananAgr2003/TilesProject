@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     overflow:"hidden"
   },
   gridHead: {
-    color: "green",
+    color: "#89a963",
     fontFamily: "unna",
     fontSize: "50px",
     margin: "40px 50px 0px 50px",

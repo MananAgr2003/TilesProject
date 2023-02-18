@@ -90,6 +90,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     padding: "0rem 1rem 0rem 2rem",
     marginTop: "3rem",
+    overflow:"hidden"
   },
   paper: {
     padding: theme.spacing(1),
@@ -115,8 +116,10 @@ function ProductFilter() {
     if (pageNumber < lastPage) setPageNumber(pageNumber + 1);
   };
 
-  return (
-    <Box sx={{ display: "flex", mt: "2rem", fontFamily: "unna" }}>
+  return ( 
+    <Box sx={{ display: "flex", mt: "2rem", fontFamily: "unna" ,   
+    overflow:"hidden" , height:"1700px"
+    }}>
       <Box
         sx={{
           width: "20vw",
@@ -258,7 +261,7 @@ function ProductFilter() {
           ))}
         </Box>
         <Box sx={{ mt: "1rem", display: "flex", flexDirection: "row"  , position:"absolute",
-                top:-75 , left:"75vw" , width:"20vw"}}>
+                top:-75 , left:"75vw" , width:"30vw"}}>
           {filter.map((size, index) => (
             <FormControlLabel
               sx={{

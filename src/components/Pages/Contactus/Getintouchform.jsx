@@ -6,14 +6,14 @@ const useStyles = makeStyles((theme) => ({
   root: {
     padding: "75px 37px 89px 59px",
     width: "850px",
-    height:"720px",
+    height: "720px",
 
     border: "1px solid #ccc",
     borderRadius: "4px",
     margin: "0 auto",
     position: "absolute",
-    top:"370px",
-    left:66,
+    top: "370px",
+    left: 66,
     backgroundColor: "white",
   },
   header: {
@@ -27,6 +27,10 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "bold",
     marginBottom: "10px",
     fontFamily: "unna",
+
+   
+      color:"black"
+    
   },
   paragraph: {
     fontSize: "19px",
@@ -39,7 +43,11 @@ const useStyles = makeStyles((theme) => ({
   },
   submitButton: {
     marginTop: "20px",
-    backgroundColor:"#89A963"
+    backgroundColor: "#89A963",
+
+    "&:hover":{
+      backgroundColor:"#89a963"
+    }
   },
 }));
 
@@ -52,7 +60,9 @@ const GetInTouchForm = () => {
         Contact with Us
       </Typography>
       <Typography variant="h4" className={classes.title}>
-        Get in touch
+        Get in<span style={{
+          color:"#89a963"
+        }}> touch</span>
       </Typography>
       <Typography variant="body1" className={classes.paragraph}>
         In hac habitasse platea dictumst. Pellentesque viverra sem nec orci
