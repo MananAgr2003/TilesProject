@@ -32,8 +32,8 @@ export default function Map() {
         <Box
           sx={{
             backgroundImage: `url(${banner})`,
-            width: "95vw",
-            height: "424px",
+            width: "91.5vw",
+            height: "380px",
             backgroundSize: "100% 100%",
             marginTop: "2rem",
             display: "flex",
