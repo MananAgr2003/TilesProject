@@ -11,7 +11,14 @@ import {
 import ProductCardSqre from "../../cards/ProductCardSqre";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
+import {
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
 
+} from "@material-ui/core";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import AddIcon from '@material-ui/icons/Add';
 import product1 from "../../assets/products/product1.png";
 import product2 from "../../assets/products/product2.png";
 import product3 from "../../assets/products/product3.png";
@@ -90,7 +97,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     padding: "0rem 1rem 0rem 2rem",
     marginTop: "3rem",
-    overflow:"hidden"
+    overflow: "hidden",
   },
   paper: {
     padding: theme.spacing(1),
@@ -100,6 +107,18 @@ const useStyles = makeStyles((theme) => ({
   gridMain: {
     backgroundColor: "black",
   },
+  acc:{
+    backgroundColor: "#F9FAFB",
+    border:"none",
+    position:"relative",
+    right:"10px"
+
+
+  },
+  icon:{
+    position:"relative",
+    bottom:"7px"
+  }
 }));
 
 function ProductFilter() {
@@ -115,11 +134,21 @@ function ProductFilter() {
     const lastPage = Math.ceil(products / 20);
     if (pageNumber < lastPage) setPageNumber(pageNumber + 1);
   };
+  const [expanded, setExpanded] = useState(false);
 
-  return ( 
-    <Box sx={{ display: "flex", mt: "2rem", fontFamily: "unna" ,   
-    overflow:"hidden" , height:"1700px"
-    }}>
+  const handleChange = (panel) => (event, isExpanded) => {
+    setExpanded(isExpanded ? panel : false);
+  };
+  return (
+    <Box
+      sx={{
+        display: "flex",
+        mt: "2rem",
+        fontFamily: "unna",
+        overflow: "hidden",
+        height: "1700px",
+      }}
+    >
       <Box
         sx={{
           width: "20vw",
@@ -145,128 +174,207 @@ function ProductFilter() {
           Showing {(pageNumber - 1) * 20 + 1} -{" "}
           {Math.min(pageNumber * 20, products)} out of {products} Products
         </Typography>
-        <Box sx={{ mt: "1rem", display: "flex", flexDirection: "column" }}>
-          <Typography
-            sx={{
-              fontSize: "1rem",
-              fontWeight: "bold",
-              fontFamily: "unna",
-              marginBottom: "30px",
-              marginTop: "20px",
-            }}
-          >
-            BRANDS
-          </Typography>
-          {brands.map((brand, index) => (
-            <FormControlLabel
-              sx={{
-                fontFamily: "unna",
-              }}
-              key={index}
-              control={
-                <Checkbox
-                  sx={{
-                    "&, & + .MuiFormControlLabel-label": {
-                      fontFamily: "unna",
-                      fontWeight: "bold",
-                      fontSize: "1.4rem",
-                    },
-                    "&.Mui-checked": {
-                      "&, & + .MuiFormControlLabel-label": {
-                        color: "#89A963",
-                      },
-                    },
-                  }}
-                />
-              }
-              label={brand}
-            />
-          ))}
-        </Box>
-        <Box sx={{ mt: "1rem", display: "flex", flexDirection: "column" }}>
-          <Typography
-            sx={{
-              fontSize: "1rem",
-              fontWeight: "bold",
-              fontFamily: "unna",
-              marginBottom: "30px",
-              marginTop: "30px",
-            }}
-          >
-            LOCATION
-          </Typography>
-          {locations.map((location, index) => (
-            <FormControlLabel
-              sx={{
-                fontFamily: "unna",
 
-                "&.label": {
+
+        <Accordion
+          expanded={expanded === "panel1"}
+          onChange={handleChange("panel1")}
+          elevation={0}
+
+          sx={{ mt: "1rem", display: "flex", flexDirection: "column" ,  backgroundColor: "#F9FAFB",}}
+
+          className={classes.acc}
+        >
+
+            <AccordionSummary
+              expandIcon={<AddIcon className={classes.icon}/>}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+              className={classes.acc}
+          elevation={0}
+
+            >
+              <Typography
+                sx={{
+                  fontSize: "1rem",
+                  fontWeight: "bold",
                   fontFamily: "unna",
-                },
-              }}
-              key={index}
-              control={
-                <Checkbox
+                  marginBottom: "30px",
+                  marginTop: "20px",
+                }}
+              >
+                BRANDS
+              </Typography>
+            </AccordionSummary>
+          
+              {brands.map((brand, index) => (
+             
+                  <AccordionDetails  className={classes.acc}>
+                <FormControlLabel
                   sx={{
-                    "&, & + .MuiFormControlLabel-label": {
-                      fontFamily: "unna",
-                      fontWeight: "bold",
-                      fontSize: "1.4rem",
-                    },
-                    "&.Mui-checked": {
-                      "&, & + .MuiFormControlLabel-label": {
-                        color: "#89a963",
-                      },
-                    },
+                    fontFamily: "unna",
                   }}
+                  key={index}
+                  control={
+                    <Checkbox
+                      sx={{
+                        "&, & + .MuiFormControlLabel-label": {
+                          fontFamily: "unna",
+                          fontWeight: "bold",
+                          fontSize: "1.4rem",
+                        },
+                        "&.Mui-checked": {
+                          "&, & + .MuiFormControlLabel-label": {
+                            color: "#89A963",
+                          },
+                        },
+                      }}
+                    />
+                  }
+                  label={brand}
                 />
-              }
-              label={location}
-            />
-          ))}
-        </Box>
-        <Box sx={{ mt: "1rem", display: "flex", flexDirection: "column" }}>
-          <Typography
-            sx={{
-              fontSize: "1rem",
-              fontWeight: "bold",
-              fontFamily: "unna",
-              marginBottom: "30px",
-              marginTop: "30px",
-            }}
-          >
-            SIZE
-          </Typography>
-          {sizes.map((size, index) => (
-            <FormControlLabel
-              key={index}
-              control={
-                <Checkbox
+            </AccordionDetails>
+              ))}
+          
+        </Accordion>
+        <Accordion
+          expanded={expanded === "panel2"}
+          onChange={handleChange("panel2")}
+          elevation={0}
+
+          sx={{ mt: "1rem", display: "flex", flexDirection: "column" ,  backgroundColor: "#F9FAFB",}}
+
+          className={classes.acc}
+        >
+
+            <AccordionSummary
+              expandIcon={<AddIcon className={classes.icon}/>}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+              className={classes.acc}
+          elevation={0}
+
+            >
+              <Typography
+                sx={{
+                  fontSize: "1rem",
+                  fontWeight: "bold",
+                  fontFamily: "unna",
+                  marginBottom: "30px",
+                  marginTop: "20px",
+                }}
+              >
+                LOCATIONS
+              </Typography>
+            </AccordionSummary>
+          
+              {locations.map((brand, index) => (
+             
+                  <AccordionDetails  className={classes.acc}>
+                <FormControlLabel
                   sx={{
-                    "&, & + .MuiFormControlLabel-label": {
-                      fontFamily: "unna",
-                      fontWeight: "bold",
-                      fontSize: "1.4rem",
-                    },
-                    "&.Mui-checked": {
-                      "&, & + .MuiFormControlLabel-label": {
-                        color: "#89a963",
-                      },
-                    },
+                    fontFamily: "unna",
                   }}
+                  key={index}
+                  control={
+                    <Checkbox
+                      sx={{
+                        "&, & + .MuiFormControlLabel-label": {
+                          fontFamily: "unna",
+                          fontWeight: "bold",
+                          fontSize: "1.4rem",
+                        },
+                        "&.Mui-checked": {
+                          "&, & + .MuiFormControlLabel-label": {
+                            color: "#89A963",
+                          },
+                        },
+                      }}
+                    />
+                  }
+                  label={brand}
                 />
-              }
-              label={size}
-            />
-          ))}
-        </Box>
-        <Box sx={{ mt: "1rem", display: "flex", flexDirection: "row"  , position:"absolute",
-                top:-75 , left:"75vw" , width:"30vw"}}>
+            </AccordionDetails>
+              ))}
+          
+        </Accordion>
+        <Accordion
+          expanded={expanded === "panel3"}
+          onChange={handleChange("panel3")}
+          elevation={0}
+
+          sx={{ mt: "1rem", display: "flex", flexDirection: "column" ,  backgroundColor: "#F9FAFB",}}
+
+          className={classes.acc}
+        >
+
+            <AccordionSummary
+              expandIcon={<AddIcon className={classes.icon}/>}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+              className={classes.acc}
+          elevation={0}
+
+            >
+              <Typography
+                sx={{
+                  fontSize: "1rem",
+                  fontWeight: "bold",
+                  fontFamily: "unna",
+                  marginBottom: "30px",
+                  marginTop: "20px",
+                }}
+              >
+                SIZES
+              </Typography>
+            </AccordionSummary>
+          
+              {sizes.map((brand, index) => (
+             
+                  <AccordionDetails  className={classes.acc}>
+                <FormControlLabel
+                  sx={{
+                    fontFamily: "unna",
+                  }}
+                  key={index}
+                  control={
+                    <Checkbox
+                      sx={{
+                        "&, & + .MuiFormControlLabel-label": {
+                          fontFamily: "unna",
+                          fontWeight: "bold",
+                          fontSize: "1.4rem",
+                        },
+                        "&.Mui-checked": {
+                          "&, & + .MuiFormControlLabel-label": {
+                            color: "#89A963",
+                          },
+                        },
+                      }}
+                    />
+                  }
+                  label={brand}
+                />
+            </AccordionDetails>
+              ))}
+          
+        </Accordion>
+        
+       
+        <Box
+          sx={{
+            mt: "1rem",
+            display: "flex",
+            flexDirection: "row",
+            position: "absolute",
+            top: -75,
+            left: "75vw",
+            width: "30vw",
+          }}
+        >
           {filter.map((size, index) => (
             <FormControlLabel
-              sx={{
-                
-              }}
+              sx={{}}
               key={index}
               control={
                 <Checkbox

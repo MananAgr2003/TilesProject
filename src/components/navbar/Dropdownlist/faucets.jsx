@@ -51,8 +51,8 @@ export default function Faucets() {
   };
 
   const handleMenuItemClick = (event, index) => {
-    setSelectedIndex(index);
     setAnchorEl(null);
+   
   };
 
   const elements = [
