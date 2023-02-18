@@ -46,7 +46,7 @@ const scrollToTop = () => {
         <Categories></Categories>
       </FadeInBottom>
 
-      <MovingLine></MovingLine>
+    
 
     </>
   );
