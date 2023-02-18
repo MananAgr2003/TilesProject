@@ -64,9 +64,12 @@ export default function AboutUs() {
                 fontSize: "2.5rem",
                 marginLeft: "1.5rem",
                 fontFamily: "unna",
+                span:{
+                  color:"#89a963"
+                }
               }}
             >
-              Who Are We
+              Who <span>are we</span>
             </Typography>
             <br></br>
             </FadeInWrapper>

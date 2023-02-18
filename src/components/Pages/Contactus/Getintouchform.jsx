@@ -5,7 +5,7 @@ import { Typography, TextField, Button, Grid } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   root: {
     padding: "75px 37px 89px 59px",
-    width: "1000px",
+    width: "850px",
     height:"720px",
 
     border: "1px solid #ccc",

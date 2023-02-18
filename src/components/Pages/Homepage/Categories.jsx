@@ -94,9 +94,12 @@ export default function ProductList() {
           sx={{
             fontFamily: "unna",
             fontSize: "3rem",
+            span:{
+              color:"#89a963"
+            }
           }}
         >
-          Product Categories
+          Product <span>Categories</span>
         </Typography>
         <div className={classes.root} >
           <Grid container spacing={4} >

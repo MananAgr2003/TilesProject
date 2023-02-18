@@ -284,7 +284,7 @@ export default function Text() {
               height: "550px",
               marginLeft: "8rem",
               position: "relative",
-              left: "150px",
+              left: "100px",
               bottom:"50px"
             }}
           >

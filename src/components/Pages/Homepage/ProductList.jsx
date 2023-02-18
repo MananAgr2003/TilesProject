@@ -110,9 +110,12 @@ export default function ProductList() {
           sx={{
             fontFamily: "unna",
             fontSize: "3rem",
+            span:{
+              color:"#89a963"
+            }
           }}
         >
-          Feel The Product
+          Feel <span>The Product</span>
         </Typography>
         <div className={classes.root}>
           <Grid container spacing={4}>

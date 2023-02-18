@@ -33,6 +33,10 @@ const brands = [
   "artist",
   "pare",
 ];
+const filter = [
+  "Floor Tiles",
+  "Wall Tiles"
+];
 const locations = ["livingroom", "bedroom", "bathroom", "outdoor", "parking"];
 const sizes = ["20 x 1000 MM", "35 x 1000 MM", "56 x 1000 MM", "23 x 1000 MM"];
 
@@ -251,6 +255,32 @@ function ProductFilter() {
                         color: "red",
                       },
                     },
+                  }}
+                />
+              }
+              label={size}
+            />
+          ))}
+        </Box>
+        <Box sx={{ mt: "1rem", display: "flex", flexDirection: "row"  }}>
+
+          {filter.map((size, index) => (
+            <FormControlLabel
+              key={index}
+              control={
+                <Checkbox
+                  sx={{
+                    "&, & + .MuiFormControlLabel-label": {
+                      fontFamily: "unna",
+                      fontWeight: "bold",
+                      fontSize: "1.4rem",
+                    },
+                    "&.Mui-checked": {
+                      "&, & + .MuiFormControlLabel-label": {
+                        color: "red",
+                      },
+                    },
+                    position:"absolute"
                   }}
                 />
               }

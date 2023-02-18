@@ -1,5 +1,7 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles  } from "@material-ui/core/styles";
+import { useMediaQuery  } from "@material-ui/core";
+
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
@@ -9,10 +11,19 @@ import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import ArrowDropDown from "@material-ui/icons/ArrowDropDown";
 import { Link } from "react-router-dom";
+import Faucets from "./Dropdownlist/faucets";
+import Shower from "./Dropdownlist/shower";
+import Sanitaryware from "./Dropdownlist/sanitaryware";
+import Accessories from "./Dropdownlist/accessories";
+import Lighting from "./Dropdownlist/lighting";
+import Catalouge from "./Dropdownlist/catalouge";
+import Tilevisualizer from "./Dropdownlist/tilevisualizer";
+import { useTheme } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -38,7 +49,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Navbar = () => {
-  const classes = useStyles();
+  const theme = useTheme();
+  const classes = useStyles(theme);
+
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [selectedIndex, setSelectedIndex] = React.useState(1);
 
@@ -65,71 +79,29 @@ const Navbar = () => {
     "Tile Visualizer",
   ];
 
+
   return (
     <div className={classes.root}>
-      <AppBar position="static" style={{ backgroundColor: "#5F5E55" }}>
+      <AppBar
+        position="static"
+        style={{
+          backgroundColor: "#5F5E55",
+          display: {
+            xs: "none",
+            md: "block",
+          },
+        }}
+      >
         <Toolbar>
           <Typography variant="h6" className={classes.title}></Typography>
-          {elements.map((element, index) => (
-            <div key={index}>
-              <Button
-                aria-controls="simple-menu"
-                aria-haspopup="true"
-                onClick={handleClick}
-                className={classes.button}
-              >
-                {element}
-                <ArrowDropDown
-                  style={{
-                    display:
-                      element === "Catalouge" || element === "Tile Visualizer"
-                        ? "none"
-                        : "block",
-                  }}
-                />
-              </Button>
-              <Menu
-                id="simple-menu"
-                anchorEl={anchorEl}
-                keepMounted
-                open={Boolean(anchorEl)}
-                onClose={handleClose}
-                className={classes.menu}
-                getContentAnchorEl={null}
-                anchorOrigin={{
-                  vertical: "bottom",
-                  horizontal: "center",
-                }}
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "center",
-                }}
-              >
-                <Link to="/productlist" style={{ textDecoration: "none" }}>
-                  <MenuItem
-                    onClick={(event) => handleMenuItemClick(event, index)}
-                  >
-                    Option 1
-                  </MenuItem>
-                </Link>
-                <MenuItem
-                  onClick={(event) => handleMenuItemClick(event, index)}
-                >
-                  Option 2
-                </MenuItem>
-                <MenuItem
-                  onClick={(event) => handleMenuItemClick(event, index)}
-                >
-                  Option 3
-                </MenuItem>
-                <MenuItem
-                  onClick={(event) => handleMenuItemClick(event, index)}
-                >
-                  Option 4
-                </MenuItem>
-              </Menu>
-            </div>
-          ))}
+
+          <Faucets></Faucets>
+          <Shower></Shower>
+          <Sanitaryware></Sanitaryware>
+          <Accessories></Accessories>
+          <Lighting></Lighting>
+          <Catalouge></Catalouge>
+          <Tilevisualizer></Tilevisualizer>
         </Toolbar>
       </AppBar>
     </div>

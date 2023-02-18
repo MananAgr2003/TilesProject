@@ -31,9 +31,12 @@ export default function Overview() {
           sx={{
             fontFamily: "unna",
             fontSize: "3rem",
+            span:{
+              color:"#89A963"
+            }
           }}
         >
-          Our Major Brands We Deal In
+          Our Major <span>Brands We Deal In</span>
         </Typography>
 
         <Box

@@ -49,9 +49,12 @@ export default function Overview() {
           sx={{
             fontFamily: "unna",
             fontSize: "3rem",
+            span:{
+              color:"#89a963"
+            }
           }}
         >
-          Tiles By Space
+          Tiles <span>By Space</span>
         </Typography>
 
         <Box

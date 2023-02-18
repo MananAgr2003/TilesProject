@@ -11,7 +11,6 @@ import ToolTip2 from "./components/ToolTip2";
 import Homepage from "./components/Pages/Homepage";
 import Productpage from "./components/Pages/Productpage";
 import RoutesFunc from "./components/Pages/Routes";
-import Navbartest from "./components/navbar/Navbartest";
 
 function App() {
   const location = useLocation();
@@ -31,7 +30,7 @@ function App() {
 
       <Header></Header>
 
-      <Navbartest></Navbartest>
+      <Navbar></Navbar>
 
       <RoutesFunc />
 
