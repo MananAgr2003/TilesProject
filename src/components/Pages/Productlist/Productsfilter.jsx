@@ -33,10 +33,7 @@ const brands = [
   "artist",
   "pare",
 ];
-const filter = [
-  "Floor Tiles",
-  "Wall Tiles"
-];
+const filter = ["Floor Tiles", "Wall Tiles"];
 const locations = ["livingroom", "bedroom", "bathroom", "outdoor", "parking"];
 const sizes = ["20 x 1000 MM", "35 x 1000 MM", "56 x 1000 MM", "23 x 1000 MM"];
 
@@ -182,7 +179,6 @@ function ProductFilter() {
               label={brand}
             />
           ))}
-         
         </Box>
         <Box sx={{ mt: "1rem", display: "flex", flexDirection: "column" }}>
           <Typography
@@ -216,7 +212,7 @@ function ProductFilter() {
                     },
                     "&.Mui-checked": {
                       "&, & + .MuiFormControlLabel-label": {
-                        color: "red",
+                        color: "#89a963",
                       },
                     },
                   }}
@@ -225,7 +221,6 @@ function ProductFilter() {
               label={location}
             />
           ))}
-        
         </Box>
         <Box sx={{ mt: "1rem", display: "flex", flexDirection: "column" }}>
           <Typography
@@ -252,7 +247,7 @@ function ProductFilter() {
                     },
                     "&.Mui-checked": {
                       "&, & + .MuiFormControlLabel-label": {
-                        color: "red",
+                        color: "#89a963",
                       },
                     },
                   }}
@@ -262,10 +257,13 @@ function ProductFilter() {
             />
           ))}
         </Box>
-        <Box sx={{ mt: "1rem", display: "flex", flexDirection: "row"  }}>
-
+        <Box sx={{ mt: "1rem", display: "flex", flexDirection: "row"  , position:"absolute",
+                top:-75 , left:"75vw" , width:"20vw"}}>
           {filter.map((size, index) => (
             <FormControlLabel
+              sx={{
+                
+              }}
               key={index}
               control={
                 <Checkbox
@@ -277,10 +275,9 @@ function ProductFilter() {
                     },
                     "&.Mui-checked": {
                       "&, & + .MuiFormControlLabel-label": {
-                        color: "red",
+                        color: "#89a963",
                       },
                     },
-                    position:"absolute"
                   }}
                 />
               }
@@ -320,71 +317,73 @@ function ProductFilter() {
             />
           </Box>
 
-          <Box sx={{   
-                height: "35px",
-                width:"35px",
-                position: "relative",
-                top: "23px",
-                left: "35px",
-                border:"1px solid grey",
-                display:"flex",
-                justifyContent:"center",
-                alignItems:"center",
-                fontFamily:"unna",
-                backgroundColor:"#89A963",
-                color:"white"
-             }}>
-          
+          <Box
+            sx={{
+              height: "35px",
+              width: "35px",
+              position: "relative",
+              top: "23px",
+              left: "35px",
+              border: "1px solid grey",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              fontFamily: "unna",
+              backgroundColor: "#89A963",
+              color: "white",
+            }}
+          >
             1
           </Box>
-          <Box sx={{   
-                height: "35px",
-                width:"35px",
-                position: "relative",
-                top: "23px",
-                left: "35px",
-                border:"1px solid grey",
-                display:"flex",
-                justifyContent:"center",
-                alignItems:"center",
-                fontFamily:"unna",
-                marginLeft:"10px"
-
-             }}>
-          
+          <Box
+            sx={{
+              height: "35px",
+              width: "35px",
+              position: "relative",
+              top: "23px",
+              left: "35px",
+              border: "1px solid grey",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              fontFamily: "unna",
+              marginLeft: "10px",
+            }}
+          >
             2
           </Box>
-          <Box sx={{   
-                height: "35px",
-                width:"35px",
-                position: "relative",
-                top: "23px",
-                left: "35px",
-                border:"1px solid grey",
-                display:"flex",
-                justifyContent:"center",
-                alignItems:"center",
-                fontFamily:"unna",
-                marginLeft:"10px"
-
-             }}>
-          
+          <Box
+            sx={{
+              height: "35px",
+              width: "35px",
+              position: "relative",
+              top: "23px",
+              left: "35px",
+              border: "1px solid grey",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              fontFamily: "unna",
+              marginLeft: "10px",
+            }}
+          >
             ...
           </Box>
-          <Box sx={{   
-                height: "35px",
-                width:"35px",
-                position: "relative",
-                top: "23px",
-                left: "35px",
-                border:"1px solid grey",
-                display:"flex",
-                justifyContent:"center",
-                alignItems:"center",
-                fontFamily:"unna",
-                marginLeft:"10px"
-             }}>
-          
+          <Box
+            sx={{
+              height: "35px",
+              width: "35px",
+              position: "relative",
+              top: "23px",
+              left: "35px",
+              border: "1px solid grey",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              fontFamily: "unna",
+              marginLeft: "10px",
+            }}
+          >
             15
           </Box>
           <Box sx={{ mx: "0.5rem" }}>
