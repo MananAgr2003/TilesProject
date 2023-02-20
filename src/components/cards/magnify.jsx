@@ -57,8 +57,8 @@ function ImageMagnifier(props) {
           width: "200px",
           borderRadius:"50%",
           // move element center to cursor pos
-          top: `${y - 10 / 1.5}px`,
-          left: `${x - 10 / 1.5}px`,
+          top: `${y - 300 / 1.5}px`,
+          left: `${x + 10 / 1.5}px`,
           opacity: "1", // reduce opacity so you can verify position
           border: "1px solid lightgray",
           backgroundColor: "white",
