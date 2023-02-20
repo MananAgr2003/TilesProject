@@ -1,144 +1,153 @@
-import * as React from "react";
-import { useTheme } from "@mui/material/styles";
-import Box from "@mui/material/Box";
-import MobileStepper from "@mui/material/MobileStepper";
-import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
-import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
-import { Button, Typography } from "@mui/material";
-import SwipeableViews from "react-swipeable-views";
-import { autoPlay } from "react-swipeable-views-utils";
-import banner from "../assets/banner.png";
-import logo from  "../assets/logo.png";
+import React , {useEffect} from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
+import IconButton from "@material-ui/core/IconButton";
+import Menu from "@material-ui/core/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
+import ArrowDropDown from "@material-ui/icons/ArrowDropDown";
+import { Link } from "react-router-dom";
 
-const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  title: {
+    flexGrow: 1,
+  },
+  menu: {
+    width: "80vw",
+    color: "white",
+  },
+  button: {
+    color: "white",
+    fontFamily: "unna",
+    fontSize: "22px",
+    textTransform: "none",
+    fontWeight: "450",
+    "&:hover": {
+      boxShadow: "0px 0px 0px rgba(0, 0, 0, 0.3)",
+      backgroundColor: "#5F5E55",
+    },
+  },
+}));
 
-const images = [
-  {
-    label: "A Class By Itself",
-    imgPath: { banner },
-  },
-  {
-    label: "A Class By Itself",
-    imgPath: { logo },
-  },
-  {
-    label: "A Class By Itself",
-    imgPath: { banner },
-  },
-  {
-    label: "A Class By Itself",
-    imgPath: { logo },
-  },
-];
+export default function Faucets() {
+  const classes = useStyles();
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [selectedIndex, setSelectedIndex] = React.useState(1);
 
-function SwipeableTextMobileStepper() {
-  const theme = useTheme();
-  const [activeStep, setActiveStep] = React.useState(0);
-  const maxSteps = images.length;
-  const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+
+
+  const handleMenuItemClick = (event, index) => {
+    setAnchorEl(null);
+   
+  };
+  const handleMouseOver = (event) => {
+
+    if(anchorEl === null){
+    setAnchorEl(event.currentTarget);
+    }
+  };
+  
+  const handleMouseOut = () => {
+    setAnchorEl(null);
+  };
+  
+  const handleClick = (event) => {
+    // Prevent the menu from opening on click
+    event.preventDefault();
+  };
+  
+  const handleClose = () => {
+    setAnchorEl(null);
   };
 
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  const handleMouseLeave = () => {
+    setAnchorEl(null);
   };
 
-  const handleStepChange = (step: number) => {
-    setActiveStep(step);
-  };
+  const elements = [
+    "Faucets",
+    "Shower",
+    "Sanitaryware",
+    "Accessories",
+    "Ligthing",
+    "Catalouge",
+    "Tile Visualizer",
+  ];
 
+ 
   return (
-    <Box
-      sx={{
-        maxWidth: "100vw",
-      }}
-    >
-      <AutoPlaySwipeableViews
-        axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-        index={activeStep}
-        onChangeIndex={handleStepChange}
-        enableMouseEvents
-      >
-        {images.map((step, index) => (
-          <div key={step.label}>
-            {Math.abs(activeStep - index) <= 2 ? (
-            
-                <Box
-                  component="img"
-                  sx={{
-                    width: "100%",
-                    filter: "brightness(50%)",
-                  }}
-                  src={step.imgPath}
-                  alt={step.label}
-                />
+    <>
+      <div key={1} >
+      
+        <Button
+          aria-controls="simple-menu"
+          aria-haspopup="true"
+          onMouseEnter={handleMouseOver}
+        
+          
+          onClick={handleClick}
+          className={classes.button}
+        >
+          Faucets
+          <ArrowDropDown />
+        </Button>
+     
+        <Menu
+          id="simple-menu"
+          anchorEl={anchorEl}
+          disableAutoFocusItem={true}
+          open={Boolean(anchorEl)}
+     
 
-               
-              
-            ) : null}
+          onClose={handleClose}
+          className={classes.menu}
+          getContentAnchorEl={null}
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "center",
+          }}
+          transformOrigin={{
+            vertical: "top",
+            horizontal: "center",
+          }}
+
+          
+        >
+
+          <div onMouseLeave={handleMouseLeave} onMouseEnter={handleMouseOver}>
+          <Link to="/productlist" style={{ textDecoration: "none" }}>
+            <MenuItem onClick={(event) => handleMenuItemClick(event, index)}  
+          
+          >
+              Option 1
+            </MenuItem>
+          </Link>
+          <MenuItem onClick={(event) => handleMenuItemClick(event, index)}
+          
+          >
+            Option 2
+          </MenuItem>
+          <MenuItem onClick={(event) => handleMenuItemClick(event, index)}
+          
+          >
+            Option 3
+          </MenuItem>
+          <MenuItem onClick={(event) => handleMenuItemClick(event, index)}
+          
+          >
+            Option 4
+          </MenuItem>
           </div>
-        ))}
-      </AutoPlaySwipeableViews>
-
-      <MobileStepper
-           
-        sx={{
-          position: "relative",
-          bottom: "4px",
-          padding: "0px",
-          justifyContent: "right",
-        }}
-        position="static"
-        nextButton={
-          <Button
-            size="small"
-            onClick={handleNext}
-            sx={{
-              backgroundColor: "black",
-              color: "white",
-              "&:hover": {
-                backgroundColor: "black",
-              },
-              height: "6rem",
-              width: "6rem",
-              borderRadius: "0px",
-            }}
-            disabled={activeStep === maxSteps - 1}
-          >
-            {theme.direction === "rtl" ? (
-              <KeyboardArrowLeft />
-            ) : (
-              <KeyboardArrowRight />
-            )}
-          </Button>
-        }
-        backButton={
-          <Button
-            sx={{
-              backgroundColor: "black",
-              color: "white",
-              "&:hover": {
-                backgroundColor: "black",
-              },
-              height: "6rem",
-              width: "6rem",
-              borderRadius: "0px",
-              marginRight: "0.7rem",
-            }}
-            size="small"
-            onClick={handleBack}
-            disabled={activeStep === 0}
-          >
-            {theme.direction === "rtl" ? (
-              <KeyboardArrowRight />
-            ) : (
-              <KeyboardArrowLeft />
-            )}
-          </Button>
-        }
-      />
-    </Box>
+        </Menu>
+      </div>
+    </>
   );
 }
-
-export default SwipeableTextMobileStepper;

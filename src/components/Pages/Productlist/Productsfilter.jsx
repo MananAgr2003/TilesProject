@@ -18,7 +18,7 @@ import {
 } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import AddIcon from "@material-ui/icons/Add";
-import RemoveIcon from '@material-ui/icons/Remove';
+import RemoveIcon from "@material-ui/icons/Remove";
 import product1 from "../../assets/products/product1.png";
 import product2 from "../../assets/products/product2.png";
 import product3 from "../../assets/products/product3.png";
@@ -30,6 +30,7 @@ import product8 from "../../assets/products/product8.png";
 import product9 from "../../assets/products/product9.png";
 import arrowRight from "../../assets/arrow/arrowRight.png";
 import arrowLeft from "../../assets/arrow/arrowLeft.png";
+
 const products = 2356; // Total number of products
 const brands = [
   "Jaquar",
@@ -39,7 +40,6 @@ const brands = [
   "ACPL",
   "artist",
   "pare",
- 
 ];
 const filter = ["Floor Tiles", "Wall Tiles"];
 const locations = ["livingroom", "bedroom", "bathroom", "outdoor", "parking"];
@@ -113,22 +113,24 @@ const useStyles = makeStyles((theme) => ({
     border: "none",
     position: "relative",
     right: "5px",
-    border:"5px solid #F9FAFB",
-    '&::before': {
-      display: 'none' // hides the default border on the AccordionSummary component
+    border: "5px solid #F9FAFB",
+    "&::before": {
+      display: "none", // hides the default border on the AccordionSummary component
     },
-    '&$expanded': {
-      margin: 'auto',
+    "&$expanded": {
+      margin: "auto",
     },
-
   },
   acc1: {
     padding: "0px 0px",
     height: "50px",
+    marginBottom:"-15px"
+
   },
   acc2: {
     padding: "0px 0px",
-    border:"5px solid transparent"
+    border: "5px solid transparent",
+    marginBottom:"-10px"
   },
   icon: {
     position: "relative",
@@ -199,7 +201,7 @@ function ProductFilter() {
         </Typography>
 
         <Accordion
-          expanded={expanded.includes('panel1')}
+          expanded={expanded.includes("panel1")}
           onChange={handleChange("panel1")}
           elevation={0}
           sx={{
@@ -211,7 +213,13 @@ function ProductFilter() {
           className={classes.acc}
         >
           <AccordionSummary
-            expandIcon={expanded.includes('panel1')  ? <RemoveIcon className={classes.icon2}></RemoveIcon> : <AddIcon className={classes.icon}  /> }
+            expandIcon={
+              expanded.includes("panel1") ? (
+                <RemoveIcon className={classes.icon2}></RemoveIcon>
+              ) : (
+                <AddIcon className={classes.icon} />
+              )
+            }
             aria-controls="panel1a-content"
             id="panel1a-header"
             className={classes.acc1}
@@ -257,9 +265,10 @@ function ProductFilter() {
               />
             </AccordionDetails>
           ))}
+       
         </Accordion>
         <Accordion
-          expanded={expanded.includes('panel2')}
+          expanded={expanded.includes("panel2")}
           onChange={handleChange("panel2")}
           elevation={0}
           sx={{
@@ -271,7 +280,13 @@ function ProductFilter() {
           className={classes.acc}
         >
           <AccordionSummary
-            expandIcon={expanded.includes('panel2')  ? <RemoveIcon className={classes.icon2}></RemoveIcon> : <AddIcon className={classes.icon}  /> }
+            expandIcon={
+              expanded.includes("panel2") ? (
+                <RemoveIcon className={classes.icon2}></RemoveIcon>
+              ) : (
+                <AddIcon className={classes.icon} />
+              )
+            }
             aria-controls="panel1a-content"
             id="panel1a-header"
             className={classes.acc1}
@@ -319,7 +334,7 @@ function ProductFilter() {
           ))}
         </Accordion>
         <Accordion
-          expanded={expanded.includes('panel3')}
+          expanded={expanded.includes("panel3")}
           onChange={handleChange("panel3")}
           elevation={0}
           sx={{
@@ -331,7 +346,13 @@ function ProductFilter() {
           className={classes.acc}
         >
           <AccordionSummary
-            expandIcon={expanded.includes('panel3')  ? <RemoveIcon className={classes.icon2}></RemoveIcon> : <AddIcon className={classes.icon}  /> }
+            expandIcon={
+              expanded.includes("panel3") ? (
+                <RemoveIcon className={classes.icon2}></RemoveIcon>
+              ) : (
+                <AddIcon className={classes.icon} />
+              )
+            }
             aria-controls="panel1a-content"
             id="panel1a-header"
             className={classes.acc1}

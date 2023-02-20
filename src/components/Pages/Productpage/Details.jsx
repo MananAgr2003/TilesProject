@@ -6,6 +6,8 @@ import pImage1 from "../../assets/ProductPageImages/img1.png";
 import pImage2 from "../../assets/ProductPageImages/img2.png";
 import pImage3 from "../../assets/ProductPageImages/img3.png";
 import pImage4 from "../../assets/ProductPageImages/img4.png";
+import ImageMagnifier from "../../cards/magnify";
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -181,7 +183,8 @@ const ProductDetailSection = () => {
         </Box>
       </Box>
       <Box className={classes.largeImageBox}>
-        <img src={selectedImage} alt="Large Image" />
+        <ImageMagnifier  imageSrc={selectedImage}   zoomLevel={2}
+  size={200}/>
       </Box>
       <Box className={classes.detailsContainer}>
         <Box>

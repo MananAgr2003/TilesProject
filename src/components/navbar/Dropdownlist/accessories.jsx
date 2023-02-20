@@ -1,145 +1,100 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
-import IconButton from "@material-ui/core/IconButton";
-import Menu from "@material-ui/core/Menu";
-import MenuItem from "@material-ui/core/MenuItem";
+import { useState } from "react";
+import "./style.css";
 import ArrowDropDown from "@material-ui/icons/ArrowDropDown";
 import { Link } from "react-router-dom";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
-  },
-  menu: {
-    width: "80vw",
-    color: "white",
-  },
-  button: {
-    color: "white",
-    fontFamily: "unna",
-    fontSize: "22px",
-    textTransform: "none",
-    fontWeight: "450",
-    "&:hover": {
-      boxShadow: "0px 0px 0px rgba(0, 0, 0, 0.3)",
-      backgroundColor: "#5F5E55",
-    },
-  },
-}));
+function Accessories(props) {
+  const [isHovered, setIsHovered] = useState(false);
 
-export default function Accessories() {
-  const classes = useStyles();
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const [selectedIndex, setSelectedIndex] = React.useState(1);
-
-
-
-  const handleMenuItemClick = (event, index) => {
-    setAnchorEl(null);
-   
-  };
-  const handleMouseOver = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  
-  const handleMouseOut = () => {
-    setAnchorEl(null);
-  };
-  
-  const handleClick = (event) => {
-    // Prevent the menu from opening on click
-    event.preventDefault();
-  };
-  
-  const handleClose = () => {
-    setAnchorEl(null);
+  const handleMouseEnter = () => {
+    setIsHovered(true);
   };
 
   const handleMouseLeave = () => {
-    setAnchorEl(null);
+    setIsHovered(false);
   };
 
-  const elements = [
-    "Accessories",
-    "Accessories",
-    "Sanitaryware",
-    "Accessories",
-    "Ligthing",
-    "Catalouge",
-    "Tile Visualizer",
-  ];
   return (
-    <>
-      <div key={1}>
-        <Button
-          aria-controls="simple-menu"
-          aria-haspopup="true"
-          onMouseOver={handleMouseOver}
-          
-          onClick={handleClick}
-          className={classes.button}
-        >
-          Accessories
-          <ArrowDropDown />
-        </Button>
-        <Menu
-          id="simple-menu"
-          anchorEl={anchorEl}
-          keepMounted
-          open={Boolean(anchorEl)}
-     
-
-          onClose={handleClose}
-          className={classes.menu}
-          getContentAnchorEl={null}
-          anchorOrigin={{
-            vertical: "bottom",
-            horizontal: "center",
+    <div
+      className="navbar-item"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      style={{
+        position: "relative",
+        right: "00px",
+        height: "50px",
+        top: "6.5px",
+        marginLeft:"10px"
+      }}
+    >
+      <span
+        className="navbar-item-label"
+        style={{
+          fontSize: "23px",
+          fontFamily: "unna",
+        }}
+      >
+        Accessories <ArrowDropDown style={{ position: "relative", top: "6px" }} />
+      </span>
+      {isHovered && (
+        <div
+          className="navbar-menu"
+          style={{
+            position: "absolute",
+            zIndex: "9999",
+            backgroundColor: "white",
+            color: "black",
+            padding: "15px",
+            top: "40px",
           }}
-          transformOrigin={{
-            vertical: "top",
-            horizontal: "center",
-          }}
-
-          
         >
-
-          <div onMouseLeave={handleMouseLeave}>
-          
-            <MenuItem onClick={(event) => handleMenuItemClick(event, index)}  
-          
-          >
+            <div
+              className="navbar-menu-item"
+              key="1"
+              style={{
+                marginBottom: "15px",
+                fontFamily: "unna",
+                cursor: "pointer",
+              }}
+            >
               Option 1
-            </MenuItem>
-        
-          <MenuItem onClick={(event) => handleMenuItemClick(event, index)}
-          
+            </div>
+          <div
+            className="navbar-menu-item"
+            key="2"
+            style={{
+              marginBottom: "15px",
+              fontFamily: "unna",
+              cursor: "pointer",
+            }}
           >
             Option 2
-          </MenuItem>
-          <MenuItem onClick={(event) => handleMenuItemClick(event, index)}
-          
+          </div>
+          <div
+            className="navbar-menu-item"
+            key="3"
+            style={{
+              marginBottom: "15px",
+              fontFamily: "unna",
+              cursor: "pointer",
+            }}
           >
             Option 3
-          </MenuItem>
-          <MenuItem onClick={(event) => handleMenuItemClick(event, index)}
-          
+          </div>
+          <div
+            className="navbar-menu-item"
+            key="4"
+            style={{
+              marginBottom: "0px",
+              fontFamily: "unna",
+              cursor: "pointer",
+            }}
           >
             Option 4
-          </MenuItem>
           </div>
-        </Menu>
-      </div>
-    </>
+        </div>
+      )}
+    </div>
   );
 }
+export default Accessories;
