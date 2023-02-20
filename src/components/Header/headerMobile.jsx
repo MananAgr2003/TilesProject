@@ -107,7 +107,7 @@ const Navbar = () => {
               <img
                 src={logo}
                 alt=""
-                style={{width:"123px" , height: "50px", position: "relative", margin:"0px 0px 0px 20px" }}
+                style={{width:"123px" , height: "50px", position: "relative", margin:"0px 0px 0px 35px" }}
               />
             </Box>
           </Link>
