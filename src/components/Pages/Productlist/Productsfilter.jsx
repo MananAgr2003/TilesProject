@@ -114,6 +114,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#F9FAFB",
     border: "none",
     position: "relative",
+    top:"20px",
     right: "5px",
     border: "5px solid #F9FAFB",
     "&::before": {
@@ -225,17 +226,25 @@ function ProductFilter() {
           Showing {(pageNumber - 1) * 20 + 1} -{" "}
           {Math.min(pageNumber * 20, products)} out of {products} Products
         </Typography>
-        <Button onClick={handleClearAllClick} sx={{
-          padding:"0px",
-          margin:"-20px 0px -5px 0px",
-          width:"200px",
-          position:"relative",
+        <Button
+          onClick={handleClearAllClick}
+          sx={{
+            padding: "0px",
+            margin: "-15px 0px 5px 0px",
+            width: "200px",
+            position: "absolute",
+            top:"02",
+             right:"-100px",
 
-      
-           color:"#89a963",
-            left:"125px"
-        }}>Clear All</Button>
-
+            color: "#89a963",
+           
+            display:"flex",
+            alignItems:"left",
+             justifyContent:"left"
+          }}
+        >
+          Clear All
+        </Button>
 
         <Accordion
           expanded={expanded.includes("panel1")}
@@ -246,6 +255,7 @@ function ProductFilter() {
             display: "flex",
             flexDirection: "column",
             backgroundColor: "#F9FAFB",
+  
           }}
           className={classes.acc}
         >
@@ -693,7 +703,6 @@ function ProductFilter() {
             </FormControl>
           </AccordionDetails>
         </Accordion>
-
 
         <Box
           sx={{
