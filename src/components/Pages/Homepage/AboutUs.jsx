@@ -1,4 +1,6 @@
 import { React, useState } from "react";
+import { useMediaQuery } from "@material-ui/core";
+import { useTheme } from "@material-ui/core/styles";
 
 import { Paper, Typography, Container, Button, Box } from "@mui/material";
 import { Waypoint } from "react-waypoint";
@@ -11,7 +13,7 @@ function Number({ n }) {
   const { number } = useSpring({
     from: { number: 0 },
    
-      number: inView ? 800 : 0,
+      number: inView ? n : 0,
 
     delay: 200,
     config: { mass: 1, tension: 20, friction: 10 },
@@ -25,6 +27,9 @@ function Number({ n }) {
 }
 
 export default function AboutUs() {
+  const theme = useTheme();
+  const isScreenSmall = useMediaQuery(theme.breakpoints.down("sm"));
+ 
   return (
     <>
       <Paper
@@ -42,17 +47,19 @@ export default function AboutUs() {
 
           zIndex: "1000",
           fontWeight: 700,
+          backgroundColor:{md:"white" , xs:"white"},
+          position:"relative"
         }}
       >
         <Box
           sx={{
             display: "flex",
-            flexDirection: "row",
+            flexDirection: {md:"row",xs:"column-reverse"}
           }}
         >
-          <div
-            style={{
-              width: "53vw",
+          <Box
+            sx={{
+              width: {md:"53vw",xs:"80vw"},
             }}
           >
 
@@ -61,11 +68,25 @@ export default function AboutUs() {
               variant="body2"
               sx={{
                 textAlign: { md: "left", xs: "center" },
-                fontSize: "2.5rem",
+                fontSize: {
+                  xs:"1.7rem",md:"2.5rem"},
                 marginLeft: "1.5rem",
                 fontFamily: "unna",
                 span:{
                   color:"#89a963"
+                },
+                position:{
+                  md:"relative",
+                  xs:"absolute"
+                },
+
+                top:{
+                  xs:"-50px",
+                  md:"0px"
+                },
+                left:{
+                  xs:"40px",
+                  md:"0px"
                 }
               }}
             >
@@ -79,9 +100,11 @@ export default function AboutUs() {
               sx={{
                 textAlign: { md: "left", xs: "center" },
 
-                marginLeft: { md: "1.5rem", xs: "0rem" },
-                lineHeight: "2rem",
-                fontSize: "1.3rem",
+                marginLeft: { md: "1.5rem", xs: "-2rem" },
+                lineHeight: {md:"1.8rem", xs:"1.5rem"},
+
+                fontSize: {md:"1.3rem" , xs:"1rem"},
+
                 fontFamily: "unna",
               }}
             >
@@ -93,14 +116,15 @@ export default function AboutUs() {
               nulla hac nulla interdum sapien lacus sit.
             </Typography>
             <br></br>
-            <Typography
+
+            {!isScreenSmall && ( <> <Typography
               variant="body2"
               sx={{
                 textAlign: { md: "left", xs: "center" },
 
-                marginLeft: { md: "1.5rem", xs: "0rem" },
-                lineHeight: "1.8rem",
-                fontSize: "1.3rem",
+                marginLeft: { md: "1.5rem", xs: "-2rem" },
+                lineHeight: {md:"1.8rem", xs:"1.5rem"},
+                fontSize: {md:"1.3rem" , xs:"0.9rem"},
                 fontFamily: "unna",
               }}
             >
@@ -110,7 +134,10 @@ export default function AboutUs() {
               tempus facilisis nullam enim nullam nisl blandit. Donec cursus
               vitae luctus donec nisl feugiat lectus
             </Typography>
-            <br></br>
+            <br></br></>)}
+          
+
+            
 
             <Box
               sx={{
@@ -118,11 +145,12 @@ export default function AboutUs() {
                 flexDirection: "row",
                 justifyContent: "left",
                 alignItems: "left",
-                marginTop: "3rem",
+                marginTop: {md:"3rem" , xs:"0rem"},
                 width: "80vw",
+                position:"relative"
               }}
             >
-              <Box>
+              <Box sx={{position:"relative" , right:{xs:"20px" , md:"0px"}}}>
                 <Typography
                   variant="body2"
                   sx={{
@@ -130,12 +158,16 @@ export default function AboutUs() {
 
                     marginLeft: { md: "1.5rem", xs: "0rem" },
                     lineHeight: "1.8rem",
-                    fontSize: "1.8rem",
+                    fontSize: {md:"1.8rem" , xs:"1.4rem"},
                     fontFamily: "unna",
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
                     alignItems: "center",
+                    color:{
+                      xs:"#89a963",
+                      md:"white"
+                    }
                   }}
                 >
                   <div
@@ -148,17 +180,22 @@ export default function AboutUs() {
                   >
                     <Number n={961} /> +
                   </div>
-                  <div
-                    style={{
+                  <Box
+                    sx={{
                       marginTop: "0.7rem",
-                      fontSize: "1.4rem",
+                      fontSize: {md:"1.4rem" , xs:"1.2rem"},
+                      color:{
+                        xs:"#89a963",
+                        md:"white"
+                      }
+
                     }}
                   >
                     Client Satisfcation
-                  </div>
+                  </Box>
                 </Typography>
               </Box>
-
+           
               <Box>
                 <Typography
                   variant="body2"
@@ -167,12 +204,16 @@ export default function AboutUs() {
 
                     marginLeft: { md: "1.5rem", xs: "0rem" },
                     lineHeight: "1.8rem",
-                    fontSize: "1.8rem",
+                    fontSize: {md:"1.8rem" , xs:"1.4rem"},
                     fontFamily: "unna",
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
                     alignItems: "center",
+                    color:{
+                      xs:"#89a963",
+                      md:"white"
+                    }
                   }}
                 >
                   <div
@@ -185,18 +226,22 @@ export default function AboutUs() {
                   >
                     <Number n={961} /> +
                   </div>
-                  <div
-                    style={{
+                  <Box
+                    sx={{
                       marginTop: "0.7rem",
-                      fontSize: "1.4rem",
+                      fontSize: {md:"1.4rem" , xs:"1.2rem"},
+                      color:{
+                        xs:"#89a963",
+                        md:"white"
+                      }
+
                     }}
                   >
                     Client Satisfcation
-                  </div>
+                  </Box>
                 </Typography>
               </Box>
-
-              <Box>
+              <Box sx={{position:{xs:"absolute" , md:"relative" ,} ,  left:{xs:"-20px" , md:"0px"} ,  top:{xs:"80px" , md:"0px"}}}>
                 <Typography
                   variant="body2"
                   sx={{
@@ -204,12 +249,16 @@ export default function AboutUs() {
 
                     marginLeft: { md: "1.5rem", xs: "0rem" },
                     lineHeight: "1.8rem",
-                    fontSize: "1.8rem",
+                    fontSize: {md:"1.8rem" , xs:"1.4rem"},
                     fontFamily: "unna",
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
                     alignItems: "center",
+                    color:{
+                      xs:"#89a963",
+                      md:"white"
+                    }
                   }}
                 >
                   <div
@@ -222,18 +271,22 @@ export default function AboutUs() {
                   >
                     <Number n={961} /> +
                   </div>
-                  <div
-                    style={{
+                  <Box
+                    sx={{
                       marginTop: "0.7rem",
-                      fontSize: "1.4rem",
+                      fontSize: {md:"1.4rem" , xs:"1.2rem"},
+                      color:{
+                        xs:"#89a963",
+                        md:"white"
+                      }
+
                     }}
                   >
                     Client Satisfcation
-                  </div>
+                  </Box>
                 </Typography>
               </Box>
-
-              <Box>
+              <Box sx={{position:{xs:"absolute" , md:"relative" ,} ,  left:{xs:"140px" , md:"0px"} ,  top:{xs:"80px" , md:"0px"}}}>
                 <Typography
                   variant="body2"
                   sx={{
@@ -241,12 +294,16 @@ export default function AboutUs() {
 
                     marginLeft: { md: "1.5rem", xs: "0rem" },
                     lineHeight: "1.8rem",
-                    fontSize: "1.8rem",
+                    fontSize: {md:"1.8rem" , xs:"1.4rem"},
                     fontFamily: "unna",
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
                     alignItems: "center",
+                    color:{
+                      xs:"#89a963",
+                      md:"white"
+                    }
                   }}
                 >
                   <div
@@ -259,21 +316,27 @@ export default function AboutUs() {
                   >
                     <Number n={961} /> +
                   </div>
-                  <div
-                    style={{
+                  <Box
+                    sx={{
                       marginTop: "0.7rem",
-                      fontSize: "1.4rem",
+                      fontSize: {md:"1.4rem" , xs:"1.2rem"},
+                      color:{
+                        xs:"#89a963",
+                        md:"white"
+                      }
+
                     }}
                   >
                     Client Satisfcation
-                  </div>
+                  </Box>
                 </Typography>
               </Box>
+
             </Box>
-          </div>
-          <div style={{ width: "28vw" , height:"550px" , marginLeft: "8rem" }}>
-            <img src={banner} alt="" style={{ width: "100%"  , height:"100%"}} />
-          </div>
+              </Box>
+          <Box sx={{ width: {md:"28vw"  ,  xs:"90vw"} , height:{md:"550px" , xs:"250px"} , marginLeft: {md:"8rem" , xs:"-2.65rem"} }}>
+            <img src={banner} alt="" style={{ width: "100%" , height:"100%"}} />
+          </Box>
         </Box>
       </Paper>
     </>

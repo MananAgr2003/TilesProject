@@ -27,6 +27,8 @@ const useStyles = makeStyles((theme) => ({
 
     fontWeight: "bold",
     filter: "brightness(100%)",
+    width:"200px"
+
   },
   link: {
     fontWeight: "bold",
@@ -55,6 +57,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     position: "relative",
     left: "5rem",
+    width:"200px"
   },
 }));
 
@@ -102,7 +105,7 @@ const Footer = () => {
       <Container>
         <Grid container spacing={4}>
           {elements.map((element, index) => (
-            <Grid item xs={12} sm={2} key={index}>
+            <Grid item xs={10} sm={2} key={index}>
               <Typography className={classes.heading}>
                 {element.heading}
               </Typography>

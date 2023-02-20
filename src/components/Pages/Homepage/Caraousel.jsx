@@ -54,7 +54,6 @@ function SwipeableTextMobileStepper() {
     <Box
       sx={{
         Width: "100vw",
-        
       }}
     >
       <AutoPlaySwipeableViews
@@ -81,7 +80,7 @@ function SwipeableTextMobileStepper() {
                   component="img"
                   sx={{
                     width: "100%",
-                    height:"593px",
+                    height: { md: "593px", xs: "293px" },
                     filter: "brightness(50%)",
                   }}
                   src={step.imgPath}
@@ -90,14 +89,20 @@ function SwipeableTextMobileStepper() {
                 <Typography
                   sx={{
                     fontFamily: "julius sans one",
-                    fontSize: "60px",
+                    fontSize: {
+                      xs: "35px",
+                      md: "60px",
+                    },
 
-                    color: "White",
+                    color: "white",
 
                     width: "100%",
                     position: "absolute",
-                    top: "12rem",
-                    paddingLeft: "7rem",
+                    top: { md: "12rem", xs: "5rem" },
+                    paddingLeft: {
+                      xs: "1rem",
+                      md: "7rem",
+                    },
                   }}
                 >
                   {step.label}
@@ -106,21 +111,29 @@ function SwipeableTextMobileStepper() {
                 <Box
                   sx={{
                     fontFamily: "julius sans one",
-                    fontSize: "20px",
-
+                    fontSize: {
+                      xs: "14px",
+                      md: "20px",
+                    },
                     color: "White",
 
                     width: "100%",
                     position: "absolute",
-                    top: "18rem",
-                    paddingLeft: "7rem",
+                    top: { md: "18rem", xs: "8rem" },
+                    paddingLeft: {
+                      xs: "1rem",
+                      md: "7rem",
+                    },
                     fontWeight: "550",
                   }}
                 >
                   <Typography
                     sx={{
                       fontFamily: "julius sans one",
-                      fontSize: "25px",
+                      fontSize: {
+                        xs: "13px",
+                        md: "25px",
+                      },
 
                       color: "White",
 
@@ -135,15 +148,18 @@ function SwipeableTextMobileStepper() {
                   <Button
                     sx={{
                       fontFamily: "julius sans one",
-                      fontSize: "18px",
+                      fontSize: {
+                        xs: "13px",
+                        md: "18px",
+                      },
                       backgroundColor: "#89A963",
                       color: "white",
                       "&:hover": {
                         backgroundColor: "#89A963",
                       },
-                      height: "3rem",
-                      width: "13rem",
-                      borderRadius: "8px",
+                      height: { md: "3rem", xs: "2rem" },
+                      width: { md: "13rem", xs: "7rem" },
+                      borderRadius: { md: "8px", xs: "5px" },
                       marginRight: "0.7rem",
                       position: "absolute",
 
@@ -158,7 +174,7 @@ function SwipeableTextMobileStepper() {
                   <Box
                     sx={{
                       fontFamily: "julius sans one",
-                      fontSize: "18px",
+                      fontSize: {md:"18px" , xs:"16px"},
                       backgroundColor: "transparent",
                       color: "white",
 
@@ -170,9 +186,10 @@ function SwipeableTextMobileStepper() {
                       justifyContent: "center",
                       alignItems: "center",
                       position: "absolute",
-                      top: "18.9rem",
-                      left: "0rem",
-                      zIndex:"9999"
+                      top: {md:"18.9rem", xs:"170px"},
+                      left: {
+                        xs:"-4rem",md:"0rem"},
+                      zIndex: "9999",
                     }}
                     size="small"
                     onClick={handleBack}
@@ -187,29 +204,27 @@ function SwipeableTextMobileStepper() {
       </AutoPlaySwipeableViews>
 
       <Box
-                    sx={{
-                      fontFamily: "julius sans one",
-                      fontSize: "18px",
-                      backgroundColor: "#89A963",
-                      color: "white",
+        sx={{
+          fontFamily: "julius sans one",
+          fontSize: "18px",
+          backgroundColor: "#89A963",
+          color: "white",
 
-                      height: "3.5rem",
-                      width: "20rem",
-                      borderRadius: "0px",
+          height: {md:"3.5rem"  , xs:"4rem"},
+          width: {md:"20rem" , xs:"12rem"},
+          borderRadius: "0px",
 
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      position: "absolute",
-                      top: "45.5rem",
-                      left: "0rem",
-                      zIndex:"-1"
-                    }}
-                    size="small"
-                    onClick={handleBack}
-                  >
-                    
-                  </Box>
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          position: "absolute",
+          top:{md: "45.5rem" , xs:"363px"},
+          left: "0rem",
+          zIndex: "-1",
+        }}
+        size="small"
+        onClick={handleBack}
+      ></Box>
 
       <MobileStepper
         sx={{
@@ -218,7 +233,7 @@ function SwipeableTextMobileStepper() {
           padding: "0px",
           justifyContent: "right",
 
-          top: "-50px",
+          top: {md:"-50px" , xs:"-52px"},
           height: "0rem",
         }}
         nextButton={
@@ -231,8 +246,8 @@ function SwipeableTextMobileStepper() {
               "&:hover": {
                 backgroundColor: "black",
               },
-              height: "4.5rem",
-              width: "4.5rem",
+              height: {md:"4.5rem",xs:"4rem"},
+              width: {md:"4.5rem",xs:"3rem"},
               borderRadius: "0px",
             }}
             disabled={activeStep === maxSteps - 1}
@@ -252,8 +267,9 @@ function SwipeableTextMobileStepper() {
               "&:hover": {
                 backgroundColor: "black",
               },
-              height: "4.5rem",
-              width: "4.5rem",
+              height: {md:"4.5rem",xs:"4rem"},
+              width: {md:"4.5rem",xs:"3rem"},
+             
               borderRadius: "0px",
               marginRight: "0.7rem",
             }}

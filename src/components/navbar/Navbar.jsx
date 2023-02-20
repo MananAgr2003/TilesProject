@@ -1,6 +1,6 @@
 import React from "react";
-import { makeStyles  } from "@material-ui/core/styles";
-import { useMediaQuery  } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import { useMediaQuery } from "@material-ui/core";
 
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -18,12 +18,10 @@ import Accessories from "./Dropdownlist/accessories";
 import Lighting from "./Dropdownlist/lighting";
 import Catalouge from "./Dropdownlist/catalouge";
 import Tilevisualizer from "./Dropdownlist/tilevisualizer";
-import { useTheme } from '@material-ui/core/styles';
-
+import { useTheme } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -52,6 +50,7 @@ const Navbar = () => {
   const theme = useTheme();
   const classes = useStyles(theme);
 
+  const isScreenSmall = useMediaQuery(theme.breakpoints.down("sm"));
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [selectedIndex, setSelectedIndex] = React.useState(1);
@@ -79,6 +78,9 @@ const Navbar = () => {
     "Tile Visualizer",
   ];
 
+  if (isScreenSmall) {
+    return null; // Hide the Navbar when the screen width is below 900px
+  }
 
   return (
     <div className={classes.root}>
@@ -95,13 +97,13 @@ const Navbar = () => {
         <Toolbar>
           <Typography variant="h6" className={classes.title}></Typography>
 
-          <Faucets></Faucets>
-          <Shower></Shower>
-          <Sanitaryware></Sanitaryware>
-          <Accessories></Accessories>
-          <Lighting></Lighting>
-          <Catalouge></Catalouge>
-          <Tilevisualizer></Tilevisualizer>
+          <Faucets />
+          <Shower />
+          <Sanitaryware />
+          <Accessories />
+          <Lighting />
+          <Catalouge />
+          <Tilevisualizer />
         </Toolbar>
       </AppBar>
     </div>

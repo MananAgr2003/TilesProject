@@ -71,8 +71,8 @@ function ImageMagnifier(props) {
           }px`,
 
           //calculate position of zoomed image.
-          backgroundPositionX: `${-x * 2 + 10 / 2}px`,
-          backgroundPositionY: `${-y * 2 + 10 / 1.5}px`
+          backgroundPositionX: `${-x * 2 + 100 / 2}px`,
+          backgroundPositionY: `${-y * 2 + 100 / 1.5}px`
         }}
       ></div>
     </div>

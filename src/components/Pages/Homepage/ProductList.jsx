@@ -1,9 +1,11 @@
 import React from "react";
-
+import { useMediaQuery } from "@material-ui/core";
+import { useTheme } from "@material-ui/core/styles";
 import { Paper, Typography, Container, Button, Box } from "@mui/material";
 import banner from "../../assets/banner3.png";
 import brand from "../../assets/brand.png";
 import ProductCard from "../../cards/ProductCard";
+import ProductCardMob from "../../cards/productCardMob";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import FadeInBottom from "../../AnimationWrapper/FadeBottom";
@@ -49,31 +51,17 @@ const products = [
       description: "We Provide You The Quality With Perfect Credibility",
   
   },
-  {
-      image:  product7 ,
-      name: "WOODEN TILE | 20* X 40*",
-      description: "We Provide You The Quality With Perfect Credibility",
-  },
-  {
-      image:  product8 ,
-      name: "WOODEN TILE | 20* X 40*",
-      description: "We Provide You The Quality With Perfect Credibility",
-  },
-  {
-      image:  product9 ,
-      name: "WOODEN TILE | 20* X 40*",
-      description: "We Provide You The Quality With Perfect Credibility",
-  },
+ 
 ];
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    padding: "0rem 3rem 0rem 3rem",
+    padding: "0rem 1rem 0rem 1rem",
     marginTop: "3rem",
   },
   paper: {
-    padding: theme.spacing(1),
+    padding: {md:theme.spacing(2) , xs:theme.spacing(0)},
     textAlign: "center",
     color: theme.palette.text.secondary,
   },
@@ -83,6 +71,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function ProductList() {
+  const theme = useTheme();
+  const isScreenSmall = useMediaQuery(theme.breakpoints.down("sm"));
+ 
   const classes = useStyles();
   return (
     <>
@@ -98,7 +89,7 @@ export default function ProductList() {
             xs: "100vw",
           },
           
-          marginTop: "80px",
+          marginTop: {md:"80px" , xs:"40px"},
           zIndex: "1000",
           fontWeight: 700,
           justifyContent: "center",
@@ -109,7 +100,7 @@ export default function ProductList() {
           variant="h4"
           sx={{
             fontFamily: "unna",
-            fontSize: "3rem",
+            fontSize: {md:"3rem" , xs:"1.8rem"},
             span:{
               color:"#89a963"
             }
@@ -119,12 +110,21 @@ export default function ProductList() {
         </Typography>
         <div className={classes.root}>
           <Grid container spacing={4}>
+            
 
           {products.map((item) => (
-            <Grid item xs={4}>
+            <Grid item md={4} xs={6}>
               
                 <div className={classes.paper}>
+                {!isScreenSmall && (
                   <ProductCard name={item.name} image={item.image} description={item.description}></ProductCard>
+
+                )}
+                {isScreenSmall && (
+                  <ProductCardMob name={item.name} image={item.image} description={item.description}></ProductCardMob>
+
+                )}
+                  
                 </div>
          
             </Grid>))}

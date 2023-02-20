@@ -1,10 +1,15 @@
 import React from "react";
+import { useMediaQuery } from "@material-ui/core";
+import { useTheme } from "@material-ui/core/styles";
 
-import { Paper, Typography, Container, Button, Box } from "@mui/material";
+import { Paper, Typography, Container, Button, Box, Grid } from "@mui/material";
 import banner from "../../assets/banner3.png";
 import brand from "../../assets/brand.png";
 
 export default function Overview() {
+  const theme = useTheme();
+  const isScreenSmall = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
     <>
       <Paper
@@ -18,7 +23,7 @@ export default function Overview() {
             md: "100vw",
             xs: "100vw",
           },
-          marginTop: "80px",
+          marginTop: { md: "80px", xs: "120px" },
 
           zIndex: "1000",
           fontWeight: 700,
@@ -30,10 +35,10 @@ export default function Overview() {
           variant="h4"
           sx={{
             fontFamily: "unna",
-            fontSize: "3rem",
-            span:{
-              color:"#89A963"
-            }
+            fontSize: { md: "3rem", xs: "1.8rem" },
+            span: {
+              color: "#89A963",
+            },
           }}
         >
           Our Major <span>Brands We Deal In</span>
@@ -44,8 +49,8 @@ export default function Overview() {
             backgroundImage: `url(${banner})`,
             width: "100vw",
             height: "50vh",
-            backgroundSize: "100% 100%",
-            marginTop: "2rem",
+            backgroundSize: "cover",
+            marginTop: { md: "2rem", xs: "1rem" },
             display: "flex",
 
             flexDirection: "row",
@@ -53,116 +58,278 @@ export default function Overview() {
             alignItems: "space-between",
           }}
         >
-          <Box
-            sx={{
-              display: "flex",
+          {!isScreenSmall && (
+            <>
+              <Box
+                sx={{
+                  display: "flex",
 
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              width: "16.6vw",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  width: "16.6vw",
 
-              img: {
-                height: "55%",
-                position: "relative",
-                bottom: "4rem",
-              },
-            }}
-          >
-            <img src={brand} alt="" />
-          </Box>
-          <Box
-            sx={{
-              display: "flex",
+                  img: {
+                    height: "55%",
+                    position: "relative",
+                    bottom: "4rem",
+                  },
+                }}
+              >
+                <img src={brand} alt="" />
+              </Box>
+              <Box
+                sx={{
+                  display: "flex",
 
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              width: "16.6vw",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  width: "16.6vw",
 
-              img: {
-                height: "55%",
-                position: "relative",
-                top: "4rem",
-              },
-            }}
-          >
-            <img src={brand} alt="" />
-          </Box>
-          <Box
-            sx={{
-              display: "flex",
+                  img: {
+                    height: "55%",
+                    position: "relative",
+                    top: "4rem",
+                  },
+                }}
+              >
+                <img src={brand} alt="" />
+              </Box>
+              <Box
+                sx={{
+                  display: "flex",
 
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              width: "16.6vw",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  width: "16.6vw",
 
-              img: {
-                height: "55%",
-                position: "relative",
-                bottom: "4rem",
-              },
-            }}
-          >
-            <img src={brand} alt="" />
-          </Box>
-          <Box
-            sx={{
-              display: "flex",
+                  img: {
+                    height: "55%",
+                    position: "relative",
+                    bottom: "4rem",
+                  },
+                }}
+              >
+                <img src={brand} alt="" />
+              </Box>
+              <Box
+                sx={{
+                  display: "flex",
 
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              width: "16.6vw",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  width: "16.6vw",
 
-              img: {
-                height: "55%",
-                position: "relative",
-                top: "4rem",
-              },
-            }}
-          >
-            <img src={brand} alt="" />
-          </Box>
-          <Box
-            sx={{
-              display: "flex",
+                  img: {
+                    height: "55%",
+                    position: "relative",
+                    top: "4rem",
+                  },
+                }}
+              >
+                <img src={brand} alt="" />
+              </Box>
+              <Box
+                sx={{
+                  display: "flex",
 
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              width: "16.6vw",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  width: "16.6vw",
 
-              img: {
-                height: "55%",
-                position: "relative",
-                bottom: "4rem",
-              },
-            }}
-          >
-            <img src={brand} alt="" />
-          </Box>
-          <Box
-            sx={{
-              display: "flex",
+                  img: {
+                    height: "55%",
+                    position: "relative",
+                    bottom: "4rem",
+                  },
+                }}
+              >
+                <img src={brand} alt="" />
+              </Box>
+              <Box
+                sx={{
+                  display: "flex",
 
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              width: "16.6vw",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  width: "16.6vw",
 
-              img: {
-                height: "55%",
-                position: "relative",
-                top: "4rem",
-              },
-            }}
-          >
-            <img src={brand} alt="" />
-          </Box>
+                  img: {
+                    height: "55%",
+                    position: "relative",
+                    top: "4rem",
+                  },
+                }}
+              >
+                <img src={brand} alt="" />
+              </Box>
+            </>
+          )}
 
-         
+          {isScreenSmall && (
+            <>
+              <Grid container spacing={0}>
+                <Grid item xs={4}>
+                  <Box
+                    sx={{
+                      display: "flex",
+
+                      flexDirection: "column",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      width: "100%",
+                      height:"100%",
+
+                     
+                    }}
+                  >
+                    <Box component="img" src={brand} alt="" sx={{height:"120px"}}/>
+                  </Box>
+                </Grid>
+                <Grid item xs={4}>
+                  <Box
+                    sx={{
+                      display: "flex",
+
+                      flexDirection: "column",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      width: "100%",
+                      height:"100%",
+
+                     
+                    }}
+                  >
+                    <Box component="img" src={brand} alt="" sx={{height:"120px"}}/>
+                  </Box>
+                </Grid>
+                <Grid item xs={4}>
+                  <Box
+                    sx={{
+                      display: "flex",
+
+                      flexDirection: "column",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      width: "100%",
+                      height:"100%",
+
+                     
+                    }}
+                  >
+                    <Box component="img" src={brand} alt="" sx={{height:"120px"}}/>
+                  </Box>
+                </Grid>
+                <Grid item xs={4}>
+                  <Box
+                    sx={{
+                      display: "flex",
+
+                      flexDirection: "column",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      width: "100%",
+                      height:"100%",
+
+                     
+                    }}
+                  >
+                    <Box component="img" src={brand} alt="" sx={{height:"120px"}}/>
+                  </Box>
+                </Grid>
+                <Grid item xs={4}>
+                  <Box
+                    sx={{
+                      display: "flex",
+
+                      flexDirection: "column",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      width: "100%",
+                      height:"100%",
+
+                     
+                    }}
+                  >
+                    <Box component="img" src={brand} alt="" sx={{height:"120px"}}/>
+                  </Box>
+                </Grid>
+                <Grid item xs={4}>
+                  <Box
+                    sx={{
+                      display: "flex",
+
+                      flexDirection: "column",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      width: "100%",
+                      height:"100%",
+
+                     
+                    }}
+                  >
+                    <Box component="img" src={brand} alt="" sx={{height:"120px"}}/>
+                  </Box>
+                </Grid>
+                <Grid item xs={4}>
+                  <Box
+                    sx={{
+                      display: "flex",
+
+                      flexDirection: "column",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      width: "100%",
+                      height:"100%",
+
+                     
+                    }}
+                  >
+                    <Box component="img" src={brand} alt="" sx={{height:"120px"}}/>
+                  </Box>
+                </Grid>
+                <Grid item xs={4}>
+                  <Box
+                    sx={{
+                      display: "flex",
+
+                      flexDirection: "column",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      width: "100%",
+                      height:"100%",
+
+                     
+                    }}
+                  >
+                    <Box component="img" src={brand} alt="" sx={{height:"120px"}}/>
+                  </Box>
+                </Grid>
+                <Grid item xs={4}>
+                  <Box
+                    sx={{
+                      display: "flex",
+
+                      flexDirection: "column",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      width: "100%",
+                      height:"100%",
+
+                     
+                    }}
+                  >
+                    <Box component="img" src={brand} alt="" sx={{height:"120px"}}/>
+                  </Box>
+                </Grid>
+              </Grid>
+            </>
+          )}
         </Box>
       </Paper>
     </>

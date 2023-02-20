@@ -234,13 +234,17 @@ function ProductFilter() {
             width: "200px",
             position: "absolute",
             top:"02",
-             right:"-100px",
+             right:"-105px",
 
             color: "#89a963",
            
             display:"flex",
             alignItems:"left",
-             justifyContent:"left"
+             justifyContent:"left",
+
+             "&:hover":{
+              backgroundColor:"transparent"
+             }
           }}
         >
           Clear All

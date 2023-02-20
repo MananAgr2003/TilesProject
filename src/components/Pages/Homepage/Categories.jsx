@@ -53,7 +53,9 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     padding:"0rem 3rem 0rem 3rem",
-    marginTop:"80px"
+    marginTop:"80px",
+    width:"100vw",
+    overflow:"hidden"
     
   },
   paper: {
