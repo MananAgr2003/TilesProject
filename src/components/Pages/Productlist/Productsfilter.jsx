@@ -15,6 +15,8 @@ import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
+  FormGroup,
+  FormControl,
 } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import AddIcon from "@material-ui/icons/Add";
@@ -139,6 +141,18 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
     top: "4px",
   },
+  checkbox: {
+    "&, & + .MuiFormControlLabel-label": {
+      fontFamily: "unna",
+      fontWeight: "bold",
+      fontSize: "1.2rem",
+    },
+    "&.Mui-checked": {
+      "&, & + .MuiFormControlLabel-label": {
+        color: "#89A963",
+      },
+    },
+  },
 }));
 
 function ProductFilter() {
@@ -162,6 +176,19 @@ function ProductFilter() {
     } else {
       setExpanded(expanded.filter((p) => p !== panel));
     }
+  };
+
+  const [checkedItems, setCheckedItems] = useState({});
+
+  const handleCheckboxChange = (event) => {
+    setCheckedItems({
+      ...checkedItems,
+      [event.target.name]: event.target.checked,
+    });
+  };
+
+  const handleClearAllClick = () => {
+    setCheckedItems({});
   };
   return (
     <Box
@@ -198,6 +225,13 @@ function ProductFilter() {
           Showing {(pageNumber - 1) * 20 + 1} -{" "}
           {Math.min(pageNumber * 20, products)} out of {products} Products
         </Typography>
+        <Button onClick={handleClearAllClick} sx={{
+          padding:"0px",
+          margin:"-20px 0px -5px 193px",
+      
+           color:"#89a963"
+        }}>Clear All</Button>
+
 
         <Accordion
           expanded={expanded.includes("panel1")}
@@ -236,34 +270,150 @@ function ProductFilter() {
               BRANDS
             </Typography>
           </AccordionSummary>
-
-          {brands.map((brand, index) => (
-            <AccordionDetails className={classes.acc2}>
-              <FormControlLabel
-                sx={{
-                  fontFamily: "unna",
-                }}
-                key={index}
-                control={
-                  <Checkbox
-                    sx={{
-                      "&, & + .MuiFormControlLabel-label": {
-                        fontFamily: "unna",
-                        fontWeight: "bold",
-                        fontSize: "1.2rem",
-                      },
-                      "&.Mui-checked": {
-                        "&, & + .MuiFormControlLabel-label": {
-                          color: "#89A963",
+          <AccordionDetails className={classes.acc2}>
+            <FormControl component="fieldset">
+              <FormGroup>
+                <FormControlLabel
+                  sx={{
+                    fontFamily: "unna",
+                  }}
+                  key="1"
+                  control={
+                    <Checkbox
+                      className={classes.checkbox}
+                      sx={{
+                        "&.Mui-checked": {
+                          "&, & + .MuiFormControlLabel-label": {
+                            color: "#89A963",
+                          },
                         },
-                      },
-                    }}
-                  />
-                }
-                label={brand}
-              />
-            </AccordionDetails>
-          ))}
+                      }}
+                      checked={checkedItems.item1}
+                      onChange={handleCheckboxChange}
+                      name="item1"
+                    />
+                  }
+                  label="Jaquar"
+                  checked={false}
+                />
+                <FormControlLabel
+                  sx={{
+                    fontFamily: "unna",
+                  }}
+                  key="2"
+                  control={
+                    <Checkbox
+                      className={classes.checkbox}
+                      sx={{
+                        "&.Mui-checked": {
+                          "&, & + .MuiFormControlLabel-label": {
+                            color: "#89A963",
+                          },
+                        },
+                      }}
+                      checked={checkedItems.item2}
+                      onChange={handleCheckboxChange}
+                      name="item2"
+                    />
+                  }
+                  label="Essco"
+                  checked={false}
+                />
+                <FormControlLabel
+                  sx={{
+                    fontFamily: "unna",
+                  }}
+                  key="3"
+                  control={
+                    <Checkbox
+                      className={classes.checkbox}
+                      sx={{
+                        "&.Mui-checked": {
+                          "&, & + .MuiFormControlLabel-label": {
+                            color: "#89A963",
+                          },
+                        },
+                      }}
+                      checked={checkedItems.item3}
+                      onChange={handleCheckboxChange}
+                      name="item3"
+                    />
+                  }
+                  label="Viking"
+                  checked={false}
+                />
+                <FormControlLabel
+                  sx={{
+                    fontFamily: "unna",
+                  }}
+                  key="4"
+                  control={
+                    <Checkbox
+                      className={classes.checkbox}
+                      sx={{
+                        "&.Mui-checked": {
+                          "&, & + .MuiFormControlLabel-label": {
+                            color: "#89A963",
+                          },
+                        },
+                      }}
+                      checked={checkedItems.item4}
+                      onChange={handleCheckboxChange}
+                      name="item4"
+                    />
+                  }
+                  label="Nirali"
+                  checked={false}
+                />
+                <FormControlLabel
+                  sx={{
+                    fontFamily: "unna",
+                  }}
+                  key="5"
+                  control={
+                    <Checkbox
+                      className={classes.checkbox}
+                      sx={{
+                        "&.Mui-checked": {
+                          "&, & + .MuiFormControlLabel-label": {
+                            color: "#89A963",
+                          },
+                        },
+                      }}
+                      checked={checkedItems.item5}
+                      onChange={handleCheckboxChange}
+                      name="item5"
+                    />
+                  }
+                  label="ACPL"
+                  checked={false}
+                />
+                <FormControlLabel
+                  sx={{
+                    fontFamily: "unna",
+                  }}
+                  key="6"
+                  control={
+                    <Checkbox
+                      className={classes.checkbox}
+                      sx={{
+                        "&.Mui-checked": {
+                          "&, & + .MuiFormControlLabel-label": {
+                            color: "#89A963",
+                          },
+                        },
+                      }}
+                      checked={checkedItems.item6}
+                      onChange={handleCheckboxChange}
+                      name="item6"
+                    />
+                  }
+                  label="Artist"
+                  checked={false}
+                />
+              </FormGroup>
+            </FormControl>
+          </AccordionDetails>
         </Accordion>
         <Accordion
           expanded={expanded.includes("panel2")}
@@ -303,33 +453,104 @@ function ProductFilter() {
             </Typography>
           </AccordionSummary>
 
-          {locations.map((brand, index) => (
-            <AccordionDetails className={classes.acc2}>
-              <FormControlLabel
-                sx={{
-                  fontFamily: "unna",
-                }}
-                key={index}
-                control={
-                  <Checkbox
-                    sx={{
-                      "&, & + .MuiFormControlLabel-label": {
-                        fontFamily: "unna",
-                        fontWeight: "bold",
-                        fontSize: "1.2rem",
-                      },
-                      "&.Mui-checked": {
-                        "&, & + .MuiFormControlLabel-label": {
-                          color: "#89A963",
+          <AccordionDetails className={classes.acc2}>
+            <FormControl component="fieldset">
+              <FormGroup>
+                <FormControlLabel
+                  sx={{
+                    fontFamily: "unna",
+                  }}
+                  key="71"
+                  control={
+                    <Checkbox
+                      className={classes.checkbox}
+                      sx={{
+                        "&.Mui-checked": {
+                          "&, & + .MuiFormControlLabel-label": {
+                            color: "#89A963",
+                          },
                         },
-                      },
-                    }}
-                  />
-                }
-                label={brand}
-              />
-            </AccordionDetails>
-          ))}
+                      }}
+                      checked={checkedItems.item71}
+                      onChange={handleCheckboxChange}
+                      name="item71"
+                    />
+                  }
+                  label="Livingroom"
+                  checked={false}
+                />
+                <FormControlLabel
+                  sx={{
+                    fontFamily: "unna",
+                  }}
+                  key="7"
+                  control={
+                    <Checkbox
+                      className={classes.checkbox}
+                      sx={{
+                        "&.Mui-checked": {
+                          "&, & + .MuiFormControlLabel-label": {
+                            color: "#89A963",
+                          },
+                        },
+                      }}
+                      checked={checkedItems.item7}
+                      onChange={handleCheckboxChange}
+                      name="item7"
+                    />
+                  }
+                  label="Bedroom"
+                  checked={false}
+                />
+                <FormControlLabel
+                  sx={{
+                    fontFamily: "unna",
+                  }}
+                  key="8"
+                  control={
+                    <Checkbox
+                      className={classes.checkbox}
+                      sx={{
+                        "&.Mui-checked": {
+                          "&, & + .MuiFormControlLabel-label": {
+                            color: "#89A963",
+                          },
+                        },
+                      }}
+                      checked={checkedItems.item8}
+                      onChange={handleCheckboxChange}
+                      name="item8"
+                    />
+                  }
+                  label="Bathroom"
+                  checked={false}
+                />
+                <FormControlLabel
+                  sx={{
+                    fontFamily: "unna",
+                  }}
+                  key="9"
+                  control={
+                    <Checkbox
+                      className={classes.checkbox}
+                      sx={{
+                        "&.Mui-checked": {
+                          "&, & + .MuiFormControlLabel-label": {
+                            color: "#89A963",
+                          },
+                        },
+                      }}
+                      checked={checkedItems.item9}
+                      onChange={handleCheckboxChange}
+                      name="item9"
+                    />
+                  }
+                  label="Parking"
+                  checked={false}
+                />
+              </FormGroup>
+            </FormControl>
+          </AccordionDetails>
         </Accordion>
         <Accordion
           expanded={expanded.includes("panel3")}
@@ -369,34 +590,106 @@ function ProductFilter() {
             </Typography>
           </AccordionSummary>
 
-          {sizes.map((brand, index) => (
-            <AccordionDetails className={classes.acc2}>
-              <FormControlLabel
-                sx={{
-                  fontFamily: "unna",
-                }}
-                key={index}
-                control={
-                  <Checkbox
-                    sx={{
-                      "&, & + .MuiFormControlLabel-label": {
-                        fontFamily: "unna",
-                        fontWeight: "bold",
-                        fontSize: "1.2rem",
-                      },
-                      "&.Mui-checked": {
-                        "&, & + .MuiFormControlLabel-label": {
-                          color: "#89A963",
+          <AccordionDetails className={classes.acc2}>
+            <FormControl component="fieldset">
+              <FormGroup>
+                <FormControlLabel
+                  sx={{
+                    fontFamily: "unna",
+                  }}
+                  key="10"
+                  control={
+                    <Checkbox
+                      className={classes.checkbox}
+                      sx={{
+                        "&.Mui-checked": {
+                          "&, & + .MuiFormControlLabel-label": {
+                            color: "#89A963",
+                          },
                         },
-                      },
-                    }}
-                  />
-                }
-                label={brand}
-              />
-            </AccordionDetails>
-          ))}
+                      }}
+                      checked={checkedItems.item10}
+                      onChange={handleCheckboxChange}
+                      name="item10"
+                    />
+                  }
+                  label="20 X 1000 MM"
+                  checked={false}
+                />
+                <FormControlLabel
+                  sx={{
+                    fontFamily: "unna",
+                  }}
+                  key="11"
+                  control={
+                    <Checkbox
+                      className={classes.checkbox}
+                      sx={{
+                        "&.Mui-checked": {
+                          "&, & + .MuiFormControlLabel-label": {
+                            color: "#89A963",
+                          },
+                        },
+                      }}
+                      checked={checkedItems.item11}
+                      onChange={handleCheckboxChange}
+                      name="item11"
+                    />
+                  }
+                  label="35 X 1000 MM"
+                  checked={false}
+                />
+                <FormControlLabel
+                  sx={{
+                    fontFamily: "unna",
+                  }}
+                  key="12"
+                  control={
+                    <Checkbox
+                      className={classes.checkbox}
+                      sx={{
+                        "&.Mui-checked": {
+                          "&, & + .MuiFormControlLabel-label": {
+                            color: "#89A963",
+                          },
+                        },
+                      }}
+                      checked={checkedItems.item12}
+                      onChange={handleCheckboxChange}
+                      name="item12"
+                    />
+                  }
+                  label="56 X 1000 MM"
+                  checked={false}
+                />
+                <FormControlLabel
+                  sx={{
+                    fontFamily: "unna",
+                  }}
+                  key="13"
+                  control={
+                    <Checkbox
+                      className={classes.checkbox}
+                      sx={{
+                        "&.Mui-checked": {
+                          "&, & + .MuiFormControlLabel-label": {
+                            color: "#89A963",
+                          },
+                        },
+                      }}
+                      checked={checkedItems.item13}
+                      onChange={handleCheckboxChange}
+                      name="item13"
+                    />
+                  }
+                  label="23 X 1000 MM"
+                  checked={false}
+                />
+              </FormGroup>
+            </FormControl>
+          </AccordionDetails>
         </Accordion>
+
 
         <Box
           sx={{
