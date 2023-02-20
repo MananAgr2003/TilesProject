@@ -34,15 +34,15 @@ import arrowLeft from "../../assets/arrow/arrowLeft.png";
 const products = 2356; // Total number of products
 const brands = [
   "Jaquar",
-  "essco",
-  "viking",
-  "nirali",
+  "Essco",
+  "Viking",
+  "Nirali",
   "ACPL",
-  "artist",
-  "pare",
+  "Artist",
+  "Pare",
 ];
 const filter = ["Floor Tiles", "Wall Tiles"];
-const locations = ["livingroom", "bedroom", "bathroom", "outdoor", "parking"];
+const locations = ["Livingroom", "Bedroom", "Bathroom", "Outdoor", "Parking"];
 const sizes = ["20 x 1000 MM", "35 x 1000 MM", "56 x 1000 MM", "23 x 1000 MM"];
 
 const Products = [
@@ -124,13 +124,12 @@ const useStyles = makeStyles((theme) => ({
   acc1: {
     padding: "0px 0px",
     height: "50px",
-    marginBottom:"-15px"
-
+    marginBottom: "-15px",
   },
   acc2: {
     padding: "0px 0px",
     border: "5px solid transparent",
-    marginBottom:"-10px"
+    marginBottom: "-10px",
   },
   icon: {
     position: "relative",
@@ -265,7 +264,6 @@ function ProductFilter() {
               />
             </AccordionDetails>
           ))}
-       
         </Accordion>
         <Accordion
           expanded={expanded.includes("panel2")}

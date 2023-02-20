@@ -1,7 +1,7 @@
 
 
  .mosaic-loader {
-	 --cell-size: 32px;
+	 --cell-size: 16px;
 	 --cell-spacing: 1px;
 	 --border-width: 1px;
 	 --cells: 4;
