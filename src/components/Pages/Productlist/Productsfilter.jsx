@@ -227,7 +227,8 @@ function ProductFilter() {
         </Typography>
         <Button onClick={handleClearAllClick} sx={{
           padding:"0px",
-          margin:"-20px 0px -5px 193px",
+          margin:"-20px 0px -5px 135px",
+          width:"200px",
       
            color:"#89a963"
         }}>Clear All</Button>
