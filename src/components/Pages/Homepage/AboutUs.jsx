@@ -166,7 +166,7 @@ export default function AboutUs() {
                     alignItems: "center",
                     color:{
                       xs:"#89a963",
-                      md:"white"
+                      md:"black"
                     }
                   }}
                 >
@@ -186,7 +186,7 @@ export default function AboutUs() {
                       fontSize: {md:"1.4rem" , xs:"1.2rem"},
                       color:{
                         xs:"#89a963",
-                        md:"white"
+                        md:"black"
                       }
 
                     }}
@@ -212,7 +212,7 @@ export default function AboutUs() {
                     alignItems: "center",
                     color:{
                       xs:"#89a963",
-                      md:"white"
+                      md:"black"
                     }
                   }}
                 >
@@ -232,7 +232,7 @@ export default function AboutUs() {
                       fontSize: {md:"1.4rem" , xs:"1.2rem"},
                       color:{
                         xs:"#89a963",
-                        md:"white"
+                        md:"black"
                       }
 
                     }}
@@ -257,7 +257,7 @@ export default function AboutUs() {
                     alignItems: "center",
                     color:{
                       xs:"#89a963",
-                      md:"white"
+                      md:"black"
                     }
                   }}
                 >
@@ -277,7 +277,7 @@ export default function AboutUs() {
                       fontSize: {md:"1.4rem" , xs:"1.2rem"},
                       color:{
                         xs:"#89a963",
-                        md:"white"
+                        md:"black"
                       }
 
                     }}
@@ -302,7 +302,7 @@ export default function AboutUs() {
                     alignItems: "center",
                     color:{
                       xs:"#89a963",
-                      md:"white"
+                      md:"black"
                     }
                   }}
                 >
@@ -322,7 +322,7 @@ export default function AboutUs() {
                       fontSize: {md:"1.4rem" , xs:"1.2rem"},
                       color:{
                         xs:"#89a963",
-                        md:"white"
+                        md:"black"
                       }
 
                     }}

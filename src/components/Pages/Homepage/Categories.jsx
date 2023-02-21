@@ -1,9 +1,11 @@
 import React from "react";
-
+import { useMediaQuery } from "@material-ui/core";
+import { useTheme } from "@material-ui/core/styles";
 import { Paper, Typography, Container, Button, Box } from "@mui/material";
 import banner from "../../assets/banner3.png";
 import brand from "../../assets/brand.png";
 import ProductCard from "../../cards/ProductCard";
+import ProductCardMob from "../../cards/productCardMob";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import product4 from "../../assets/products/product4.png";
@@ -52,8 +54,7 @@ const products = [
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    padding:"0rem 3rem 0rem 3rem",
-    marginTop:"80px",
+    marginTop:{md:"80px" , xs:"70px"},
     width:"100vw",
     overflow:"hidden"
     
@@ -69,6 +70,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function ProductList() {
+  const theme = useTheme();
+  const isScreenSmall = useMediaQuery(theme.breakpoints.down("sm"));
+ 
   const classes = useStyles();
   return (
     <>
@@ -83,7 +87,8 @@ export default function ProductList() {
             md: "100vw",
             xs: "100vw",
           },
-          marginTop: "80px",
+          marginTop: {md:"80px" , xs:"40px"},
+         
           
           zIndex: "1000",
           fontWeight: 700,
@@ -95,24 +100,37 @@ export default function ProductList() {
           variant="h4"
           sx={{
             fontFamily: "unna",
-            fontSize: "3rem",
+            fontSize: {md:"3rem" , xs:"1.8rem"},
             span:{
               color:"#89a963"
-            }
+            },
+            marginBottom:"40px"
           }}
         >
           Product <span>Categories</span>
         </Typography>
-        <div className={classes.root} >
+        <Box className={classes.root} sx={{
+    padding: {xs:"0px 10px 0px 10px" , md:"0px 60px 0px 60px"},
+  }}>
           <Grid container spacing={4} >
 
           {products.map((item) => (
-            <Grid item xs={4}>
-              <div className={classes.paper}><ProductCard name={item.name} image={item.image} description={item.description}></ProductCard></div>
+            <Grid item xs={6} md={4}>
+
+                
+              <Box className={classes.paper}>
+                {!isScreenSmall && (
+                  <ProductCard name={item.name} image={item.image} description={item.description}></ProductCard>
+
+                )}
+                {isScreenSmall && (
+                  <ProductCardMob name={item.name} image={item.image} description={item.description}></ProductCardMob>
+
+                )}</Box>
             </Grid>))}
            
           </Grid>
-        </div>
+        </Box>
       </Paper>
     </>
   );

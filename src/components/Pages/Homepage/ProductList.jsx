@@ -57,7 +57,7 @@ const products = [
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    padding: "0rem 1rem 0rem 1rem",
+    padding: {xs:"0rem 1rem 0rem 1rem" , md:"0rem 3rem 0rem 3rem"},
     marginTop: "3rem",
   },
   paper: {
@@ -81,6 +81,7 @@ export default function ProductList() {
         elevation={0}
         sx={{
           display: "flex",
+          overflow:"hidden",
 
           flexDirection: "column",
 
@@ -90,6 +91,7 @@ export default function ProductList() {
           },
           
           marginTop: {md:"80px" , xs:"40px"},
+          padding:{xs:"0px 10px 0px 10px" , md:"0px 70px 0px 70px"},
           zIndex: "1000",
           fontWeight: 700,
           justifyContent: "center",
