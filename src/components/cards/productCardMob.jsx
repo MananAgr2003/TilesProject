@@ -78,9 +78,9 @@ const useStyles = makeStyles({
 
   },
   mediaDiv:{
-    height: 150,
+    height: 160,
     width:"180px",
-   
+    overflow:"hidden",
     transition: "transform 5s ease-in-out",
 
     
