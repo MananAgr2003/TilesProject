@@ -5,6 +5,7 @@ import Navbar from "./components/navbar/Navbar";
 import { useLocation } from "react-router-dom";
 
 import Footer from "./components/footer";
+import FooterMob from "./components/footerMob";
 import FooterFoot from "./components/FooterFoot";
 
 import Tooltip from "./components/Tootip";
@@ -13,7 +14,13 @@ import Homepage from "./components/Pages/Homepage";
 import Productpage from "./components/Pages/Productpage";
 import RoutesFunc from "./components/Pages/Routes";
 
+import { useMediaQuery } from "@material-ui/core";
+import { useTheme } from "@material-ui/core/styles";
+
+
 function App() {
+  const theme = useTheme();
+  const isScreenSmall = useMediaQuery(theme.breakpoints.down("sm"));
   const location = useLocation();
   const displayTooltip = location.pathname !== "/contactus";
   const displayTooltip1 = location.pathname !== "/catalouge";
@@ -34,8 +41,8 @@ function App() {
       <Navbar></Navbar>
 
       <RoutesFunc />
-
-      <Footer></Footer>
+      {!isScreenSmall ? (      <Footer></Footer>) : (    <FooterMob></FooterMob>)}
+  
       <FooterFoot></FooterFoot>
     </>
   );

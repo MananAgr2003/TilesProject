@@ -50,6 +50,9 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "left",
     flexDirection: "row",
+    position:"relative",
+    top:"10px",
+    right:"10px"
   },
   gridHeadingLine: {
     width: "100px",
@@ -98,7 +101,7 @@ const useStyles = makeStyles((theme) => ({
   gridBox:{
 
       fontFamily: "julius sans one",
-      fontSize: "25px",
+      fontSize: "18px",
       backgroundColor: "rgba(0, 0, 0, 0.9)",
       color: "white",
 

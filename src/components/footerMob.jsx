@@ -25,15 +25,15 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: "25px",
     fontFamily: "montserrat",
     position: "relative",
-    left: "5rem" ,
+    left: "1rem" ,
 
     fontWeight: "bold",
     filter: "brightness(100%)",
-    width:"200px"
+    width:"150px"
 
   },
   link: {
-    fontWeight: "bold",
+
 
     color: "#FFFFFF",
     marginBottom: "15px",
@@ -42,6 +42,7 @@ const useStyles = makeStyles((theme) => ({
     filter: "brightness(100%)",
     cursor: "pointer",
     textDecoration: "none",
+    marginLeft:"1rem"
   },
   Link: {
     fontWeight: "bold",
@@ -58,8 +59,8 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     position: "relative",
-    left: "5rem"  ,
-    width:"200px"
+    left: "0rem"  ,
+    width:"150px"
   },
 }));
 
@@ -67,7 +68,7 @@ const handleClick = (index) => {
   console.log(index);
 };
 
-const Footer = () => {
+const FooterMob = () => {
   const classes = useStyles();
   const theme = useTheme();
   const isScreenSmall = useMediaQuery(theme.breakpoints.down("sm"));
@@ -169,4 +170,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default FooterMob;
