@@ -233,7 +233,7 @@ function SwipeableTextMobileStepper() {
           padding: "0px",
           justifyContent: "right",
 
-          top: {md:"-50px" , xs:"-52px"},
+          top: {md:"-50px" , xs:"-54px"},
           height: "0rem",
         }}
         nextButton={

@@ -107,13 +107,13 @@ const Navbar = () => {
               <img
                 src={logo}
                 alt=""
-                style={{width:"123px" , height: "50px", position: "relative", margin:"0px 0px 0px 70px" }}
+                style={{width:"123px" , height: "50px", position: "relative", margin:"0px 0px 0px 80px" }}
               />
             </Box>
           </Link>
           {isMobile && (
             <>
-            <img src={icon4} alt="" style={{position:"relative" , left:"85px"}}/>
+            <img src={icon4} alt="" style={{position:"relative" , left:"115px"}}/>
             <IconButton
               edge="end"
               className={classes.menuButton}
