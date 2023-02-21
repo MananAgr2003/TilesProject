@@ -8,11 +8,15 @@ import Brands from "./Homepage/Brands";
 import TilesHover from "./Homepage/TilesHover";
 import ProductList from "./Homepage/ProductList";
 import GptVisualizer from "./Homepage/GptVisualizer";
+import GptVisualizerMob from "./Homepage/Visualizermob";
 
 import Categories from "./Homepage/Categories";
 import FadeInWrapper from "../AnimationWrapper/FadeIn";
 import FadeInBottom from "../AnimationWrapper/FadeBottom";
 import MovingLine from "../cards/line";
+
+import { useMediaQuery } from "@material-ui/core";
+import { useTheme } from "@material-ui/core/styles";
 
 const scrollToTop = () => {
     window.scrollTo(0, 0);
@@ -23,6 +27,9 @@ const scrollToTop = () => {
     useEffect(() => {
         scrollToTop();
       }, []);
+
+      const theme = useTheme();
+      const isScreenSmall = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <>
       <Caraousel></Caraousel>
@@ -40,7 +47,9 @@ const scrollToTop = () => {
       <FadeInBottom>
         <ProductList></ProductList>
       </FadeInBottom>
-      <GptVisualizer></GptVisualizer>
+
+      {!isScreenSmall ? (  <GptVisualizer></GptVisualizer>) : (<GptVisualizerMob></GptVisualizerMob>)}
+    
 
       <FadeInBottom>
         <Categories></Categories>

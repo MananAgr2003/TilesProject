@@ -110,9 +110,9 @@ export default function ProductList() {
           Product <span>Categories</span>
         </Typography>
         <Box className={classes.root} sx={{
-    padding: {xs:"0px 10px 0px 10px" , md:"0px 60px 0px 60px"},
+    padding: {xs:"0px 0px 0px 0px" , md:"0px 60px 0px 60px"},
   }}>
-          <Grid container spacing={4} >
+          <Grid container spacing={!isScreenSmall ? 4  : 0} >
 
           {products.map((item) => (
             <Grid item xs={6} md={4}>

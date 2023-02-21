@@ -22,10 +22,10 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     background: `url(${banner})`,
     backgroundSize: "cover",
-    marginTop: "80px",
+    marginTop: "40px",
     padding: "0px",
     Width: "100vw",
-    height: "750px",
+    height: "1000px",
     overflowX: "hidden",
     overflowY: "hidden",
     backgroundPosition:"center"
@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     fontFamily: "unna",
     color: "white",
-    fontSize: "40px",
+    fontSize: "25px",
     display: "flex",
     
     alignItems: "center",
@@ -59,13 +59,14 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: "20px",
   },
   grid: {
-    width: "50vw",
+    width: "100vw",
     height: "400px",
 
     margingLeft: "0rem",
     position: "relative",
-    top: "5rem",
-    left: "5rem",
+    top:"1rem",
+    left:"0.8rem"
+ 
   },
   gridImage: {
     height: "100%",
@@ -80,17 +81,17 @@ const useStyles = makeStyles((theme) => ({
     objectFit: "cover",
   },
   wideRectangle: {
-    width: "90%",
-    height: "130px",
+    width: "100%",
+    height: "100px",
   },
   tallRectangle: {
-    height: "485px",
-    width: "30vw",
+    height: "400px",
+    width: "70vw",
     display: "flex",
 
     position: "relative",
-    right: "10rem",
-    top: "8.5rem",
+    left: "4rem",
+    top: "8rem",
     border: "5px solid white",
     flexDirection: "column",
   },

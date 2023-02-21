@@ -16,16 +16,18 @@ const product ={
 
     imageUrl: {banner},
     name: "WOODEN TILE | 20* X 40*",
-    description:"We Provide You The Quality With Perfect Credibility"
+    description:"We Provide You Quality With Perfect "
 
 
 }
 
 const useStyles = makeStyles({
   root: {
-   width:"100%",
+   width:"110%",
    height:"auto",
-   borderRadius:"0px"
+   borderRadius:"0px",
+   padding:"0px"
+   
  
 
   },
@@ -34,7 +36,7 @@ const useStyles = makeStyles({
   media: {
     height: "100%",
     width:"100%",
-    objectFit:"contain",
+   
     transition: "scale 0.5s ease-in-out",
     "&:hover" :{
       
@@ -47,16 +49,20 @@ const useStyles = makeStyles({
   name:{
     color:"#89A963",
     fontFamily:"unna",
-    textAlign:"center",
-    fontSize:"15px"
+    textAlign:"left",
+    fontSize:"15px",
+    position:"relative",
+    right:"12px"
   },
   description:{
     fontFamily:"unna",
-    textAlign:"center",
+    textAlign:"left",
     fontSize:"18px",
     color:"black",
     opacity:"1",
     fontWeight:"600",
+    position:"relative",
+    right:"12px"
 
 
   },
@@ -64,21 +70,26 @@ const useStyles = makeStyles({
     color:"#89A963",
     fontFamily:"unna",
     textAlign:"left",
-    fontSize:"20px",
+    fontSize:"15px",
+    position:"relative",
+    bottom:"10px",
+    right:"10px"
 
 
   },
   mediaDiv:{
     height: 150,
-    width:"auto",
-    overflow:"hidden",
+    width:"180px",
+   
     transition: "transform 5s ease-in-out",
 
     
 
   },
   arrow:{
-    height:"30px",
+    height:"25px",
+    position:"relative",
+    bottom:"10px"
     
   }
 });
@@ -121,7 +132,7 @@ export default function ProductCardMob(props) {
         <Button size="small" color="primary">
           <img src={arrow} alt="" className={classes.arrow}/>
         </Button>
-        <Button size="small" color="primary" className={classes.name}>
+        <Button size="small" color="primary" className={classes.rm}>
           Read More
         </Button>
       </CardActions>

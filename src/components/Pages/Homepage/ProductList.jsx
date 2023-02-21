@@ -22,33 +22,33 @@ const products = [
   {
       image:  product1 ,
       name: "WOODEN TILE | 20* X 40*",
-      description: "We Provide You The Quality With Perfect Credibility",
+      description: "We Provide You Quality With Perfect",
   },
   {
       image:  product2 ,
       name: "WOODEN TILE | 20* X 40*",
-      description: "We Provide You The Quality With Perfect Credibility",
+      description: "We Provide You Quality With Perfect",
   },
   {
       image:  product3 ,
       name: "WOODEN TILE | 20* X 40*",
-      description: "We Provide You The Quality With Perfect Credibility",
+      description: "We Provide You Quality With Perfect",
   },
   {
       image:  product4 ,
       name: "WOODEN TILE | 20* X 40*",
-      description: "We Provide You The Quality With Perfect Credibility",
+      description: "We Provide You Quality With Perfect",
   },
   {
       image:  product5 ,
       name: "WOODEN TILE | 20* X 40*",
-      description: "We Provide You The Quality With Perfect Credibility",
+      description: "We Provide You Quality With Perfect",
   },
   {
 
       image:  product6 ,
       name: "WOODEN TILE | 20* X 40*",
-      description: "We Provide You The Quality With Perfect Credibility",
+      description: "We Provide You Quality With Perfect",
   
   },
  
@@ -57,7 +57,7 @@ const products = [
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    padding: {xs:"0rem 1rem 0rem 1rem" , md:"0rem 3rem 0rem 3rem"},
+    padding: {xs:"0rem" , md:"0rem 3rem 0rem 3rem"},
     marginTop: "3rem",
   },
   paper: {
@@ -111,7 +111,7 @@ export default function ProductList() {
           Feel <span>The Product</span>
         </Typography>
         <div className={classes.root}>
-          <Grid container spacing={4}>
+          <Grid container spacing={!isScreenSmall ? 4 : 2}>
             
 
           {products.map((item) => (
