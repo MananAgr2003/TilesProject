@@ -96,11 +96,12 @@ export default function ProductList() {
           },
           
           marginTop: {md:"80px" , xs:"40px"},
-          padding:{xs:"0px 0px 0px 15px" , md:"0px 70px 0px 70px"},
+          padding:{xs:"0px auto" , md:"0px 70px 0px 70px"},
           zIndex: "1000",
           fontWeight: 700,
           justifyContent: "center",
           alignItems: "center",
+          overflow:"hidden"
         }}
       >
         <Typography
