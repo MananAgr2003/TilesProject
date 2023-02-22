@@ -23,7 +23,7 @@ export default function Overview() {
             md: "100vw",
             xs: "100vw",
           },
-          marginTop: { md: "80px", xs: "120px" },
+          marginTop: { md: "80px", xs: "130px" },
 
           zIndex: "1000",
           fontWeight: 700,

@@ -43,7 +43,7 @@ export default function AboutUs() {
             md: "100vw",
             xs: "100vw",
           },
-          margin: "60px 4rem 0rem 4rem",
+          margin: {md:"60px 4rem 0rem 4rem" , xs:"90px 4rem 0rem 4rem"},
 
           zIndex: "1000",
           fontWeight: 700,
@@ -51,6 +51,19 @@ export default function AboutUs() {
           position:"relative"
         }}
       >
+        <Box sx={{
+          position:"absolute",
+          display:{
+            md:"none",
+            xs:"block"
+          },
+          zIndex:"-1",
+          backgroundColor:"#f3f6ef",
+          height:"700px",
+          width:"100vw",
+          left:-65,top:-55
+
+        }}></Box>
         <Box
           sx={{
             display: "flex",

@@ -91,7 +91,7 @@ export default function ProductList() {
           },
           
           marginTop: {md:"80px" , xs:"40px"},
-          padding:{xs:"0px 10px 0px 10px" , md:"0px 70px 0px 70px"},
+          padding:{xs:"0px 5px 0px 10px" , md:"0px 70px 0px 70px"},
           zIndex: "1000",
           fontWeight: 700,
           justifyContent: "center",
