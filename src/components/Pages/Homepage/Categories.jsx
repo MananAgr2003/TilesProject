@@ -103,7 +103,7 @@ export default function ProductList() {
             marginBottom: "40px",
           }}
         >
-          Product <span>Categories</span>
+          Feel <span>The Product</span>
         </Typography>
         <Box
           className={!isScreenSmall ? classes.root : classes.root1}
