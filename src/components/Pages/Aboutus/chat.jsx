@@ -3,6 +3,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Box, Button, Container, Typography } from "@material-ui/core";
 import PhoneIcon from "@material-ui/icons/Phone";
 import ceo from "../../assets/aboutuspage/ceo.png.png";
+import { useTheme } from "@material-ui/core/styles";
+import { useMediaQuery } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   section: {
@@ -23,6 +25,14 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(2),
     fontFamily: "unna",
     marginTop: "5rem",
+  },
+  heading1: {
+    fontSize: "25px",
+    fontWeight: "bold",
+    textAlign: "center",
+    marginBottom: theme.spacing(2),
+    fontFamily: "unna",
+    marginTop: "4rem",
   },
   subHeading: {
     fontSize: "27px",
@@ -79,11 +89,15 @@ const useStyles = makeStyles((theme) => ({
 
 function Chat() {
   const classes = useStyles();
+  const theme = useTheme();
+  const isScreenSmall = useMediaQuery(theme.breakpoints.down("sm"));
+ 
+  
 
   return (
     <Box className={classes.section}>
       <Container maxWidth="md">
-        <Typography variant="h1" className={classes.heading}>
+        <Typography variant="h1" className={!isScreenSmall ? classes.heading :classes.heading1  }>
           Let’s chat, we’re user friendly!
         </Typography>
         <Typography variant="h2" className={classes.subHeading}>

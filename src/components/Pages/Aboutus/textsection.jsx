@@ -6,6 +6,8 @@ import { useSpring, animated } from "react-spring";
 import banner from "../../assets/banner2.png";
 import banner1 from "../../assets/aboutuspage/banner5.png";
 import FadeInWrapper from "../../AnimationWrapper/FadeIn";
+import { useMediaQuery } from "@material-ui/core";
+import { useTheme } from "@material-ui/core/styles";
 
 function Number({ n }) {
   const [inView, setInview] = useState(false);
@@ -20,7 +22,7 @@ function Number({ n }) {
 
   return (
     <Waypoint onEnter={() => setInview(true)} onLeave={() => setInview(false)}>
-      <animated.div>{number.to((n) => n.toFixed(0))}</animated.div>
+      <animated.Box>{number.to((n) => n.toFixed(0))}</animated.Box>
     </Waypoint>
   );
 }
@@ -39,7 +41,7 @@ export default function Textsection() {
             md: "100vw",
             xs: "100vw",
           },
-          margin: "80px 4rem 0rem 4rem",
+          margin: {md:"80px 4rem 0rem 4rem" , xs:"0px 0rem 0rem 0rem"},
 
           zIndex: "1000",
           fontWeight: 700,
@@ -48,15 +50,15 @@ export default function Textsection() {
         <Box
           sx={{
             display: "flex",
-            flexDirection: "row",
+            flexDirection: {md:"row" , xs:"column-reverse"},
             justifyContent:"center",
              alignItems:"center"
           }}
         >
-          <div
-            style={{
-              width: "45vw",
-               height:"550px" ,
+          <Box
+            sx={{
+              width: {md:"45vw" , xs:"100vw"},
+               height:{xs:"350px" , md:"550px"} ,
                position:"relative",
                top:"50px"
             }}
@@ -67,11 +69,15 @@ export default function Textsection() {
               variant="body2"
               sx={{
                 textAlign: { md: "left", xs: "center" },
-                fontSize: "2.5rem",
-                marginLeft: "1.5rem",
+                fontSize: {md:"2.5rem" , xs:"1.6rem"},
+                marginLeft: {md:"1.5rem" , xs:""},
                 fontFamily: "unna",
                 color:"#243659",
+                lineHeight: {md:"3rem" , xs:"2rem"},
+                padding:{
+                  md:"0px" , xs:"0px 15px 0px 15px"
 
+                },
                 "& span":{
                     color:"#89A963"
                 }
@@ -87,10 +93,13 @@ Hardware nearshoring due to its location and time zone.
               variant="body2"
               sx={{
                 textAlign: { md: "left", xs: "center" },
+                padding:{
+                  md:"0px" , xs:"0px 30px 0px 30px"
 
+                },
                 marginLeft: { md: "1.5rem", xs: "0rem" },
-                lineHeight: "2rem",
-                fontSize: "1.3rem",
+                lineHeight: {md:"2.5rem" , xs:"1.3rem"},
+                fontSize: {md:"1.3rem" , xs:"1rem"},
                 fontFamily: "unna",
                 color:"#243659",
 
@@ -108,10 +117,10 @@ Hardware nearshoring due to its location and time zone.
          
 
           
-          </div>
-          <div style={{ width: "39vw" , height:"550px" , marginLeft: "8rem" }}>
+          </Box>
+          <Box sx={{ width:{md: "39vw" , xs:"90vw"} , height:{md:"550px" , xs:"329px"} , marginLeft:{md: "8rem" , xs:"0rem"} }}>
             <img src={banner1} alt="" style={{ width: "100%"  , height:"100%"}} />
-          </div>
+          </Box>
         </Box>
       </Paper>
     </>

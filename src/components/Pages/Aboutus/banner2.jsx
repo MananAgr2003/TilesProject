@@ -32,13 +32,14 @@ export default function Banner2() {
             backgroundImage: `url(${section})`,
             width: "100vw",
             height: "450px",
-            backgroundSize: "100% 100%",
+            backgroundSize: {xs:"300% 80%" , md:"cover"},
             marginTop: "0rem",
             display: "flex",
-
+     backgroundPosition:"center",
             flexDirection: "row",
             justifyContent: "center",
             alignItems: "space-between",
+            backgroundRepeat:"no-repeat"
           }}
         ></Box>
       </Paper>
