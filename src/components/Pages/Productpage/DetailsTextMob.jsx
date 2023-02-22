@@ -2,15 +2,10 @@ import { useState } from "react";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import { useMediaQuery } from "@material-ui/core";
-import { useTheme } from "@material-ui/core/styles";
-import DetailsTextMob from "./DetailsTextMob";
 
-const MAX_CHARS = 1320;
+const MAX_CHARS = 800;
 
-function DetailsText() {
-  const theme = useTheme();
-  const isScreenSmall = useMediaQuery(theme.breakpoints.down("sm"));
+function DetailsTextMob() {
   const [selected, setSelected] = useState("details");
   const [showFullDetails, setShowFullDetails] = useState(false);
   const [showFullSpecs, setShowFullSpecs] = useState(false);
@@ -48,112 +43,105 @@ function DetailsText() {
   };
 
   return (
-    <>
-{isScreenSmall && (<DetailsTextMob></DetailsTextMob>)}
-
-{!isScreenSmall && (<> <Box
-
-
-sx={{
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  marginTop: "70px"
-}}
->
-<Box sx={{ display: "flex", justifyContent: "center" }}>
-  <Button
-    onClick={handleDetailsClick}
-    sx={{
-      backgroundColor: selected === "details" ? "transparent" : "inherit",
-      borderBottom: selected === "details" ? "4px solid #89A963" : "none",
-      padding: "10px",
-      marginRight: "30px",
-      fontWeight: selected === "details" ? "bold" : "normal",
-      color: "black",
-      fontFamily: "unna",
-      textTransform: "none",
-      fontSize: "25px",
-
-      "&:hover": {
-        backgroundColor: "white",
-      },
-
-      borderRadius: "0px",
-    }}
-  >
-    Description
-  </Button>
-
-  <Button
-    onClick={handleSpecsClick}
-    sx={{
-      backgroundColor: selected === "specs" ? "transparent" : "inherit",
-      borderBottom: selected === "specs" ? "4px solid #89A963" : "none",
-      padding: "10px",
-      marginRight: "10px",
-      fontWeight: selected === "specs" ? "bold" : "normal",
-      color: "black",
-      fontFamily: "unna",
-      textTransform: "none",
-      fontSize: "25px",
-
-      "&:hover": {
-        backgroundColor: "white",
-      },
-
-      borderRadius: "0px",
-    }}
-  >
-    Specification
-  </Button>
-</Box>
-<hr
-  style={{
-    width: "90vw",
-    position:"relative",
-    bottom:"1.5px",
-    opacity:"0.7"
-  }}
-></hr>
-<Box sx={{ width: "80%", marginTop: "40px", textAlign: "left" }}>
-  <Typography variant="body1" sx={{fontFamily:"unna"}}>
-    {selected === "details"
-      ? showFullDetails
-        ? details
-        : details.substring(0, MAX_CHARS)
-      : showFullSpecs
-      ? specs
-      : specs.substring(0, MAX_CHARS)}
-    {selected === "details" ? (
-      !showFullDetails && details.length > MAX_CHARS ? (
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        marginTop: "0px"
+      }}
+    >
+      <Box sx={{ display: "flex", justifyContent: "center" }}>
         <Button
-          onClick={handleReadMoreClick}
+          onClick={handleDetailsClick}
           sx={{
+            backgroundColor: selected === "details" ? "transparent" : "inherit",
+            borderBottom: selected === "details" ? "4px solid #89A963" : "none",
+            padding: "10px",
+            marginRight: "30px",
+            fontWeight: selected === "details" ? "bold" : "normal",
+            color: "black",
+            fontFamily: "unna",
             textTransform: "none",
-            color: "red",
+            fontSize: "25px",
+
+            "&:hover": {
+              backgroundColor: "white",
+            },
+
+            borderRadius: "0px",
           }}
         >
-          More..
+          Description
         </Button>
-      ) : null
-    ) : !showFullSpecs && specs.length > MAX_CHARS ? (
-      <Button
-        onClick={handleReadMoreClick}
-        sx={{
-          textTransform: "none",
-          color: "red",
+
+        <Button
+          onClick={handleSpecsClick}
+          sx={{
+            backgroundColor: selected === "specs" ? "transparent" : "inherit",
+            borderBottom: selected === "specs" ? "4px solid #89A963" : "none",
+            padding: "10px",
+            marginRight: "10px",
+            fontWeight: selected === "specs" ? "bold" : "normal",
+            color: "black",
+            fontFamily: "unna",
+            textTransform: "none",
+            fontSize: "25px",
+
+            "&:hover": {
+              backgroundColor: "white",
+            },
+
+            borderRadius: "0px",
+          }}
+        >
+          Specification
+        </Button>
+      </Box>
+      <hr
+        style={{
+          width: "90vw",
+          position:"relative",
+          bottom:"1.5px",
+          opacity:"0.7"
         }}
-      >
-        More..
-      </Button>
-    ) : null}
-  </Typography>
-</Box>
-</Box></>)}
-   
-    </>
+      ></hr>
+      <Box sx={{ width: "80%", marginTop: "40px", textAlign: "left" }}>
+        <Typography variant="body1" sx={{fontFamily:"unna"}}>
+          {selected === "details"
+            ? showFullDetails
+              ? details
+              : details.substring(0, MAX_CHARS)
+            : showFullSpecs
+            ? specs
+            : specs.substring(0, MAX_CHARS)}
+          {selected === "details" ? (
+            !showFullDetails && details.length > MAX_CHARS ? (
+              <Button
+                onClick={handleReadMoreClick}
+                sx={{
+                  textTransform: "none",
+                  color: "red",
+                }}
+              >
+                More..
+              </Button>
+            ) : null
+          ) : !showFullSpecs && specs.length > MAX_CHARS ? (
+            <Button
+              onClick={handleReadMoreClick}
+              sx={{
+                textTransform: "none",
+                color: "red",
+              }}
+            >
+              More..
+            </Button>
+          ) : null}
+        </Typography>
+      </Box>
+    </Box>
   );
 }
 
-export default DetailsText;
+export default DetailsTextMob;

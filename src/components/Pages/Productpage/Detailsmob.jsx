@@ -1,21 +1,19 @@
 import { useState } from "react";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import { Box, Typography, Button } from "@material-ui/core";
-import { useMediaQuery } from "@material-ui/core";
-import { useTheme } from "@material-ui/core/styles";
+
 import pImage1 from "../../assets/ProductPageImages/img1.png";
 import pImage2 from "../../assets/ProductPageImages/img2.png";
 import pImage3 from "../../assets/ProductPageImages/img3.png";
 import pImage4 from "../../assets/ProductPageImages/img4.png";
 import ImageMagnifier from "../../cards/magnify";
-import ProductDetailSectionMob from "./Detailsmob";
 
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
-    flexDirection: "row",
-    height: "680px",
+    flexDirection: "column",
+    height: "950px",
 
     width: "99vw",
     marginLeft: "1vw",
@@ -25,19 +23,24 @@ const useStyles = makeStyles((theme) => ({
   smallImageBoxDiv: {
     paddingLeft: "10px",
     paddingRight: "10px",
-    height: "100%",
-    overflowY: "scroll",
+    height: "25%",
+    width:"97%",
+    overflowX: "scroll",
     marginRight: "1rem",
+    position:"absolute",
+    display:"flex",
+    flexDirection:"row",
+    top:"650px"
   },
   smallImageBox: {
-    height: "25%",
+    height: "50%",
     width: "100%",
     display: "flex",
-    flexDirection: "column",
+    flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
     cursor: "pointer",
-    marginBottom: "2rem",
+    marginRight: "1rem",
     "& img": {
       height: "100%",
       width: "auto",
@@ -45,8 +48,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   largeImageBox: {
-    height: "100%",
-    width: "38%",
+    height: "36%",
+    width: "98%",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -54,6 +57,7 @@ const useStyles = makeStyles((theme) => ({
       height: "100%",
       width: "100%",
     },
+    margin:"auto"
   },
   detailsContainer: {
     height: "100%",
@@ -62,21 +66,37 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
-    marginLeft: "47px",
-    marginTop:"15px",
+     
     fontFamily: "unna",
 
   },
   topDetails: {
     fontFamily: "unna",
-    fontSize: "18px",
+    fontSize: "16px",
     marginBottom: "0.7rem",
   },
   heading: {
-    fontSize: "2rem",
+    fontSize: "1.6rem",
     fontWeight: "bold",
-    marginBottom: theme.spacing(1),
+   
     fontFamily: "unna",
+    position:"relative",
+    top:"320px",
+
+    width:"90vw",
+    left:"10px"
+  },
+  heading1: {
+    fontSize: "1.2rem",
+    fontWeight: "light",
+   
+    fontFamily: "unna",
+    position:"relative",
+    top:"330px",
+
+    width:"90vw",
+    left:"10px"
+
   },
   bulletList: {
     marginBottom: theme.spacing(2),
@@ -102,15 +122,19 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "left",
     width: "100%",
-    marginTop: theme.spacing(3),
+    marginTop: theme.spacing(0),
+    width:"90vw",
+    position:"relative",
+    top:"340px",
+    left:"10px"
 
   },
   buttonGroupOne: {
     color: "white",
     backgroundColor: "#89A963",
     borderRadius: "0px",
-    height: "3rem",
-    width: "15rem",
+    height: "2.5rem",
+    width: "12rem",
 
     "&:hover": {
       backgroundColor: "#89A963",
@@ -123,14 +147,16 @@ const useStyles = makeStyles((theme) => ({
     color: "#89A963",
     backgroundColor: "white",
     borderRadius: "0px",
-    height: "3rem",
-    width: "15rem",
+    width:"500px",
+    height:"40px",
     border:"1px solid #89A963",
+    position:"relative",
 
    
     fontFamily: "unna",
-    fontSize: "20px",
-    marginRight:"20px"
+    fontSize: "16px",
+    bottom:"-25px"
+ 
   },
   hr:{
 
@@ -144,27 +170,45 @@ const useStyles = makeStyles((theme) => ({
     margin:"30px 0px 30px 0px"
 
 
+  },
+  newTop:{
+
+    position:"absolute",
+    top:"100px",
+    left:"10px",
+    display:"flex",
+    flexDirection:"row",
+    justifyContent:"space-between",
+    width:"96vw"
   }
 
 }));
 
-const ProductDetailSection = () => {
+const ProductDetailSectionMob = () => {
   const classes = useStyles();
   const [selectedImage, setSelectedImage] = useState(pImage1);
 
   const handleImageClick = (index) => {
     setSelectedImage(index);
   };
-  const theme = useTheme();
-  const isScreenSmall = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
     <>
+    <Box className={classes.root}>
+     <Box className={classes.newTop}>
+          <Typography variant="body2" className={classes.topDetails}>
+            <span>Brand:</span> Jaguar
+          </Typography>
+          <Typography variant="body2" className={classes.topDetails}>
+            <span>Model:</span> OLED42C2PSA
+          </Typography>
+         
+          </Box>
+      <Box className={classes.largeImageBox}>
+        <ImageMagnifier  imageSrc={selectedImage}   zoomLevel={2}
+  size={200}/>
+      </Box>
 
-    {isScreenSmall && (<ProductDetailSectionMob></ProductDetailSectionMob>)}
-
-    {!isScreenSmall && (<> 
-      <Box className={classes.root}>
       <Box className={classes.smallImageBoxDiv}>
         <Box
           className={classes.smallImageBox}
@@ -191,49 +235,24 @@ const ProductDetailSection = () => {
           <img src={pImage4} alt="Small Image 4" />
         </Box>
       </Box>
-      <Box className={classes.largeImageBox}>
-        <ImageMagnifier  imageSrc={selectedImage}   zoomLevel={2}
-  size={200}/>
-      </Box>
       <Box className={classes.detailsContainer}>
         <Box>
-          <Typography variant="body2" className={classes.topDetails}>
-            <span>Brand:</span> Jaguar
-          </Typography>
-          <Typography variant="body2" className={classes.topDetails}>
-            <span>Model:</span> OLED42C2PSA
-          </Typography>
-          <Typography variant="body2" className={classes.topDetails}>
-            <span>Availability:</span> Only 2 in Stock
-          </Typography>
+<Box>
           <Typography variant="h3" className={classes.heading}>
             GOLDEN WOODEN TILE WITH A THICK TEXTURE
           </Typography>
-          <Box className={classes.bulletList}>
-            <Typography variant="body1" className={classes.bulletPoint}>
-              Collection: <span>Wooden Tile</span>
-            </Typography>
-            <Typography variant="body1" className={classes.bulletPoint}>
-              Size: <span>100 x 1000 MM</span>
-            </Typography>
-            <Typography variant="body1" className={classes.bulletPoint}>
-              Finish: <span>Carving</span>
-            </Typography>
-            <Typography variant="body1" className={classes.bulletPoint}>
-              Color: <span> Wooden Brown</span>
-            </Typography>
-            <Typography variant="body1" className={classes.bulletPoint}>
-              Location:
-              <span> Living room, Bedroom, Washroom, Outdoor, Kitchen</span>
-            </Typography>
+        <Typography variant="body2"className={classes.heading1} >
+            <span>Availability:</span> Only 2 in Stock
+          </Typography>
           </Box>
+         
           <Box className={classes.buttonGroup}>
          
 
             <Button className={classes.buttonGroupOne}>Inquiry</Button>
           </Box>
 
-          <hr className={classes.hr}></hr>
+          
           <Box className={classes.buttonGroup}>
             <Button className={classes.buttonGroupTwo}>
               100 x 1000 MM
@@ -258,11 +277,9 @@ const ProductDetailSection = () => {
           </Box>
         </Box>
       </Box>
-    </Box></>)}
-
+    </Box>
     </>
-   
   );
 };
 
-export default ProductDetailSection;
+export default ProductDetailSectionMob;
