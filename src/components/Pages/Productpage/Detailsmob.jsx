@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     position:"absolute",
     display:"flex",
     flexDirection:"row",
-    top:"650px"
+    top:"680px"
   },
   smallImageBox: {
     height: "50%",
@@ -154,7 +154,7 @@ const useStyles = makeStyles((theme) => ({
 
    
     fontFamily: "unna",
-    fontSize: "16px",
+    fontSize: "12px",
     bottom:"-25px"
  
   },
