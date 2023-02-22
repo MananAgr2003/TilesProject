@@ -14,8 +14,14 @@ import Sitemap from "./Sitemap";
 import Catalouge from "./Catalouge";
 import Contactus from "./Contactus";
 import LoadingPageTest from "../cards/loadtest";
+import { useMediaQuery } from "@material-ui/core";
+import { useTheme } from "@material-ui/core/styles";
 
 const RoutesFunc = () => {
+
+  const theme = useTheme();
+  const isScreenSmall = useMediaQuery(theme.breakpoints.down("sm"));
+ 
   const [isLoading, setIsLoading] = useState(true);
   const location = useLocation();
 

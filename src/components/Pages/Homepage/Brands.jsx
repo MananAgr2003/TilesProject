@@ -50,7 +50,7 @@ export default function Overview() {
             width: "100vw",
             height: "50vh",
             backgroundSize: "cover",
-            marginTop: { md: "2rem", xs: "1rem" },
+            marginTop: { md: "2rem", xs: "2rem" },
             display: "flex",
 
             flexDirection: "row",

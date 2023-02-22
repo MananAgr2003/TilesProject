@@ -60,6 +60,11 @@ const useStyles = makeStyles((theme) => ({
     padding: {xs:"0rem" , md:"0rem 3rem 0rem 3rem"},
     marginTop: "3rem",
   },
+  root1: {
+    flexGrow: 1,
+    padding: {xs:"0rem" , md:"0rem 3rem 0rem 3rem"},
+    marginTop: "2.5rem",
+  },
   paper: {
     padding: {md:theme.spacing(2) , xs:theme.spacing(0)},
     textAlign: "center",
@@ -91,7 +96,7 @@ export default function ProductList() {
           },
           
           marginTop: {md:"80px" , xs:"40px"},
-          padding:{xs:"0px 5px 0px 10px" , md:"0px 70px 0px 70px"},
+          padding:{xs:"0px 0px 0px 15px" , md:"0px 70px 0px 70px"},
           zIndex: "1000",
           fontWeight: 700,
           justifyContent: "center",
@@ -110,7 +115,7 @@ export default function ProductList() {
         >
           Feel <span>The Product</span>
         </Typography>
-        <div className={classes.root}>
+        <div className={!isScreenSmall ? classes.root : classes.root1}>
           <Grid container spacing={!isScreenSmall ? 4 : 2}>
             
 

@@ -44,16 +44,19 @@ const scrollToTop = () => {
 
       <TilesHover></TilesHover>
 
-      <FadeInBottom>
+
+      {!isScreenSmall ? ( <> <FadeInBottom>
         <ProductList></ProductList>
-      </FadeInBottom>
+      </FadeInBottom></> ) : ( <ProductList></ProductList>)}
+
+     
 
       {!isScreenSmall ? (  <GptVisualizer></GptVisualizer>) : (<GptVisualizerMob></GptVisualizerMob>)}
     
 
-      <FadeInBottom>
+      {!isScreenSmall ? ( <> <FadeInBottom>
         <Categories></Categories>
-      </FadeInBottom>
+      </FadeInBottom></> ) : ( <Categories></Categories>)}
 
     
 
