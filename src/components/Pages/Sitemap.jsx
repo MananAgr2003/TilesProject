@@ -1,5 +1,8 @@
 import React , {useEffect} from 'react'
 import Banner from './Sitemap/banner'
+import { Box , Button, Typography } from "@mui/material";
+import { useMediaQuery } from "@material-ui/core";
+import { useTheme } from "@material-ui/core/styles";
 import Largecategory from './Sitemap/Largecategory'
 import Largecategory2 from './Sitemap/Largecategory2'
 import Largecategory3 from './Sitemap/Largecategory3'
@@ -18,6 +21,10 @@ const scrollToTop = () => {
   };
 
 export default function Sitemap() {
+  const theme = useTheme();
+  const isScreenSmall = useMediaQuery(theme.breakpoints.down("sm"));
+  const direction = !isScreenSmall ? "row" : "column";
+
 
     useEffect(() => {
         scrollToTop();
@@ -27,29 +34,30 @@ export default function Sitemap() {
     <Banner></Banner>
     <Largecategory></Largecategory>
 
-    <div  style={{
+    <Box  sx={{
         display:"flex",
-        flexDirection:"horizontal",
+        flexDirection:`${direction}`
       
     }}>
     <Sc1></Sc1>
     <Sc2></Sc2>
     <Sc3></Sc3>
     <Sc4></Sc4>
-    </div>
+    </Box>
 
     <Largecategory2></Largecategory2>
 
-    <div style={{
+    <Box style={{
         display:"flex",
-        flexDirection:"horizontal"
+        flexDirection:`${direction}`
+
     }}>
     <Sc5></Sc5>
     <Sc6></Sc6>
    
     <Sc7></Sc7>
     <Sc8></Sc8>
-    </div>
+    </Box>
 
     <Largecategory3></Largecategory3>
 

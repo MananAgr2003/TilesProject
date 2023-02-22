@@ -6,6 +6,8 @@ import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
 import banner from "../../../assets/banner4.png";
 import { Box } from "@material-ui/core";
+import { useMediaQuery } from "@material-ui/core";
+import { useTheme } from "@material-ui/core/styles";
 import p2 from "../../../assets/sitemap/p5.png"
 
 
@@ -25,6 +27,22 @@ const useStyles = makeStyles((theme) => ({
     backgroundPosition: "center",
    
   },
+  root1: {
+
+    background: `url(${p2})`,
+
+    color: "#000000",
+    padding: "0px 0",
+
+    marginTop: "40px",
+    boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)",
+    width:"90vw",
+    height:"280px",
+    marginLeft:"20px",
+    backgroundSize: "110% 110%",
+    backgroundPosition: "center",
+   
+  },
 
   heading: {
     fontWeight: "semi-bold",
@@ -38,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "light",
     filter: "brightness(100%)",
     color: "#ffffff",
-    width:"15vw"
+    width:"200px"
 
   },
   link: {
@@ -50,7 +68,7 @@ const useStyles = makeStyles((theme) => ({
 
     filter: "brightness(100%)",
     color: "#ffffff",
-    width:"15vw"
+    width:"200px"
     
   },
   links: {
@@ -61,7 +79,7 @@ const useStyles = makeStyles((theme) => ({
     left:"0.7rem",
 
     top:"7px",
-    width:"15vw"
+    width:"200px"
   },
   mainHead:{
     position:"relative",
@@ -87,6 +105,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Sc5 = () => {
+  const theme = useTheme();
+  const isScreenSmall = useMediaQuery(theme.breakpoints.down("sm"));
+  const width = !isScreenSmall ? "18.5vw" : "50vw";
   const classes = useStyles();
 
   const elements = [
@@ -100,7 +121,7 @@ const Sc5 = () => {
 
   return (
    
-      <Box className={classes.root}>
+      <Box className={!isScreenSmall ? classes.root : classes.root1} >
         <Box className={classes.topBox}>PRODUCTS</Box>
         <Typography className={classes.mainHead}>Tiles By Category</Typography>
         <Grid container spacing={4} className={classes.mainGrid}>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Box , Button, Typography } from "@mui/material";
-import banner from "../../assets/sitemap/banner.png"
+import banner from "../../assets/sitemap/banner.png";
 
 
 export default function Banner() {
@@ -10,7 +10,7 @@ export default function Banner() {
         component="img"
         sx={{
           width: "100%",
-          height: "463px",
+          height: {md:"463px" , xs:"300px"},
           filter: "brightness(50%)",
         }}
         src={banner}
@@ -19,37 +19,39 @@ export default function Banner() {
       <Typography
         sx={{
           fontFamily: "julius sans one",
-          fontSize: "60px",
+          fontSize: {md:"60px" , xs:"35px"},
 
           color: "White",
 
           width: "100%",
           position: "absolute",
-          top: "15rem",
-          paddingLeft: "3rem",
+          top: {md:"15rem" , xs:"10rem"},
+          paddingLeft: {md:"3rem" , xs:"1rem"},
         }}
       >
-      Site Map
+      LOREM IPSUM
       </Typography>
 
       <Box
         sx={{
           fontFamily: "julius sans one",
-          fontSize: "20px",
+          fontSize: {md:"20px" ,xs:"14px"},
 
           color: "White",
 
           width: "100%",
           position: "absolute",
-          top: "21rem",
-          paddingLeft: "3rem",
+          top: {md:"21rem" , xs:"14rem"},
+          paddingLeft: {md:"3rem" , xs:"1rem"},
+
           fontWeight: "550",
         }}
       >
         <Typography
           sx={{
             fontFamily: "julius sans one",
-            fontSize: "25px",
+            fontSize: {md:"25px" ,xs:"18px"},
+
 
             color: "White",
 
@@ -58,7 +60,7 @@ export default function Banner() {
             fontWeight: "550",
           }}
         >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, nisi!
+          Lorem ipsum dolor sit amet consectetur. Ut, nisi!
         </Typography>
 
        

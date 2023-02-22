@@ -6,6 +6,8 @@ import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
 import banner from "../../assets/banner4.png";
 import { Box } from "@material-ui/core";
+import { useMediaQuery } from "@material-ui/core";
+import { useTheme } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -13,6 +15,17 @@ const useStyles = makeStyles((theme) => ({
     padding: "0px 0",
 
     marginTop: "80px",
+    boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)",
+    width:"90vw",
+    marginLeft:"auto",
+    marginRight:"auto"
+   
+  },
+  root1: {
+    color: "#000000",
+    padding: "0px 0",
+
+    marginTop: "20px",
     boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)",
     width:"90vw",
     marginLeft:"auto",
@@ -32,6 +45,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "light",
     filter: "brightness(100%)",
     color: "#000000",
+    width:"100px"
   },
   link: {
     fontWeight: "light",
@@ -42,6 +56,8 @@ const useStyles = makeStyles((theme) => ({
 
     filter: "brightness(100%)",
     color: "#000000",
+    width:"200px"
+
     
   },
   links: {
@@ -50,7 +66,9 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
     color: "#000000",
     left:"2rem",
-    top:"7px"
+    top:"7px",
+    width:"200px"
+
   },
   mainHead:{
     position:"relative",
@@ -58,7 +76,8 @@ const useStyles = makeStyles((theme) => ({
 
     fontWeight:"bold",
     left:"2rem",
-    top:"7px"
+    top:"7px",
+    width:"200px"
   },
   topBox:{
     width:"100%",
@@ -72,6 +91,8 @@ const useStyles = makeStyles((theme) => ({
 
 const Largecategory2 = () => {
   const classes = useStyles();
+  const theme = useTheme();
+  const isScreenSmall = useMediaQuery(theme.breakpoints.down("sm"));
 
   const elements = [
     {
@@ -114,7 +135,7 @@ const Largecategory2 = () => {
 
   return (
    
-      <Box className={classes.root}>
+      <Box className={!isScreenSmall ? classes.root : classes.root1}>
         <Box className={classes.topBox}>PRODUCTS</Box>
         <Typography className={classes.mainHead}>Tiles By Category</Typography>
         <Grid container spacing={4}>
