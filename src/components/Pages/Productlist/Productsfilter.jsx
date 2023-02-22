@@ -9,6 +9,7 @@ import {
   Box,
 } from "@mui/material";
 import ProductCardSqre from "../../cards/ProductCardSqre";
+import ProductCardMob from "../../cards/productCardMob";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import {
@@ -32,6 +33,8 @@ import product8 from "../../assets/products/product8.png";
 import product9 from "../../assets/products/product9.png";
 import arrowRight from "../../assets/arrow/arrowRight.png";
 import arrowLeft from "../../assets/arrow/arrowLeft.png";
+import { useMediaQuery } from "@material-ui/core";
+import { useTheme } from "@material-ui/core/styles";
 
 const products = 2356; // Total number of products
 const brands = [
@@ -102,6 +105,12 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "3rem",
     overflow: "hidden",
   },
+  root1: {
+    flexGrow: 1,
+    padding: "0rem 0rem 0rem 0rem",
+    marginTop: "3rem",
+    overflow: "hidden",
+  },
   paper: {
     padding: theme.spacing(1),
     textAlign: "center",
@@ -114,7 +123,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#F9FAFB",
     border: "none",
     position: "relative",
-    top:"20px",
+    top: "20px",
     right: "5px",
     border: "5px solid #F9FAFB",
     "&::before": {
@@ -157,6 +166,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function ProductFilter() {
+  const theme = useTheme();
+  const isScreenSmall = useMediaQuery(theme.breakpoints.down("sm"));
   const classes = useStyles();
 
   const [pageNumber, setPageNumber] = useState(1);
@@ -210,6 +221,7 @@ function ProductFilter() {
           height: "1400px",
           position: "relative",
           top: "50px",
+          display: { md: "block", xs: "none" },
         }}
       >
         <Typography
@@ -233,18 +245,18 @@ function ProductFilter() {
             margin: "-15px 0px 5px 0px",
             width: "200px",
             position: "absolute",
-            top:"02",
-             right:"-105px",
+            top: "02",
+            right: "-105px",
 
             color: "#89a963",
-           
-            display:"flex",
-            alignItems:"left",
-             justifyContent:"left",
 
-             "&:hover":{
-              backgroundColor:"transparent"
-             }
+            display: "flex",
+            alignItems: "left",
+            justifyContent: "left",
+
+            "&:hover": {
+              backgroundColor: "transparent",
+            },
           }}
         >
           Clear All
@@ -259,7 +271,6 @@ function ProductFilter() {
             display: "flex",
             flexDirection: "column",
             backgroundColor: "#F9FAFB",
-  
           }}
           className={classes.acc}
         >
@@ -744,17 +755,28 @@ function ProductFilter() {
           ))}
         </Box>
       </Box>
-      <Box sx={{ fontFamily: "unna", width: "75vw" }}>
-        <div className={classes.root}>
-          <Grid container spacing={4}>
+      <Box sx={{ fontFamily: "unna", width: {md:"75vw" , xs:"100vw"} }}>
+        <div className={!isScreenSmall ? classes.root : classes.root1}>
+          <Grid container spacing={!isScreenSmall ? 4 : 1}>
             {Products.map((item) => (
-              <Grid item xs={4}>
+              <Grid item xs={6} md={4}>
                 <div className={classes.paper}>
-                  <ProductCardSqre
-                    name={item.name}
-                    image={item.image}
-                    description={item.description}
-                  ></ProductCardSqre>
+                  <>
+                    {!isScreenSmall && (
+                      <ProductCardSqre
+                        name={item.name}
+                        image={item.image}
+                        description={item.description}
+                      ></ProductCardSqre>
+                    )}
+                    {isScreenSmall && (
+                      <ProductCardMob
+                        name={item.name}
+                        image={item.image}
+                        description={item.description}
+                      ></ProductCardMob>
+                    )}
+                  </>
                 </div>
               </Grid>
             ))}

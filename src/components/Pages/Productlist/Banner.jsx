@@ -1,6 +1,6 @@
 import React from "react";
 import { Box , Button, Typography } from "@mui/material";
-import banner from "../../assets/newBanner1.png"
+import banner from "../../assets/newBanner1.png";
 
 
 export default function Banner() {
@@ -10,7 +10,7 @@ export default function Banner() {
         component="img"
         sx={{
           width: "100%",
-          height: "463px",
+          height: {md:"463px" , xs:"300px"},
           filter: "brightness(50%)",
         }}
         src={banner}
@@ -19,37 +19,39 @@ export default function Banner() {
       <Typography
         sx={{
           fontFamily: "julius sans one",
-          fontSize: "60px",
+          fontSize: {md:"60px" , xs:"35px"},
 
           color: "White",
 
           width: "100%",
           position: "absolute",
-          top: "15rem",
-          paddingLeft: "7rem",
+          top: {md:"15rem" , xs:"10rem"},
+          paddingLeft: {md:"3rem" , xs:"1rem"},
         }}
       >
-       A Class in itself
+      LOREM IPSUM
       </Typography>
 
       <Box
         sx={{
           fontFamily: "julius sans one",
-          fontSize: "20px",
+          fontSize: {md:"20px" ,xs:"14px"},
 
           color: "White",
 
           width: "100%",
           position: "absolute",
-          top: "21rem",
-          paddingLeft: "7rem",
+          top: {md:"21rem" , xs:"14rem"},
+          paddingLeft: {md:"3rem" , xs:"1rem"},
+
           fontWeight: "550",
         }}
       >
         <Typography
           sx={{
             fontFamily: "julius sans one",
-            fontSize: "25px",
+            fontSize: {md:"25px" ,xs:"18px"},
+
 
             color: "White",
 
@@ -58,21 +60,21 @@ export default function Banner() {
             fontWeight: "550",
           }}
         >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, nisi!
+          Lorem ipsum dolor sit amet consectetur. Ut, nisi!
         </Typography>
 
         <Button
           sx={{
             fontFamily: "julius sans one",
-            fontSize: "18px",
+            fontSize: {md:"18px" , xs:"14px"},
             backgroundColor: "#89A963",
             color: "white",
             "&:hover": {
               backgroundColor: "#89A963",
             },
-            height: "3rem",
-            width: "13rem",
-            borderRadius: "8px",
+            height: {md:"3rem" , xs:"2rem"},
+            width: {md:"13rem" ,xs:"8rem"},
+            borderRadius: "5px",
             marginRight: "0.7rem",
             position: "absolute",
 
@@ -83,6 +85,10 @@ export default function Banner() {
         >
           Read More
         </Button>
+
+
+
+       
 
         
       </Box>

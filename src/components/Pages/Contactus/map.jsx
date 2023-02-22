@@ -24,6 +24,7 @@ export default function Map() {
           fontWeight: 700,
           justifyContent: "center",
           alignItems: "center",
+          marginTop:{md:"0px" , xs:"0px"}
           
         }}
       >
@@ -34,13 +35,14 @@ export default function Map() {
             backgroundImage: `url(${banner})`,
             width: "91.5vw",
             height: "380px",
-            backgroundSize: "100% 100%",
+            backgroundSize: "cover",
             marginTop: "2rem",
             display: "flex",
 
             flexDirection: "row",
             justifyContent: "center",
             alignItems: "space-between",
+            backgroundPosition:"center"
           }}
         >
          

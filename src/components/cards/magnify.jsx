@@ -53,8 +53,8 @@ function ImageMagnifier(props) {
           // prevent magnifier blocks the mousemove event of img
           pointerEvents: "none",
           // set size of magnifier
-          height: "200px",
-          width: "200px",
+          height: "400px",
+          width: "400px",
           borderRadius:"50%",
           // move element center to cursor pos
           top: `${y - 300 / 1.5}px`,
@@ -72,7 +72,8 @@ function ImageMagnifier(props) {
 
           //calculate position of zoomed image.
           backgroundPositionX: `${-x * 2 + 100 / 2}px`,
-          backgroundPositionY: `${-y * 2 + 100 / 1.5}px`
+          backgroundPositionY: `${-y * 2 + 100 / 1.5}px`,
+          zIndex:"9999"
         }}
       ></div>
     </div>

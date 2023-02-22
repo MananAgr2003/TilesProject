@@ -1,7 +1,8 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography, TextField, Button, Grid } from "@material-ui/core";
-
+import { useMediaQuery } from "@material-ui/core";
+import { useTheme } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
   root: {
     padding: "75px 37px 89px 59px",
@@ -14,6 +15,19 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute",
     top: "370px",
     left: 66,
+    backgroundColor: "white",
+  },
+  root1: {
+    padding: "20px",
+    width: "95vw",
+    height: "800px",
+
+    border: "1px solid #ccc",
+    borderRadius: "4px",
+    margin: "auto auto",
+    position: "absolute",
+    top: "150px",
+    left: 13,
     backgroundColor: "white",
   },
   header: {
@@ -53,9 +67,11 @@ const useStyles = makeStyles((theme) => ({
 
 const GetInTouchForm = () => {
   const classes = useStyles();
+  const theme = useTheme();
+  const isScreenSmall = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
-    <div className={classes.root}>
+    <div className={!isScreenSmall ? classes.root : classes.root1}>
       <Typography variant="subtitle1" className={classes.header}>
         Contact with Us
       </Typography>
@@ -71,7 +87,7 @@ const GetInTouchForm = () => {
       </Typography>
       <form>
         <Grid container spacing={2}>
-          <Grid item xs={6}>
+          <Grid item xs={12} md={6}>
             <TextField
               required
               fullWidth
@@ -80,7 +96,7 @@ const GetInTouchForm = () => {
               className={classes.formControl}
             />
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12} md={6}>
             <TextField
               required
               fullWidth

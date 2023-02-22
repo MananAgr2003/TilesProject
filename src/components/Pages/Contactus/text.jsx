@@ -1,5 +1,6 @@
 import { React, useState } from "react";
-
+import { useMediaQuery } from "@material-ui/core";
+import { useTheme } from "@material-ui/core/styles";
 import { Paper, Typography, Container, Button, Box } from "@mui/material";
 import { Waypoint } from "react-waypoint";
 import { useSpring, animated } from "react-spring";
@@ -25,6 +26,9 @@ function Number({ n }) {
 }
 
 export default function Text() {
+  const theme = useTheme();
+  const isScreenSmall = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
     <>
       <Paper
@@ -38,17 +42,20 @@ export default function Text() {
             md: "100vw",
             xs: "100vw",
           },
-          margin: "80px 4rem 0rem 4rem",
+          margin: {md:"80px 4rem 0rem 4rem" , xs:"430px 2rem 0rem 2rem"},
 
           zIndex: "1000",
           fontWeight: 700,
-          height:"420px"
+          height:"420px",
+          display:{md:"block" , xs:"block"},
+          overflow:{xs:"hidden" , md:"visible"}
+
         }}
       >
         <Box
           sx={{
             display: "flex",
-            flexDirection: "row",
+            flexDirection: {md:"row" , xs:"column-reverse"},
           }}
         >
           <div
@@ -278,14 +285,15 @@ export default function Text() {
               </Box>
             </Box>
           </div>
-          <div
-            style={{
+          <Box
+            sx={{
               width: "300px",
-              height: "550px",
+              height: "850px",
               marginLeft: "8rem",
               position: "relative",
-              left: "100px",
-              bottom:"50px"
+              left: {md:"100px" , xs:"-120px"},
+              bottom:{md:"50px" , xs:"0px"},
+              
             }}
           >
             <Typography
@@ -424,7 +432,7 @@ export default function Text() {
                  }
               }}> Weekend Closed</Typography>
            
-          </div>
+          </Box>
         </Box>
       </Paper>
     </>
