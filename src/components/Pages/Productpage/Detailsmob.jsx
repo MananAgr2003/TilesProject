@@ -30,7 +30,9 @@ const useStyles = makeStyles((theme) => ({
     position:"absolute",
     display:"flex",
     flexDirection:"row",
-    top:"615px"
+    top:"615px",
+    marginTop:"15px",
+    marginBottom:"15px"
   },
   smallImageBox: {
     height: "50%",
@@ -174,7 +176,7 @@ const useStyles = makeStyles((theme) => ({
   newTop:{
 
     position:"absolute",
-    top:"95px",
+    top:"100px",
     left:"10px",
     display:"flex",
     flexDirection:"row",
