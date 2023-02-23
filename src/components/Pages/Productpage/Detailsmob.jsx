@@ -13,12 +13,12 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     flexDirection: "column",
-    height: "950px",
+    height: "900px",
 
     width: "99vw",
     marginLeft: "1vw",
     overflow: "hidden",
-    marginTop: "56px",
+    marginTop: "40px",
   },
   smallImageBoxDiv: {
     paddingLeft: "10px",
@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     position:"absolute",
     display:"flex",
     flexDirection:"row",
-    top:"680px"
+    top:"615px"
   },
   smallImageBox: {
     height: "50%",
@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   largeImageBox: {
-    height: "36%",
+    height: "290px",
     width: "98%",
     display: "flex",
     alignItems: "center",
@@ -174,7 +174,7 @@ const useStyles = makeStyles((theme) => ({
   newTop:{
 
     position:"absolute",
-    top:"100px",
+    top:"85px",
     left:"10px",
     display:"flex",
     flexDirection:"row",

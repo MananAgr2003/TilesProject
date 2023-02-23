@@ -25,10 +25,12 @@ import MenuIcon from "@material-ui/icons/Menu";
 import HomeIcon from "@material-ui/icons/Home";
 import InfoIcon from "@material-ui/icons/Info";
 import ContactMailIcon from "@material-ui/icons/ContactMail";
-
+import { Accordion, AccordionSummary, AccordionDetails } from "@mui/material";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+   
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -38,12 +40,41 @@ const useStyles = makeStyles((theme) => ({
   },
   drawerList: {
     width: 250,
+    overflow: "hidden",
   },
   toolbar: {
     backgroundColor: "white",
     display: "flex",
     justifyContent: "space-between",
-    padding:"8px"
+    padding: "8px",
+  },
+
+  acc: {
+    backgroundColor: "white",
+    border: "none",
+    position: "relative",
+    top: "35px",
+    right: "5px",
+    border: "5px solid white",
+    "&::before": {
+      display: "none", // hides the default border on the AccordionSummary component
+    },
+    "&$expanded": {
+      margin: "auto",
+    },
+  },
+  acc1: {
+    padding: "0px 0px",
+    height: "50px",
+    marginBottom: "-55px",
+  },
+  acc2: {
+    padding: "0px 0px",
+    border: "5px solid transparent",
+    marginBottom: "-10px",
+  },
+  accChev: {
+   
   },
 }));
 
@@ -67,16 +98,168 @@ const Navbar = () => {
   const renderDrawer = () => (
     <div
       className={classes.drawerList}
-      onClick={toggleDrawer(false)}
-      onKeyDown={toggleDrawer(false)}
+      // onClick={toggleDrawer(false)}
+      // onKeyDown={toggleDrawer(false)}
     >
+      <Box>
+        <img
+          src={logo}
+          alt=""
+          style={{
+            height: "80px",
+            width: "200px",
+            position: "relative",
+
+            left: "25px",
+            marginTop: "55px",
+            margin: "105px auto 0px auto",
+          }}
+        />
+        <Typography
+          style={{
+            height: "10px",
+            width: "200px",
+            position: "relative",
+
+            left: "38px",
+            margin: "5px auto",
+            fontFamily: "unna",
+          }}
+          variant="h5"
+        >
+          Brand Name
+        </Typography>
+        <Typography
+          style={{
+            height: "10px",
+            width: "200px",
+            position: "relative",
+
+            left: "20px",
+            top: "15px",
+            margin: "5px auto",
+            fontFamily: "unna",
+          }}
+          variant="h6"
+        >
+          Tag Line Goes Here
+        </Typography>
+      </Box>
       <List>
-        {drawerItems.map((item, index) => (
-          <ListItem button key={index} component="a" href={item.link}>
-            <ListItemIcon>{item.icon}</ListItemIcon>
-            <ListItemText primary={item.text} />
-          </ListItem>
-        ))}
+        <ListItem button key="5" component="a" style={{
+
+          position:"relative",
+           top:"45px",
+           left:"15px"
+        }}>
+          <img
+            src={icon1}
+            alt=""
+            style={{
+              height: "30px",
+              width: "30px",
+              position: "relative",
+              top: "-5px",
+              right: "15px",
+            }}
+          />
+          <Typography variant="body1">Home Screen</Typography>
+        </ListItem>
+        <ListItem button key="5" component="a" style={{
+
+          position:"relative",
+           top:"45px",
+           left:"15px"
+        }}>
+          <img
+            src={icon2}
+            alt=""
+            style={{
+              height: "30px",
+              width: "30px",
+              position: "relative",
+              top: "-5px",
+              right: "15px",
+            }}
+          />
+          <Typography variant="body1">About Us</Typography>
+        </ListItem>
+        <ListItem button key="5" component="a" style={{
+
+          position:"relative",
+           top:"45px",
+           left:"15px"
+        }}>
+          <img
+            src={icon3}
+            alt=""
+            style={{
+              height: "30px",
+              width: "30px",
+              position: "relative",
+              top: "-5px",
+              right: "15px",
+            }}
+          />
+          <Typography variant="body1">Contact Us</Typography>
+        </ListItem>
+       
+        <ListItem button key="5" component="a">
+          <Accordion
+            elevation={0}
+            className={classes.acc}
+            sx={{
+              mt: "0rem",
+              display: "flex",
+              flexDirection: "column",
+              backgroundColor: "white",
+              position: "relative",
+              marginTop:"0px"
+            }}
+          >
+            <AccordionSummary
+              className={classes.acc1}
+            
+              
+            >
+              <img
+                src={icon1}
+                alt=""
+                style={{
+                  height: "30px",
+                  width: "30px",
+                  position: "relative",
+                  top: "-5px",
+                  right: "15px",
+                }}
+              />
+              <Typography variant="body1">Faucets</Typography>
+            </AccordionSummary>
+            <AccordionDetails className={classes.acc2}>
+              <ListItem button component="a" href="/Productlist" style={{
+                position:"relative",
+                bottom:"20px"
+              }}>
+                {/* <ListItemIcon>
+                  {" "}
+                  <img
+                    src={icon1}
+                    alt=""
+                    style={{
+                      height: "30px",
+                      width: "30px",
+                      position: "relative",
+                      top: "-5px",
+                      right: "15px",
+                    }}
+                  />
+                </ListItemIcon> */}
+                <ListItemText primary="Option1" />
+              </ListItem>
+            </AccordionDetails>
+          </Accordion>
+        </ListItem>
+        
       </List>
     </div>
   );
@@ -101,29 +284,41 @@ const Navbar = () => {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                padding:"10px"
+                padding: "10px",
               }}
             >
               <img
                 src={logo}
                 alt=""
-                style={{width:"123px" , height: "50px", position: "relative", margin:"0px 0px 0px 80px" }}
+                style={{
+                  width: "123px",
+                  height: "50px",
+                  position: "relative",
+                  margin: "0px 0px 0px 80px",
+                }}
               />
             </Box>
           </Link>
           {isMobile && (
             <>
-            <img src={icon4} alt="" style={{position:"relative" , left:"115px"}}/>
-            <IconButton
-              edge="end"
-              className={classes.menuButton}
-              color="#89a963"
-              aria-label="menu"
-              onClick={toggleDrawer(true)}
-            >
-            <img src={icon5} alt="" style={{position:"relative" , left:"15px"}}/>
-             
-            </IconButton>
+              <img
+                src={icon4}
+                alt=""
+                style={{ position: "relative", left: "115px" }}
+              />
+              <IconButton
+                edge="end"
+                className={classes.menuButton}
+                color="#89a963"
+                aria-label="menu"
+                onClick={toggleDrawer(true)}
+              >
+                <img
+                  src={icon5}
+                  alt=""
+                  style={{ position: "relative", left: "15px" }}
+                />
+              </IconButton>
             </>
           )}
         </Toolbar>
@@ -139,6 +334,7 @@ const Navbar = () => {
         open={isDrawerOpen}
         onClose={toggleDrawer(false)}
         onOpen={toggleDrawer(true)}
+        disableSwipeToOpen={true}
       >
         {renderDrawer()}
       </SwipeableDrawer>

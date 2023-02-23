@@ -83,7 +83,8 @@ export default function ProductList() {
             xs: "100vw",
           },
           marginTop: { md: "80px", xs: "40px" },
-          padding:{xs:"0px auto" , md:"0px 70px 0px 70px"},
+          padding:{xs:"0px 8px 0px 10px" , md:"0px 70px 0px 70px"},
+
 
           zIndex: "1000",
           fontWeight: 700,
