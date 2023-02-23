@@ -107,7 +107,7 @@ const useStyles = makeStyles((theme) => ({
   },
   root1: {
     flexGrow: 1,
-    padding: "0rem 0rem 0rem 0rem",
+    padding: "0rem 0rem 0rem 0.3rem",
     marginTop: "3rem",
     overflow: "hidden",
   },
@@ -763,7 +763,7 @@ function ProductFilter() {
           ))}
         </Box>
       </Box>
-      <Box sx={{ fontFamily: "unna", width: {md:"75vw" , xs:"100vw"} }}>
+      <Box sx={{ fontFamily: "unna", width: {md:"75vw" , xs:"100vw"} , position:"relative", bottom:"25px" }}>
         <div className={!isScreenSmall ? classes.root : classes.root1}>
           <Grid container spacing={!isScreenSmall ? 4 : 1}>
             {Products.map((item) => (
