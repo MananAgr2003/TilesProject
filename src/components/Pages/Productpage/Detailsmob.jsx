@@ -83,10 +83,11 @@ const useStyles = makeStyles((theme) => ({
    
     fontFamily: "unna",
     position:"relative",
-    top:"320px",
+    top:"335px",
 
     width:"90vw",
-    left:"10px"
+    left:"10px",
+    marginTop:"20px"
   },
   heading1: {
     fontSize: "1.2rem",
@@ -176,7 +177,7 @@ const useStyles = makeStyles((theme) => ({
   newTop:{
 
     position:"absolute",
-    top:"100px",
+    top:"95px",
     left:"10px",
     display:"flex",
     flexDirection:"row",
