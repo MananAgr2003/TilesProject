@@ -210,7 +210,7 @@ const Navbar = () => {
           />
           <Typography variant="body1">Home Screen</Typography>
         </ListItem>
-        <ListItem button key="5" component="a" style={{
+        <ListItem disableRipple button key="5" component="a" style={{
 
           position:"relative",
            top:"45px",
@@ -229,7 +229,7 @@ const Navbar = () => {
           />
           <Typography variant="body1">About Us</Typography>
         </ListItem>
-        <ListItem button key="5" component="a" style={{
+        <ListItem disableRipple button key="5" component="a" style={{
 
           position:"relative",
            top:"45px",
@@ -251,7 +251,7 @@ const Navbar = () => {
         </ListItem>
        
        
-        <ListItem button key="5" component="a">
+        <ListItem disableRipple button key="5" component="a">
           <Accordion
             elevation={0}
             className={classes.accNew}
@@ -375,7 +375,7 @@ const Navbar = () => {
             </AccordionDetails>
           </Accordion>
         </ListItem>
-        <ListItem button key="5" component="a">
+        <ListItem disableRipple button key="5" component="a">
           <Accordion
             elevation={0}
             className={classes.accNew}
@@ -500,7 +500,7 @@ const Navbar = () => {
           </Accordion>
         </ListItem>
         
-        <ListItem button key="5" component="a">
+        <ListItem disableRipple button key="5" component="a">
           <Accordion
             elevation={0}
             className={classes.accNew}
@@ -624,7 +624,7 @@ const Navbar = () => {
             </AccordionDetails>
           </Accordion>
         </ListItem>
-        <ListItem button key="5" component="a">
+        <ListItem disableRipple button key="5" component="a">
           <Accordion
             elevation={0}
             className={classes.accNew}
@@ -749,7 +749,7 @@ const Navbar = () => {
           </Accordion>
         </ListItem>
         
-        <ListItem button key="5" component="a">
+        <ListItem disableRipple button key="5" component="a">
           <Accordion
             elevation={0}
             className={classes.accNew}
@@ -874,7 +874,7 @@ const Navbar = () => {
           </Accordion>
         </ListItem>
         
-        <ListItem button key="5" component="a">
+        <ListItem disableRipple button key="5" component="a">
           <Accordion
             elevation={0}
             className={classes.accNew}
@@ -914,7 +914,7 @@ const Navbar = () => {
           </Accordion>
         </ListItem>
         
-        <ListItem button key="5" component="a">
+        <ListItem disableRipple button key="5" component="a">
           <Accordion
             elevation={0}
             className={classes.accNew}
