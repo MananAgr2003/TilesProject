@@ -116,7 +116,7 @@ export default function Products() {
         <Box
           sx={{
             flexGrow: 1,
-            padding: {xs:"0rem 0rem 0rem 0rem",md:"0rem 3rem 0rem 3rem"},
+            padding: {xs:"0rem 0rem 0rem 0.5rem",md:"0rem 3rem 0rem 3rem"},
          
             width:"100vw",
             margin:"auto"
