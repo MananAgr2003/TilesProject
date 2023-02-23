@@ -79,7 +79,7 @@ const useStyles = makeStyles({
   },
   mediaDiv:{
     height: 160,
-    width:"180px",
+    width:"170px",
     overflow:"hidden",
     transition: "transform 5s ease-in-out",
 
@@ -104,8 +104,8 @@ export default function ProductCardMob(props) {
 
   return (
     <Link to="/product" style={{ textDecoration: 'none' }}>
-    <Card className={classes.root}  elevation={0}>
-      <CardActionArea>
+    <Card className={classes.root}  disableRipple  elevation={0}>
+      <CardActionArea disableRipple>
         <div 
           className={classes.mediaDiv}>
         <CardMedia 

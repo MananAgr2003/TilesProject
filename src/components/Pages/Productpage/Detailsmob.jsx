@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   largeImageBox: {
-    height: "290px",
+    height: "270px",
     width: "98%",
     display: "flex",
     alignItems: "center",

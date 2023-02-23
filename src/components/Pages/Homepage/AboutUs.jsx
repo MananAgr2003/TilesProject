@@ -347,7 +347,7 @@ export default function AboutUs() {
 
             </Box>
               </Box>
-          <Box sx={{ width: {md:"28vw"  ,  xs:"90vw"} , height:{md:"550px" , xs:"250px"} , marginLeft: {md:"8rem" , xs:"-2.65rem"} }}>
+          <Box sx={{ width: {md:"28vw"  ,  xs:"60vw"} , height:{md:"550px" , xs:"250px"} , marginLeft: {md:"8rem" , xs:"1.2rem"} }}>
             <img src={banner} alt="" style={{ width: "100%" , height:"100%"}} />
           </Box>
         </Box>

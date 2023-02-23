@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
   },
   drawerList: {
     width: 250,
-    overflow: "hidden",
+    overflowX: "hidden",
   },
   toolbar: {
     backgroundColor: "white",
@@ -61,6 +61,48 @@ const useStyles = makeStyles((theme) => ({
     },
     "&$expanded": {
       margin: "auto",
+
+      '&.Mui-focused': {
+        backgroundColor: 'transparent',
+      },
+    },
+  },
+  accNew: {
+    backgroundColor: "white",
+    border: "none",
+    position: "relative",
+    top: "10px",
+    right: "5px",
+    border: "5px solid white",
+    "&::before": {
+      display: "none", // hides the default border on the AccordionSummary component
+    },
+    "&$expanded": {
+      margin: "auto",
+
+      
+    },
+    '&.Mui-focused': {
+      backgroundColor: 'transparent',
+    },
+  },
+  accNew1: {
+    backgroundColor: "white",
+    border: "none",
+    position: "relative",
+    top: "-18px",
+    right: "5px",
+    border: "5px solid white",
+    "&::before": {
+      display: "none", // hides the default border on the AccordionSummary component
+    },
+    "&$expanded": {
+      margin: "auto",
+
+      
+    },
+    '&.Mui-focused': {
+      backgroundColor: 'transparent',
     },
   },
   acc1: {
@@ -111,8 +153,8 @@ const Navbar = () => {
             position: "relative",
 
             left: "25px",
-            marginTop: "55px",
-            margin: "105px auto 0px auto",
+          
+            margin: "55px auto 0px auto",
           }}
         />
         <Typography
@@ -146,7 +188,7 @@ const Navbar = () => {
         </Typography>
       </Box>
       <List>
-        <ListItem button key="5" component="a" style={{
+        <ListItem disableRipple button key="5" component="a" style={{
 
           position:"relative",
            top:"45px",
@@ -238,7 +280,8 @@ const Navbar = () => {
             <AccordionDetails className={classes.acc2}>
               <ListItem button component="a" href="/Productlist" style={{
                 position:"relative",
-                bottom:"20px"
+                bottom:"20px",
+                right:"28px"
               }}>
                 {/* <ListItemIcon>
                   {" "}
@@ -255,6 +298,307 @@ const Navbar = () => {
                   />
                 </ListItemIcon> */}
                 <ListItemText primary="Option1" />
+              </ListItem>
+              <ListItem button component="a" href="/" style={{
+                position:"relative",
+                bottom:"20px",
+                right:"28px"
+              }}>
+                {/* <ListItemIcon>
+                  {" "}
+                  <img
+                    src={icon1}
+                    alt=""
+                    style={{
+                      height: "30px",
+                      width: "30px",
+                      position: "relative",
+                      top: "-5px",
+                      right: "15px",
+                    }}
+                  />
+                </ListItemIcon> */}
+                <ListItemText primary="Option2" />
+              </ListItem>
+              <ListItem button component="a" href="/" style={{
+                position:"relative",
+                bottom:"20px",
+                right:"28px"
+              }}>
+                {/* <ListItemIcon>
+                  {" "}
+                  <img
+                    src={icon1}
+                    alt=""
+                    style={{
+                      height: "30px",
+                      width: "30px",
+                      position: "relative",
+                      top: "-5px",
+                      right: "15px",
+                    }}
+                  />
+                </ListItemIcon> */}
+                <ListItemText primary="Option4" />
+              </ListItem>
+              <ListItem button component="a" href="/" style={{
+                position:"relative",
+                bottom:"20px",
+                right:"28px"
+              }}>
+                {/* <ListItemIcon>
+                  {" "}
+                  <img
+                    src={icon1}
+                    alt=""
+                    style={{
+                      height: "30px",
+                      width: "30px",
+                      position: "relative",
+                      top: "-5px",
+                      right: "15px",
+                    }}
+                  />
+                </ListItemIcon> */}
+                <ListItemText primary="Option4" />
+              </ListItem>
+            </AccordionDetails>
+          </Accordion>
+        </ListItem>
+        <ListItem button key="5" component="a">
+          <Accordion
+            elevation={0}
+            className={classes.accNew}
+            sx={{
+              mt: "0rem",
+              display: "flex",
+              flexDirection: "column",
+              backgroundColor: "white",
+              position: "relative",
+              marginTop:"0px"
+            }}
+          >
+            <AccordionSummary
+              className={classes.acc1}
+            
+              
+            >
+              <img
+                src={icon1}
+                alt=""
+                style={{
+                  height: "30px",
+                  width: "30px",
+                  position: "relative",
+                  top: "-5px",
+                  right: "15px",
+                }}
+              />
+              <Typography variant="body1">Faucets</Typography>
+            </AccordionSummary>
+            <AccordionDetails className={classes.acc2}>
+              <ListItem button component="a" href="/Productlist" style={{
+                position:"relative",
+                bottom:"20px",
+                right:"28px"
+              }}>
+                {/* <ListItemIcon>
+                  {" "}
+                  <img
+                    src={icon1}
+                    alt=""
+                    style={{
+                      height: "30px",
+                      width: "30px",
+                      position: "relative",
+                      top: "-5px",
+                      right: "15px",
+                    }}
+                  />
+                </ListItemIcon> */}
+                <ListItemText primary="Option1" />
+              </ListItem>
+              <ListItem button component="a" href="/" style={{
+                position:"relative",
+                bottom:"20px",
+                right:"28px"
+              }}>
+                {/* <ListItemIcon>
+                  {" "}
+                  <img
+                    src={icon1}
+                    alt=""
+                    style={{
+                      height: "30px",
+                      width: "30px",
+                      position: "relative",
+                      top: "-5px",
+                      right: "15px",
+                    }}
+                  />
+                </ListItemIcon> */}
+                <ListItemText primary="Option2" />
+              </ListItem>
+              <ListItem button component="a" href="/" style={{
+                position:"relative",
+                bottom:"20px",
+                right:"28px"
+              }}>
+                {/* <ListItemIcon>
+                  {" "}
+                  <img
+                    src={icon1}
+                    alt=""
+                    style={{
+                      height: "30px",
+                      width: "30px",
+                      position: "relative",
+                      top: "-5px",
+                      right: "15px",
+                    }}
+                  />
+                </ListItemIcon> */}
+                <ListItemText primary="Option4" />
+              </ListItem>
+              <ListItem button component="a" href="/" style={{
+                position:"relative",
+                bottom:"20px",
+                right:"28px"
+              }}>
+                {/* <ListItemIcon>
+                  {" "}
+                  <img
+                    src={icon1}
+                    alt=""
+                    style={{
+                      height: "30px",
+                      width: "30px",
+                      position: "relative",
+                      top: "-5px",
+                      right: "15px",
+                    }}
+                  />
+                </ListItemIcon> */}
+                <ListItemText primary="Option4" />
+              </ListItem>
+            </AccordionDetails>
+          </Accordion>
+        </ListItem>
+        <ListItem button key="5" component="a">
+          <Accordion
+            elevation={0}
+            className={classes.accNew1}
+            sx={{
+              mt: "0rem",
+              display: "flex",
+              flexDirection: "column",
+              backgroundColor: "white",
+              position: "relative",
+              marginTop:"0px"
+            }}
+          >
+            <AccordionSummary
+              className={classes.acc1}
+            
+              
+            >
+              <img
+                src={icon1}
+                alt=""
+                style={{
+                  height: "30px",
+                  width: "30px",
+                  position: "relative",
+                  top: "-5px",
+                  right: "15px",
+                }}
+              />
+              <Typography variant="body1">Faucets</Typography>
+            </AccordionSummary>
+            <AccordionDetails className={classes.acc2}>
+              <ListItem button component="a" href="/Productlist" style={{
+                position:"relative",
+                bottom:"20px",
+                right:"28px"
+              }}>
+                {/* <ListItemIcon>
+                  {" "}
+                  <img
+                    src={icon1}
+                    alt=""
+                    style={{
+                      height: "30px",
+                      width: "30px",
+                      position: "relative",
+                      top: "-5px",
+                      right: "15px",
+                    }}
+                  />
+                </ListItemIcon> */}
+                <ListItemText primary="Option1" />
+              </ListItem>
+              <ListItem button component="a" href="/" style={{
+                position:"relative",
+                bottom:"20px",
+                right:"28px"
+              }}>
+                {/* <ListItemIcon>
+                  {" "}
+                  <img
+                    src={icon1}
+                    alt=""
+                    style={{
+                      height: "30px",
+                      width: "30px",
+                      position: "relative",
+                      top: "-5px",
+                      right: "15px",
+                    }}
+                  />
+                </ListItemIcon> */}
+                <ListItemText primary="Option2" />
+              </ListItem>
+              <ListItem button component="a" href="/" style={{
+                position:"relative",
+                bottom:"20px",
+                right:"28px"
+              }}>
+                {/* <ListItemIcon>
+                  {" "}
+                  <img
+                    src={icon1}
+                    alt=""
+                    style={{
+                      height: "30px",
+                      width: "30px",
+                      position: "relative",
+                      top: "-5px",
+                      right: "15px",
+                    }}
+                  />
+                </ListItemIcon> */}
+                <ListItemText primary="Option4" />
+              </ListItem>
+              <ListItem button component="a" href="/" style={{
+                position:"relative",
+                bottom:"20px",
+                right:"28px"
+              }}>
+                {/* <ListItemIcon>
+                  {" "}
+                  <img
+                    src={icon1}
+                    alt=""
+                    style={{
+                      height: "30px",
+                      width: "30px",
+                      position: "relative",
+                      top: "-5px",
+                      right: "15px",
+                    }}
+                  />
+                </ListItemIcon> */}
+                <ListItemText primary="Option4" />
               </ListItem>
             </AccordionDetails>
           </Accordion>
