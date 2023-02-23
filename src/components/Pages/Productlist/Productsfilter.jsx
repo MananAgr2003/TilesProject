@@ -107,7 +107,7 @@ const useStyles = makeStyles((theme) => ({
   },
   root1: {
     flexGrow: 1,
-    padding: "0rem 0rem 0rem 0.3rem",
+    padding: "0rem 0rem 0rem 0.2rem",
     marginTop: "3rem",
     overflow: "hidden",
   },
