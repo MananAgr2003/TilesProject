@@ -210,7 +210,7 @@ function SwipeableTextMobileStepper() {
           backgroundColor: "#89A963",
           color: "white",
 
-          height: {md:"3.5rem"  , xs:"4rem"},
+          height: {md:"3.5rem"  , xs:"5rem"},
           width: {md:"20rem" , xs:"12rem"},
           borderRadius: "0px",
 

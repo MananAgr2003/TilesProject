@@ -10,7 +10,7 @@ export default function Banner() {
         component="img"
         sx={{
           width: "100%",
-          height: {md:"463px" , xs:"300px"},
+          height: {md:"463px" , xs:"280px"},
           filter: "brightness(50%)",
         }}
         src={banner}

@@ -103,7 +103,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     padding: "0rem 1rem 0rem 2rem",
     marginTop: "3rem",
-    overflow: "hidden",
+   
   },
   root1: {
     flexGrow: 1,
@@ -209,19 +209,22 @@ function ProductFilter() {
         mt: "2rem",
         fontFamily: "unna",
         overflow: "hidden",
-        height: "1700px",
+        height: {md:"1700px" , xs:"2070px"},
+        flexDirection:{md:"row" , xs:"column"}
       }}
     >
       <Box
         sx={{
-          width: "20vw",
+          width: {md:"20vw" , xs:"95vw"},
           padding: "0px 0px 0px 20px",
           backgroundColor: "#F9FAFB",
           margin: "0px 0px 0px 50px",
-          height: "1400px",
+          height: {md:"1400px" , xs:"1100px"},
           position: "relative",
-          top: "50px",
-          display: { md: "block", xs: "none" },
+          top: {md:"50px" , xs:"20px"},
+          display: { md: "block" },
+          left:{md:"0px" , xs:"-40px"
+          }
         }}
       >
         <Typography
@@ -230,13 +233,17 @@ function ProductFilter() {
             fontWeight: "bold",
             fontFamily: "unna",
             backgroundColor: "white",
-            position: "relative",
-            bottom: "50px",
-            right: "20px",
+            position: {md:"relative" , xs:"relative"},
+           
+            right: {md:"20px"  , xs:"0px"},
+            display:"block",
+            top:{md:"-50px" , xs:"-4px"},
+         
+            height:"80px"
           }}
         >
-          Showing {(pageNumber - 1) * 20 + 1} -{" "}
-          {Math.min(pageNumber * 20, products)} out of {products} Products
+          Showing  {(pageNumber - 1) * 20 + 1} -{" "}
+          {Math.min(pageNumber * 20, products)}  out of {products} Products
         </Typography>
         <Button
           onClick={handleClearAllClick}
@@ -245,7 +252,7 @@ function ProductFilter() {
             margin: "-15px 0px 5px 0px",
             width: "200px",
             position: "absolute",
-            top: "02",
+            top: {md:"02",xs:"95px"},
             right: "-105px",
 
             color: "#89a963",
@@ -722,12 +729,13 @@ function ProductFilter() {
         <Box
           sx={{
             mt: "1rem",
-            display: "flex",
+            display: {md:"flex" , xs:"flex"},
             flexDirection: "row",
             position: "absolute",
-            top: -75,
-            left: "75vw",
-            width: "30vw",
+            top: {md:-75 , xs:10},
+            left: {md:"75vw"  , xs:"18px"},
+            width: {md:"30vw" , xs:"100vw"},
+            backgroundColor:"white"
           }}
         >
           {filter.map((size, index) => (
