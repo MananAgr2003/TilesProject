@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState ,useRef , useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
@@ -15,6 +15,7 @@ import image8 from "../../assets/tiles/tile8.png";
 import image9 from "../../assets/tiles/tile9.png";
 import { useMediaQuery } from "@material-ui/core";
 import { useTheme } from "@material-ui/core/styles";
+
 import banner from "../../assets/banner4.png";
 
 const useStyles = makeStyles((theme) => ({
@@ -115,11 +116,27 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function App() {
+
+  
+
+  
   const classes = useStyles();
   const [selectedImage, setSelectedImage] = useState(image1);
   const [clicked, setClicked] = useState(1);
+  const sectionRef = useRef(null);
+  const handleScrollToSection = () => {
+    const section = document.getElementById("section");
+    section.scrollIntoView({ behavior: "smooth" });
+  };
+  useEffect(() => {
+
+    const section = document.getElementById("section");
+    section.scrollIntoView({ behavior: "smooth" });
+    
+  }, [clicked]);
 
   const handleClick = (index) => {
+   
     let imageName = "image" + index;
     console.log(imageName);
 
@@ -128,6 +145,7 @@ function App() {
 
     setSelectedImage(dynamicVariable);
     setClicked(index);
+    
   };
 
   return (
@@ -234,13 +252,14 @@ function App() {
         </Grid>
 
         <Grid item xs={3} sx={{}}>
-          <Paper className={classes.tallRectangle}>
+          <Paper ref={sectionRef}  className={classes.tallRectangle}>
             <img
               src={selectedImage}
               className={classes.gridImageTall}
               alt="selected"
+              id="section"
             />
-            <Box  className={classes.gridBox}
+            <Box   className={classes.gridBox}
              
               size="small"
             >
