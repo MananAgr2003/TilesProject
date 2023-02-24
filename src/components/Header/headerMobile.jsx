@@ -1115,13 +1115,16 @@ const Navbar = () => {
           </Link>
           {isMobile && (
             <>
-              <Link to="/searchpage">
+              <a href="/searchpage" style={{
+                textDecoration:"none",
+                position: "relative", left: "115px"
+              }}>
                 <img
                   src={icon4}
                   alt=""
-                  style={{ position: "relative", left: "115px" }}
+                  style={{ }}
                 />
-              </Link>
+              </a>
               <IconButton
                 edge="end"
                 className={classes.menuButton}
