@@ -237,7 +237,7 @@ function ProductFilter() {
     <Box
       sx={{
         display: "flex",
-        mt: "2rem",
+        mt: {md:"2rem" ,xs:"0px"},
         fontFamily: "unna",
         overflow: "hidden",
         height: {md:"1700px" , xs:"2070px"},

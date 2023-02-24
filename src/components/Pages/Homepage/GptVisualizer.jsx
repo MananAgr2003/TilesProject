@@ -131,7 +131,17 @@ function App() {
   useEffect(() => {
 
     const section = document.getElementById("section");
-    section.scrollIntoView({ behavior: "smooth" });
+    if (section) {
+      if ("ontouchstart" in window) {
+        // For touch-enabled devices, use document.documentElement
+        document.documentElement.scrollTop =
+          section.offsetTop - document.documentElement.offsetTop;
+      } else {
+        // For desktop devices, use document.body
+        document.body.scrollTop =
+          section.offsetTop - document.body.offsetTop;
+      }
+    }
     
   }, [clicked]);
 
@@ -149,7 +159,7 @@ function App() {
   };
 
   return (
-    <Box className={classes.root}>
+    <Box   id="section" className={classes.root}>
       <Grid container spacing={3}>
         <Grid item xs={12} md={9}>
           <Grid container className={classes.grid} spacing={3}>
