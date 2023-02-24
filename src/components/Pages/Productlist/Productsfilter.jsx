@@ -35,6 +35,20 @@ import arrowRight from "../../assets/arrow/arrowRight.png";
 import arrowLeft from "../../assets/arrow/arrowLeft.png";
 import { useMediaQuery } from "@material-ui/core";
 import { useTheme } from "@material-ui/core/styles";
+import { styled } from '@mui/material/styles';
+
+const CustomAccordion = styled(Accordion)({
+  '&.Mui-expanded': {
+    margin: "10 0 0 0",
+  },
+  marginBottom:-25
+});
+const CustomAccordionLast = styled(Accordion)({
+  '&.Mui-expanded': {
+    margin: "10 0 0 0",
+  },
+  marginBottom:"50px"
+});
 
 const products = 2356; // Total number of products
 const brands = [
@@ -133,6 +147,22 @@ const useStyles = makeStyles((theme) => ({
       margin: "auto",
     },
   },
+  accLast: {
+    backgroundColor: "#F9FAFB",
+    border: "none",
+    position: "relative",
+    top: "20px",
+    right: "5px",
+    border: "5px solid #F9FAFB",
+    "&::before": {
+      display: "none", // hides the default border on the AccordionSummary component
+    },
+    "&.expanded": {
+      margin: "auto",
+      backgroundColor:"black"
+    },
+    marginBottom:"50px"
+  },
   acc1: {
     padding: "0px 0px",
     height: "50px",
@@ -166,6 +196,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function ProductFilter() {
+
   const theme = useTheme();
   const isScreenSmall = useMediaQuery(theme.breakpoints.down("sm"));
   const classes = useStyles();
@@ -219,7 +250,7 @@ function ProductFilter() {
           padding: "0px 0px 0px 20px",
           backgroundColor: "#F9FAFB",
           margin: "0px 0px 0px 50px",
-          height: {md:"1400px" , xs:"1100px"},
+          height: {md:"1500px" , xs:"1150px"},
           position: "relative",
           top: {md:"50px" , xs:"20px"},
           display: { md: "block" },
@@ -239,7 +270,7 @@ function ProductFilter() {
             display:"block",
             top:{md:"-50px" , xs:"-4px"},
          
-            height:"80px"
+            height:{md:"0px" , xs:"80px"}
           }}
         >
           Showing  {(pageNumber - 1) * 20 + 1} -{" "}
@@ -252,10 +283,11 @@ function ProductFilter() {
             margin: "-15px 0px 5px 0px",
             width: "200px",
             position: "absolute",
-            top: {md:"02",xs:"95px"},
+            top: {md:"18px",xs:"95px"},
             right: "-105px",
 
             color: "#89a963",
+        
 
             display: "flex",
             alignItems: "left",
@@ -269,7 +301,7 @@ function ProductFilter() {
           Clear All
         </Button>
 
-        <Accordion
+        <CustomAccordion 
           expanded={expanded.includes("panel1")}
           onChange={handleChange("panel1")}
           elevation={0}
@@ -280,6 +312,8 @@ function ProductFilter() {
             backgroundColor: "#F9FAFB",
           }}
           className={classes.acc}
+          disableElevation
+          square
         >
           <AccordionSummary
             expandIcon={
@@ -450,8 +484,8 @@ function ProductFilter() {
               </FormGroup>
             </FormControl>
           </AccordionDetails>
-        </Accordion>
-        <Accordion
+        </CustomAccordion>
+        <CustomAccordion
           expanded={expanded.includes("panel2")}
           onChange={handleChange("panel2")}
           elevation={0}
@@ -587,8 +621,8 @@ function ProductFilter() {
               </FormGroup>
             </FormControl>
           </AccordionDetails>
-        </Accordion>
-        <Accordion
+        </CustomAccordion>
+        <CustomAccordionLast 
           expanded={expanded.includes("panel3")}
           onChange={handleChange("panel3")}
           elevation={0}
@@ -598,7 +632,7 @@ function ProductFilter() {
             flexDirection: "column",
             backgroundColor: "#F9FAFB",
           }}
-          className={classes.acc}
+          className={classes.accLast}
         >
           <AccordionSummary
             expandIcon={
@@ -724,7 +758,7 @@ function ProductFilter() {
               </FormGroup>
             </FormControl>
           </AccordionDetails>
-        </Accordion>
+        </CustomAccordionLast >
 
         <Box
           sx={{

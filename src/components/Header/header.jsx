@@ -5,10 +5,10 @@ import { useMediaQuery } from "@material-ui/core";
 import { useTheme } from "@material-ui/core/styles";
 import { Paper, Box } from "@mui/material";
 
-import { Link } from "react-router-dom";
 
-import SearchIcon from "@mui/icons-material/Search";
 import TextField from "@mui/material/TextField";
+import SearchIcon from "@mui/icons-material/Search";
+import { Link } from "react-router-dom";
 
 import logo from "../assets/logo.png";
 import { IconButton, makeStyles } from "@material-ui/core";

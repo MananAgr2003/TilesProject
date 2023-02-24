@@ -27,11 +27,24 @@ import HomeIcon from "@material-ui/icons/Home";
 import InfoIcon from "@material-ui/icons/Info";
 import ContactMailIcon from "@material-ui/icons/ContactMail";
 import { Accordion, AccordionSummary, AccordionDetails } from "@mui/material";
+import { styled } from "@mui/material/styles";
+
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+const CustomAccordion = styled(Accordion)({
+  "&.Mui-expanded": {
+    margin: 0,
+  },
+});
+const CustomAccordionLast = styled(Accordion)({
+  "&.Mui-expanded": {
+    margin: "10 0 0 0",
+  },
+  marginBottom: "50px",
+});
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-   
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -54,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "white",
     border: "none",
     position: "relative",
-    top: "35px",
+    top: "45px",
     right: "5px",
     border: "5px solid white",
     "&::before": {
@@ -63,11 +76,10 @@ const useStyles = makeStyles((theme) => ({
     "&$expanded": {
       margin: "auto",
 
-      '&.Mui-focused': {
-        backgroundColor: 'transparent',
+      "&.Mui-focused": {
+        backgroundColor: "transparent",
       },
     },
-    
   },
   accNew: {
     backgroundColor: "white",
@@ -81,14 +93,12 @@ const useStyles = makeStyles((theme) => ({
     },
     "&$expanded": {
       margin: "auto",
-
-      
     },
-    '&.Mui-focused': {
-      backgroundColor: 'transparent',
+    "&.Mui-focused": {
+      backgroundColor: "transparent",
     },
-    textDecoration:"none",
-    color:"black"
+    textDecoration: "none",
+    color: "black",
   },
   accNew1: {
     backgroundColor: "white",
@@ -102,11 +112,9 @@ const useStyles = makeStyles((theme) => ({
     },
     "&$expanded": {
       margin: "auto",
-
-      
     },
-    '&.Mui-focused': {
-      backgroundColor: 'transparent',
+    "&.Mui-focused": {
+      backgroundColor: "transparent",
     },
   },
   acc1: {
@@ -118,12 +126,10 @@ const useStyles = makeStyles((theme) => ({
     padding: "0px 0px",
     border: "5px solid transparent",
     marginBottom: "-10px",
-    display:"flex",
-    flexDirection:"column"
+    display: "flex",
+    flexDirection: "column",
   },
-  accChev: {
-   
-  },
+  accChev: {},
 }));
 
 const Navbar = () => {
@@ -159,7 +165,7 @@ const Navbar = () => {
             position: "relative",
 
             left: "25px",
-          
+
             margin: "55px auto 0px auto",
           }}
         />
@@ -194,12 +200,18 @@ const Navbar = () => {
         </Typography>
       </Box>
       <List>
-        <ListItem disableRipple button key="5" component="a" href="/" style={{
-
-          position:"relative",
-           top:"45px",
-           left:"15px"
-        }}>
+        <ListItem
+          disableRipple
+          button
+          key="5"
+          component="a"
+          href="/"
+          style={{
+            position: "relative",
+            top: "45px",
+            left: "15px",
+          }}
+        >
           <img
             src={icon1}
             alt=""
@@ -213,12 +225,18 @@ const Navbar = () => {
           />
           <Typography variant="body1">Home Screen</Typography>
         </ListItem>
-        <ListItem disableRipple button key="5" component="a" href="/aboutus" style={{
-
-          position:"relative",
-           top:"45px",
-           left:"15px"
-        }}>
+        <ListItem
+          disableRipple
+          button
+          key="5"
+          component="a"
+          href="/aboutus"
+          style={{
+            position: "relative",
+            top: "45px",
+            left: "15px",
+          }}
+        >
           <img
             src={icon2}
             alt=""
@@ -232,13 +250,19 @@ const Navbar = () => {
           />
           <Typography variant="body1">About Us</Typography>
         </ListItem>
-        <ListItem disableRipple button key="5" component="a" href="/contactus" style={{
-
-          position:"relative",
-           top:"45px",
-           left:"15px",
-           marginBottom:"45px"
-        }}>
+        <ListItem
+          disableRipple
+          button
+          key="5"
+          component="a"
+          href="/contactus"
+          style={{
+            position: "relative",
+            top: "45px",
+            left: "15px",
+            marginBottom: "15px",
+          }}
+        >
           <img
             src={icon3}
             alt=""
@@ -252,10 +276,9 @@ const Navbar = () => {
           />
           <Typography variant="body1">Contact Us</Typography>
         </ListItem>
-       
-       
+
         <ListItem disableRipple button key="5" component="a">
-          <Accordion
+          <CustomAccordion
             elevation={0}
             className={classes.accNew}
             sx={{
@@ -264,14 +287,10 @@ const Navbar = () => {
               flexDirection: "column",
               backgroundColor: "white",
               position: "relative",
-              marginTop:"-20px"
+              marginTop: "10px",
             }}
           >
-            <AccordionSummary
-              className={classes.acc1}
-            
-              
-            >
+            <AccordionSummary className={classes.acc1}>
               <img
                 src={icon6}
                 alt=""
@@ -283,19 +302,28 @@ const Navbar = () => {
                   right: "10px",
                 }}
               />
-              <Typography style={{
-                position:"relative",
-                bottom:"5px",
-                left:"10.5px"
-            
-              }} variant="body1">Faucets</Typography>
+              <Typography
+                style={{
+                  position: "relative",
+                  bottom: "5px",
+                  left: "10.5px",
+                }}
+                variant="body1"
+              >
+                Faucets
+              </Typography>
             </AccordionSummary>
             <AccordionDetails className={classes.acc2}>
-              <ListItem button component="a" href="/Productlist" style={{
-                position:"relative",
-                bottom:"20px",
-                right:"28px"
-              }}>
+              <ListItem
+                button
+                component="a"
+                href="/Productlist"
+                style={{
+                  position: "relative",
+                  bottom: "20px",
+                  right: "28px",
+                }}
+              >
                 {/* <ListItemIcon>
                   {" "}
                   <img
@@ -312,11 +340,16 @@ const Navbar = () => {
                 </ListItemIcon> */}
                 <ListItemText primary="Option1" />
               </ListItem>
-              <ListItem button component="a" href="/" style={{
-                position:"relative",
-                bottom:"20px",
-                right:"28px"
-              }}>
+              <ListItem
+                button
+                component="a"
+                href="/"
+                style={{
+                  position: "relative",
+                  bottom: "20px",
+                  right: "28px",
+                }}
+              >
                 {/* <ListItemIcon>
                   {" "}
                   <img
@@ -333,11 +366,16 @@ const Navbar = () => {
                 </ListItemIcon> */}
                 <ListItemText primary="Option2" />
               </ListItem>
-              <ListItem button component="a" href="/" style={{
-                position:"relative",
-                bottom:"20px",
-                right:"28px"
-              }}>
+              <ListItem
+                button
+                component="a"
+                href="/"
+                style={{
+                  position: "relative",
+                  bottom: "20px",
+                  right: "28px",
+                }}
+              >
                 {/* <ListItemIcon>
                   {" "}
                   <img
@@ -354,11 +392,16 @@ const Navbar = () => {
                 </ListItemIcon> */}
                 <ListItemText primary="Option4" />
               </ListItem>
-              <ListItem button component="a" href="/" style={{
-                position:"relative",
-                bottom:"20px",
-                right:"28px"
-              }}>
+              <ListItem
+                button
+                component="a"
+                href="/"
+                style={{
+                  position: "relative",
+                  bottom: "20px",
+                  right: "28px",
+                }}
+              >
                 {/* <ListItemIcon>
                   {" "}
                   <img
@@ -376,10 +419,10 @@ const Navbar = () => {
                 <ListItemText primary="Option4" />
               </ListItem>
             </AccordionDetails>
-          </Accordion>
+          </CustomAccordion>
         </ListItem>
         <ListItem disableRipple button key="5" component="a">
-          <Accordion
+          <CustomAccordion
             elevation={0}
             className={classes.accNew}
             sx={{
@@ -388,14 +431,13 @@ const Navbar = () => {
               flexDirection: "column",
               backgroundColor: "white",
               position: "relative",
-              marginTop:"-30px"
+              marginTop: "-30px",
+              "&.Mui-expanded": {
+               marginTop: "-30px"
+              },
             }}
           >
-            <AccordionSummary
-              className={classes.acc1}
-            
-              
-            >
+            <AccordionSummary className={classes.acc1}>
               <img
                 src={icon6}
                 alt=""
@@ -407,19 +449,28 @@ const Navbar = () => {
                   right: "10px",
                 }}
               />
-              <Typography style={{
-                position:"relative",
-                bottom:"5px",
-                left:"10.5px"
-            
-              }} variant="body1">Shower</Typography>
+              <Typography
+                style={{
+                  position: "relative",
+                  bottom: "5px",
+                  left: "10.5px",
+                }}
+                variant="body1"
+              >
+                Shower
+              </Typography>
             </AccordionSummary>
             <AccordionDetails className={classes.acc2}>
-              <ListItem button component="a" href="/Productlist" style={{
-                position:"relative",
-                bottom:"20px",
-                right:"28px"
-              }}>
+              <ListItem
+                button
+                component="a"
+                href="/Productlist"
+                style={{
+                  position: "relative",
+                  bottom: "20px",
+                  right: "28px",
+                }}
+              >
                 {/* <ListItemIcon>
                   {" "}
                   <img
@@ -436,11 +487,16 @@ const Navbar = () => {
                 </ListItemIcon> */}
                 <ListItemText primary="Option1" />
               </ListItem>
-              <ListItem button component="a" href="/" style={{
-                position:"relative",
-                bottom:"20px",
-                right:"28px"
-              }}>
+              <ListItem
+                button
+                component="a"
+                href="/"
+                style={{
+                  position: "relative",
+                  bottom: "20px",
+                  right: "28px",
+                }}
+              >
                 {/* <ListItemIcon>
                   {" "}
                   <img
@@ -457,11 +513,16 @@ const Navbar = () => {
                 </ListItemIcon> */}
                 <ListItemText primary="Option2" />
               </ListItem>
-              <ListItem button component="a" href="/" style={{
-                position:"relative",
-                bottom:"20px",
-                right:"28px"
-              }}>
+              <ListItem
+                button
+                component="a"
+                href="/"
+                style={{
+                  position: "relative",
+                  bottom: "20px",
+                  right: "28px",
+                }}
+              >
                 {/* <ListItemIcon>
                   {" "}
                   <img
@@ -478,11 +539,16 @@ const Navbar = () => {
                 </ListItemIcon> */}
                 <ListItemText primary="Option4" />
               </ListItem>
-              <ListItem button component="a" href="/" style={{
-                position:"relative",
-                bottom:"20px",
-                right:"28px"
-              }}>
+              <ListItem
+                button
+                component="a"
+                href="/"
+                style={{
+                  position: "relative",
+                  bottom: "20px",
+                  right: "28px",
+                }}
+              >
                 {/* <ListItemIcon>
                   {" "}
                   <img
@@ -500,11 +566,11 @@ const Navbar = () => {
                 <ListItemText primary="Option4" />
               </ListItem>
             </AccordionDetails>
-          </Accordion>
+          </CustomAccordion>
         </ListItem>
-        
+
         <ListItem disableRipple button key="5" component="a">
-          <Accordion
+          <CustomAccordion
             elevation={0}
             className={classes.accNew}
             sx={{
@@ -513,14 +579,10 @@ const Navbar = () => {
               flexDirection: "column",
               backgroundColor: "white",
               position: "relative",
-              marginTop:"-30px"
+              marginTop: "-30px",
             }}
           >
-            <AccordionSummary
-              className={classes.acc1}
-            
-              
-            >
+            <AccordionSummary className={classes.acc1}>
               <img
                 src={icon6}
                 alt=""
@@ -532,19 +594,28 @@ const Navbar = () => {
                   right: "10px",
                 }}
               />
-              <Typography style={{
-                position:"relative",
-                bottom:"5px",
-                left:"10.5px"
-            
-              }} variant="body1">Sanitaryware</Typography>
+              <Typography
+                style={{
+                  position: "relative",
+                  bottom: "5px",
+                  left: "10.5px",
+                }}
+                variant="body1"
+              >
+                Sanitaryware
+              </Typography>
             </AccordionSummary>
             <AccordionDetails className={classes.acc2}>
-              <ListItem button component="a" href="/Productlist" style={{
-                position:"relative",
-                bottom:"20px",
-                right:"28px"
-              }}>
+              <ListItem
+                button
+                component="a"
+                href="/Productlist"
+                style={{
+                  position: "relative",
+                  bottom: "20px",
+                  right: "28px",
+                }}
+              >
                 {/* <ListItemIcon>
                   {" "}
                   <img
@@ -561,11 +632,16 @@ const Navbar = () => {
                 </ListItemIcon> */}
                 <ListItemText primary="Option1" />
               </ListItem>
-              <ListItem button component="a" href="/" style={{
-                position:"relative",
-                bottom:"20px",
-                right:"28px"
-              }}>
+              <ListItem
+                button
+                component="a"
+                href="/"
+                style={{
+                  position: "relative",
+                  bottom: "20px",
+                  right: "28px",
+                }}
+              >
                 {/* <ListItemIcon>
                   {" "}
                   <img
@@ -582,11 +658,16 @@ const Navbar = () => {
                 </ListItemIcon> */}
                 <ListItemText primary="Option2" />
               </ListItem>
-              <ListItem button component="a" href="/" style={{
-                position:"relative",
-                bottom:"20px",
-                right:"28px"
-              }}>
+              <ListItem
+                button
+                component="a"
+                href="/"
+                style={{
+                  position: "relative",
+                  bottom: "20px",
+                  right: "28px",
+                }}
+              >
                 {/* <ListItemIcon>
                   {" "}
                   <img
@@ -603,11 +684,16 @@ const Navbar = () => {
                 </ListItemIcon> */}
                 <ListItemText primary="Option4" />
               </ListItem>
-              <ListItem button component="a" href="/" style={{
-                position:"relative",
-                bottom:"20px",
-                right:"28px"
-              }}>
+              <ListItem
+                button
+                component="a"
+                href="/"
+                style={{
+                  position: "relative",
+                  bottom: "20px",
+                  right: "28px",
+                }}
+              >
                 {/* <ListItemIcon>
                   {" "}
                   <img
@@ -625,10 +711,10 @@ const Navbar = () => {
                 <ListItemText primary="Option4" />
               </ListItem>
             </AccordionDetails>
-          </Accordion>
+          </CustomAccordion>
         </ListItem>
         <ListItem disableRipple button key="5" component="a">
-          <Accordion
+          <CustomAccordion
             elevation={0}
             className={classes.accNew}
             sx={{
@@ -637,14 +723,10 @@ const Navbar = () => {
               flexDirection: "column",
               backgroundColor: "white",
               position: "relative",
-              marginTop:"-30px"
+              marginTop: "-30px",
             }}
           >
-            <AccordionSummary
-              className={classes.acc1}
-            
-              
-            >
+            <AccordionSummary className={classes.acc1}>
               <img
                 src={icon6}
                 alt=""
@@ -656,19 +738,28 @@ const Navbar = () => {
                   right: "10px",
                 }}
               />
-              <Typography style={{
-                position:"relative",
-                bottom:"5px",
-                left:"10.5px"
-            
-              }} variant="body1">Accessories</Typography>
+              <Typography
+                style={{
+                  position: "relative",
+                  bottom: "5px",
+                  left: "10.5px",
+                }}
+                variant="body1"
+              >
+                Accessories
+              </Typography>
             </AccordionSummary>
             <AccordionDetails className={classes.acc2}>
-              <ListItem button component="a" href="/Productlist" style={{
-                position:"relative",
-                bottom:"20px",
-                right:"28px"
-              }}>
+              <ListItem
+                button
+                component="a"
+                href="/Productlist"
+                style={{
+                  position: "relative",
+                  bottom: "20px",
+                  right: "28px",
+                }}
+              >
                 {/* <ListItemIcon>
                   {" "}
                   <img
@@ -685,11 +776,16 @@ const Navbar = () => {
                 </ListItemIcon> */}
                 <ListItemText primary="Option1" />
               </ListItem>
-              <ListItem button component="a" href="/" style={{
-                position:"relative",
-                bottom:"20px",
-                right:"28px"
-              }}>
+              <ListItem
+                button
+                component="a"
+                href="/"
+                style={{
+                  position: "relative",
+                  bottom: "20px",
+                  right: "28px",
+                }}
+              >
                 {/* <ListItemIcon>
                   {" "}
                   <img
@@ -706,11 +802,16 @@ const Navbar = () => {
                 </ListItemIcon> */}
                 <ListItemText primary="Option2" />
               </ListItem>
-              <ListItem button component="a" href="/" style={{
-                position:"relative",
-                bottom:"20px",
-                right:"28px"
-              }}>
+              <ListItem
+                button
+                component="a"
+                href="/"
+                style={{
+                  position: "relative",
+                  bottom: "20px",
+                  right: "28px",
+                }}
+              >
                 {/* <ListItemIcon>
                   {" "}
                   <img
@@ -727,11 +828,16 @@ const Navbar = () => {
                 </ListItemIcon> */}
                 <ListItemText primary="Option4" />
               </ListItem>
-              <ListItem button component="a" href="/" style={{
-                position:"relative",
-                bottom:"20px",
-                right:"28px"
-              }}>
+              <ListItem
+                button
+                component="a"
+                href="/"
+                style={{
+                  position: "relative",
+                  bottom: "20px",
+                  right: "28px",
+                }}
+              >
                 {/* <ListItemIcon>
                   {" "}
                   <img
@@ -749,11 +855,11 @@ const Navbar = () => {
                 <ListItemText primary="Option4" />
               </ListItem>
             </AccordionDetails>
-          </Accordion>
+          </CustomAccordion>
         </ListItem>
-        
+
         <ListItem disableRipple button key="5" component="a">
-          <Accordion
+          <CustomAccordion
             elevation={0}
             className={classes.accNew}
             sx={{
@@ -762,14 +868,10 @@ const Navbar = () => {
               flexDirection: "column",
               backgroundColor: "white",
               position: "relative",
-              marginTop:"-30px"
+              marginTop: "-30px",
             }}
           >
-            <AccordionSummary
-              className={classes.acc1}
-            
-              
-            >
+            <AccordionSummary className={classes.acc1}>
               <img
                 src={icon6}
                 alt=""
@@ -781,19 +883,28 @@ const Navbar = () => {
                   right: "10px",
                 }}
               />
-              <Typography style={{
-                position:"relative",
-                bottom:"5px",
-                left:"10.5px"
-            
-              }} variant="body1">Lighting</Typography>
+              <Typography
+                style={{
+                  position: "relative",
+                  bottom: "5px",
+                  left: "10.5px",
+                }}
+                variant="body1"
+              >
+                Lighting
+              </Typography>
             </AccordionSummary>
             <AccordionDetails className={classes.acc2}>
-              <ListItem button component="a" href="/Productlist" style={{
-                position:"relative",
-                bottom:"20px",
-                right:"28px"
-              }}>
+              <ListItem
+                button
+                component="a"
+                href="/Productlist"
+                style={{
+                  position: "relative",
+                  bottom: "20px",
+                  right: "28px",
+                }}
+              >
                 {/* <ListItemIcon>
                   {" "}
                   <img
@@ -810,11 +921,16 @@ const Navbar = () => {
                 </ListItemIcon> */}
                 <ListItemText primary="Option1" />
               </ListItem>
-              <ListItem button component="a" href="/" style={{
-                position:"relative",
-                bottom:"20px",
-                right:"28px"
-              }}>
+              <ListItem
+                button
+                component="a"
+                href="/"
+                style={{
+                  position: "relative",
+                  bottom: "20px",
+                  right: "28px",
+                }}
+              >
                 {/* <ListItemIcon>
                   {" "}
                   <img
@@ -831,11 +947,16 @@ const Navbar = () => {
                 </ListItemIcon> */}
                 <ListItemText primary="Option2" />
               </ListItem>
-              <ListItem button component="a" href="/" style={{
-                position:"relative",
-                bottom:"20px",
-                right:"28px"
-              }}>
+              <ListItem
+                button
+                component="a"
+                href="/"
+                style={{
+                  position: "relative",
+                  bottom: "20px",
+                  right: "28px",
+                }}
+              >
                 {/* <ListItemIcon>
                   {" "}
                   <img
@@ -852,11 +973,16 @@ const Navbar = () => {
                 </ListItemIcon> */}
                 <ListItemText primary="Option4" />
               </ListItem>
-              <ListItem button component="a" href="/" style={{
-                position:"relative",
-                bottom:"20px",
-                right:"28px"
-              }}>
+              <ListItem
+                button
+                component="a"
+                href="/"
+                style={{
+                  position: "relative",
+                  bottom: "20px",
+                  right: "28px",
+                }}
+              >
                 {/* <ListItemIcon>
                   {" "}
                   <img
@@ -874,29 +1000,20 @@ const Navbar = () => {
                 <ListItemText primary="Option4" />
               </ListItem>
             </AccordionDetails>
-          </Accordion>
+          </CustomAccordion>
         </ListItem>
-        
-        <ListItem disableRipple button key="5" component="a" sx={{
-          
-              
-            
-             
-            }}>
-          <Box component="a" href="/catalouge"
+
+        <ListItem disableRipple button key="5" component="a" sx={{}}>
+          <Box
+            component="a"
+            href="/catalouge"
             elevation={0}
             className={classes.accNew}
             style={{
-
-              marginTop:"-30px"
+              marginTop: "-30px",
             }}
-            
           >
-            <AccordionSummary
-              className={classes.acc1}
-            
-              
-            >
+            <AccordionSummary className={classes.acc1}>
               <img
                 src={icon6}
                 alt=""
@@ -908,37 +1025,31 @@ const Navbar = () => {
                   right: "10px",
                 }}
               />
-              <Typography style={{
-                position:"relative",
-                bottom:"5px",
-                left:"10.5px"
-            
-              }} variant="body1">Catalouge</Typography>
+              <Typography
+                style={{
+                  position: "relative",
+                  bottom: "5px",
+                  left: "10.5px",
+                }}
+                variant="body1"
+              >
+                Catalouge
+              </Typography>
             </AccordionSummary>
-           
           </Box>
         </ListItem>
-        
-        <ListItem disableRipple button key="5" component="a" sx={{
-          
-              
-            
-             
-            }}>
-          <Box component="a" href="/catalouge"
+
+        <ListItem disableRipple button key="5" component="a" sx={{}}>
+          <Box
+            component="a"
+            href="/catalouge"
             elevation={0}
             className={classes.accNew}
             style={{
-
-              marginTop:"-30px"
+              marginTop: "-30px",
             }}
-            
           >
-            <AccordionSummary
-              className={classes.acc1}
-            
-              
-            >
+            <AccordionSummary className={classes.acc1}>
               <img
                 src={icon6}
                 alt=""
@@ -950,20 +1061,19 @@ const Navbar = () => {
                   right: "10px",
                 }}
               />
-              <Typography style={{
-                position:"relative",
-                bottom:"5px",
-                left:"10.5px"
-            
-              }} variant="body1">Tile Visualizer</Typography>
+              <Typography
+                style={{
+                  position: "relative",
+                  bottom: "5px",
+                  left: "10.5px",
+                }}
+                variant="body1"
+              >
+                Tile Visualizer
+              </Typography>
             </AccordionSummary>
-           
           </Box>
         </ListItem>
-        
-      
-        
-        
       </List>
     </div>
   );

@@ -39,6 +39,7 @@ export default function Overview() {
             span: {
               color: "#89A963",
             },
+            marginTop:{md:"" , xs:"30px"}
           }}
         >
           Our Major <span>Brands We Deal In</span>
