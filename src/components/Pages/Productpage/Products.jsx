@@ -119,7 +119,8 @@ export default function Products() {
             padding: {xs:"0rem 0rem 0rem 0.2rem",md:"0rem 3rem 0rem 3rem"},
          
             width:"100vw",
-            margin:"auto"
+            margin:"auto",
+            marginTop:{md:"" , xs:"20px"}
 
           }}
         >
