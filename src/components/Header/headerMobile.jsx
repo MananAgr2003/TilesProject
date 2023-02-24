@@ -67,6 +67,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: 'transparent',
       },
     },
+    
   },
   accNew: {
     backgroundColor: "white",
@@ -86,6 +87,8 @@ const useStyles = makeStyles((theme) => ({
     '&.Mui-focused': {
       backgroundColor: 'transparent',
     },
+    textDecoration:"none",
+    color:"black"
   },
   accNew1: {
     backgroundColor: "white",
@@ -874,18 +877,20 @@ const Navbar = () => {
           </Accordion>
         </ListItem>
         
-        <ListItem disableRipple button key="5" component="a">
-          <Accordion
+        <ListItem disableRipple button key="5" component="a" sx={{
+          
+              
+            
+             
+            }}>
+          <Box component="a" href="/catalouge"
             elevation={0}
             className={classes.accNew}
-            sx={{
-              mt: "0rem",
-              display: "flex",
-              flexDirection: "column",
-              backgroundColor: "white",
-              position: "relative",
+            style={{
+
               marginTop:"-30px"
             }}
+            
           >
             <AccordionSummary
               className={classes.acc1}
@@ -911,21 +916,23 @@ const Navbar = () => {
               }} variant="body1">Catalouge</Typography>
             </AccordionSummary>
            
-          </Accordion>
+          </Box>
         </ListItem>
         
-        <ListItem disableRipple button key="5" component="a">
-          <Accordion
+        <ListItem disableRipple button key="5" component="a" sx={{
+          
+              
+            
+             
+            }}>
+          <Box component="a" href="/catalouge"
             elevation={0}
             className={classes.accNew}
-            sx={{
-              mt: "0rem",
-              display: "flex",
-              flexDirection: "column",
-              backgroundColor: "white",
-              position: "relative",
+            style={{
+
               marginTop:"-30px"
             }}
+            
           >
             <AccordionSummary
               className={classes.acc1}
@@ -951,8 +958,10 @@ const Navbar = () => {
               }} variant="body1">Tile Visualizer</Typography>
             </AccordionSummary>
            
-          </Accordion>
+          </Box>
         </ListItem>
+        
+      
         
         
       </List>

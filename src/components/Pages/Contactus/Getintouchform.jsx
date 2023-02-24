@@ -1,8 +1,22 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Typography, TextField, Button, Grid } from "@material-ui/core";
+import { Typography, TextField, Button, Grid , Box , Checkbox} from "@material-ui/core";
 import { useMediaQuery } from "@material-ui/core";
 import { useTheme } from "@material-ui/core/styles";
+import { styled } from '@mui/material/styles';
+
+import banner from "../../assets/contactus/captcha.png";
+
+const CustomCheckbox = styled(Checkbox)({
+  '&.Mui-checked': {
+    color: '#89a963', // change the color when checked
+  },
+
+  "&:hover":{
+
+    backgroundColor:"transparent"
+  }
+});
 const useStyles = makeStyles((theme) => ({
   root: {
     padding: "75px 37px 89px 59px",
@@ -20,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
   root1: {
     padding: "20px",
     width: "95vw",
-    height: "800px",
+    height: "810px",
 
     border: "1px solid #ccc",
     borderRadius: "4px",
@@ -56,13 +70,16 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#FDFFFA",
   },
   submitButton: {
-    marginTop: "20px",
+    marginTop: "0px",
     backgroundColor: "#89A963",
 
     "&:hover":{
       backgroundColor:"#89a963"
     }
   },
+  captcha:{
+
+  }
 }));
 
 const GetInTouchForm = () => {
@@ -125,6 +142,43 @@ const GetInTouchForm = () => {
               className={classes.formControl}
             />
           </Grid>
+          <Grid item xs={12} style={{
+
+            position:"relative"
+          }}>
+            <Box
+              variant="contained"
+              color="primary"
+              style={{
+          
+                height:"50px",
+                width:"200px",
+                boxShadow: "2px 2px 5px rgba(0, 0, 0, 0.3)"
+
+              }}
+            >
+             <img src={banner} alt="" style={{
+
+              width:"100%",
+              height:"100%"
+             }}/>
+             <CustomCheckbox style={{
+
+              zIndex:"9999",
+              position:"absolute",
+              top:11.5,
+              left:4,
+              "&.Mui-checked": {
+              
+                  color: "#89A963",
+                
+              },
+
+             }}/>
+            </Box>
+        
+        
+          </Grid>
           <Grid item xs={12}>
             <Button
               variant="contained"
@@ -133,6 +187,8 @@ const GetInTouchForm = () => {
             >
               Send Message
             </Button>
+        
+        
           </Grid>
         </Grid>
       </form>

@@ -11,6 +11,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import banner from "../assets/banner2.png";
 import arrow from "../assets/arrow.png";
+import { Box} from "@mui/material";
 
 const product ={
 
@@ -104,7 +105,7 @@ export default function ProductCardMob(props) {
   
 
   return (
-    <Link to="/product" style={{ textDecoration: 'none' }}>
+    <Box component="a" href="/product" style={{ textDecoration: 'none' }}>
     <Card className={classes.root}  disableRipple  elevation={0}>
       <CardActionArea disableRipple>
         <div 
@@ -138,6 +139,6 @@ export default function ProductCardMob(props) {
         </Button>
       </CardActions>
     </Card>
-    </Link>
+    </Box>
   );
 }

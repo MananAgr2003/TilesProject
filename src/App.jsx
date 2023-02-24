@@ -10,6 +10,7 @@ import FooterFoot from "./components/FooterFoot";
 import Tooltip from "./components/Tootip";
 import TooltipMob from "./components/ToolTipMob";
 import ToolTip2 from "./components/ToolTip2";
+import ToolTip3 from "./components/ToolTip3";
 import Homepage from "./components/Pages/Homepage";
 import Productpage from "./components/Pages/Productpage";
 import RoutesFunc from "./components/Pages/Routes";
@@ -34,11 +35,13 @@ function App() {
             <>
               <TooltipMob></TooltipMob>
               <ToolTip2></ToolTip2>
+              <ToolTip3></ToolTip3>
             </>
           ) : (
             <>
               <Tooltip></Tooltip>
               <ToolTip2></ToolTip2>
+              <ToolTip3></ToolTip3>
             </>
           )}
         </>
