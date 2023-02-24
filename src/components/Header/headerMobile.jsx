@@ -433,7 +433,7 @@ const Navbar = () => {
               position: "relative",
               marginTop: "-30px",
               "&.Mui-expanded": {
-               marginTop: "-30px"
+                marginTop: "-30px",
               },
             }}
           >
@@ -1115,11 +1115,13 @@ const Navbar = () => {
           </Link>
           {isMobile && (
             <>
-              <img
-                src={icon4}
-                alt=""
-                style={{ position: "relative", left: "115px" }}
-              />
+              <Link to="/searchpage">
+                <img
+                  src={icon4}
+                  alt=""
+                  style={{ position: "relative", left: "115px" }}
+                />
+              </Link>
               <IconButton
                 edge="end"
                 className={classes.menuButton}
