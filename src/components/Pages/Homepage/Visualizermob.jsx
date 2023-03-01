@@ -16,6 +16,8 @@ import image9 from "../../assets/tiles/tile9.png";
 import { useMediaQuery } from "@material-ui/core";
 import { useTheme } from "@material-ui/core/styles";
 import banner from "../../assets/banner4.png";
+import MovingLine from "../../cards/line";
+
 
 const useStyles = makeStyles((theme) => ({
   root: {

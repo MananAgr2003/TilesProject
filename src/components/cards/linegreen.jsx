@@ -18,7 +18,7 @@ const useStyles = makeStyles({
   line1: {
     width: "30px",
     height: "10px",
-    backgroundColor: "white",
+    backgroundColor: "#f3f6ef",
     position: "relative",
     animation: "$move 6s infinite",
   },

@@ -5,6 +5,7 @@ import { useTheme } from "@material-ui/core/styles";
 import { Paper, Typography, Container, Button, Box, Grid } from "@mui/material";
 import banner from "../../assets/banner3.png";
 import brand from "../../assets/brand.png";
+import MovingLine from "../../cards/line";
 
 export default function Overview() {
   const theme = useTheme();
@@ -31,19 +32,38 @@ export default function Overview() {
           alignItems: "center",
         }}
       >
-        <Typography
-          variant="h4"
+        <Box
           sx={{
-            fontFamily: "unna",
-            fontSize: { md: "3rem", xs: "1.8rem" },
-            span: {
-              color: "#89A963",
-            },
-            marginTop:{md:"" , xs:"30px"}
+            position: "relative",
           }}
         >
-          Our Major <span>Brands We Deal In</span>
-        </Typography>
+          <Typography
+            variant="h4"
+            sx={{
+              fontFamily: "unna",
+              fontSize: { md: "3rem", xs: "1.8rem" },
+              span: {
+                color: "#89A963",
+              },
+              marginTop: { md: "", xs: "30px" },
+            }}
+          >
+            Our Major <span>Brands We Deal In</span>
+          </Typography>
+          <Box
+          sx={{
+            height: "50px",
+            width: "100%",
+            overflow: "hidden",
+            position: "absolute",
+            top: {md:"75px" , xs:"50px"},
+            left: "5px",
+          }}
+        >
+          <MovingLine></MovingLine>
+        </Box>
+        </Box>
+       
 
         <Box
           sx={{
@@ -184,12 +204,15 @@ export default function Overview() {
                       justifyContent: "center",
                       alignItems: "center",
                       width: "100%",
-                      height:"100%",
-
-                     
+                      height: "100%",
                     }}
                   >
-                    <Box component="img" src={brand} alt="" sx={{height:"120px"}}/>
+                    <Box
+                      component="img"
+                      src={brand}
+                      alt=""
+                      sx={{ height: "120px" }}
+                    />
                   </Box>
                 </Grid>
                 <Grid item xs={4}>
@@ -201,12 +224,15 @@ export default function Overview() {
                       justifyContent: "center",
                       alignItems: "center",
                       width: "100%",
-                      height:"100%",
-
-                     
+                      height: "100%",
                     }}
                   >
-                    <Box component="img" src={brand} alt="" sx={{height:"120px"}}/>
+                    <Box
+                      component="img"
+                      src={brand}
+                      alt=""
+                      sx={{ height: "120px" }}
+                    />
                   </Box>
                 </Grid>
                 <Grid item xs={4}>
@@ -218,12 +244,15 @@ export default function Overview() {
                       justifyContent: "center",
                       alignItems: "center",
                       width: "100%",
-                      height:"100%",
-
-                     
+                      height: "100%",
                     }}
                   >
-                    <Box component="img" src={brand} alt="" sx={{height:"120px"}}/>
+                    <Box
+                      component="img"
+                      src={brand}
+                      alt=""
+                      sx={{ height: "120px" }}
+                    />
                   </Box>
                 </Grid>
                 <Grid item xs={4}>
@@ -235,12 +264,15 @@ export default function Overview() {
                       justifyContent: "center",
                       alignItems: "center",
                       width: "100%",
-                      height:"100%",
-
-                     
+                      height: "100%",
                     }}
                   >
-                    <Box component="img" src={brand} alt="" sx={{height:"120px"}}/>
+                    <Box
+                      component="img"
+                      src={brand}
+                      alt=""
+                      sx={{ height: "120px" }}
+                    />
                   </Box>
                 </Grid>
                 <Grid item xs={4}>
@@ -252,12 +284,15 @@ export default function Overview() {
                       justifyContent: "center",
                       alignItems: "center",
                       width: "100%",
-                      height:"100%",
-
-                     
+                      height: "100%",
                     }}
                   >
-                    <Box component="img" src={brand} alt="" sx={{height:"120px"}}/>
+                    <Box
+                      component="img"
+                      src={brand}
+                      alt=""
+                      sx={{ height: "120px" }}
+                    />
                   </Box>
                 </Grid>
                 <Grid item xs={4}>
@@ -269,12 +304,15 @@ export default function Overview() {
                       justifyContent: "center",
                       alignItems: "center",
                       width: "100%",
-                      height:"100%",
-
-                     
+                      height: "100%",
                     }}
                   >
-                    <Box component="img" src={brand} alt="" sx={{height:"120px"}}/>
+                    <Box
+                      component="img"
+                      src={brand}
+                      alt=""
+                      sx={{ height: "120px" }}
+                    />
                   </Box>
                 </Grid>
                 <Grid item xs={4}>
@@ -286,12 +324,15 @@ export default function Overview() {
                       justifyContent: "center",
                       alignItems: "center",
                       width: "100%",
-                      height:"100%",
-
-                     
+                      height: "100%",
                     }}
                   >
-                    <Box component="img" src={brand} alt="" sx={{height:"120px"}}/>
+                    <Box
+                      component="img"
+                      src={brand}
+                      alt=""
+                      sx={{ height: "120px" }}
+                    />
                   </Box>
                 </Grid>
                 <Grid item xs={4}>
@@ -303,12 +344,15 @@ export default function Overview() {
                       justifyContent: "center",
                       alignItems: "center",
                       width: "100%",
-                      height:"100%",
-
-                     
+                      height: "100%",
                     }}
                   >
-                    <Box component="img" src={brand} alt="" sx={{height:"120px"}}/>
+                    <Box
+                      component="img"
+                      src={brand}
+                      alt=""
+                      sx={{ height: "120px" }}
+                    />
                   </Box>
                 </Grid>
                 <Grid item xs={4}>
@@ -320,12 +364,15 @@ export default function Overview() {
                       justifyContent: "center",
                       alignItems: "center",
                       width: "100%",
-                      height:"100%",
-
-                     
+                      height: "100%",
                     }}
                   >
-                    <Box component="img" src={brand} alt="" sx={{height:"120px"}}/>
+                    <Box
+                      component="img"
+                      src={brand}
+                      alt=""
+                      sx={{ height: "120px" }}
+                    />
                   </Box>
                 </Grid>
               </Grid>

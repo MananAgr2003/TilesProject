@@ -14,6 +14,8 @@ import product6 from "../../assets/products/product6.png";
 import product7 from "../../assets/products/product7.png";
 import product8 from "../../assets/products/product8.png";
 import product9 from "../../assets/products/product9.png";
+import MovingLine from "../../cards/line";
+
 const products = [
   {
     image: product4,
@@ -94,6 +96,7 @@ export default function ProductList() {
           
         }}
       >
+        <Box sx={{position:"relative"}}>
         <Typography
           variant="h4"
           sx={{
@@ -107,6 +110,19 @@ export default function ProductList() {
         >
           Product <span>Categories</span>
         </Typography>
+        <Box sx={{
+              height:"50px",
+              width:"100%",
+              overflow:"hidden",
+              position:"absolute",
+              top: {md:"40px" , xs:"20px"},
+
+             left:"0px"
+            }}>
+            <MovingLine></MovingLine>
+            </Box>
+        
+</Box>
         <Box
           className={!isScreenSmall ? classes.root : classes.root1}
           sx={{

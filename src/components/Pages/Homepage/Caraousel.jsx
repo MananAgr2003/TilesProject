@@ -8,6 +8,8 @@ import { Button, Typography } from "@mui/material";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
 import banner from "../../assets/banner.png";
+import MovingLine from "../../cards/line";
+
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 

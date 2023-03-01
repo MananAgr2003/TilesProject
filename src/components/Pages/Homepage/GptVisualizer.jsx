@@ -17,6 +17,8 @@ import { useMediaQuery } from "@material-ui/core";
 import { useTheme } from "@material-ui/core/styles";
 
 import banner from "../../assets/banner4.png";
+import MovingLine from "../../cards/line";
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -146,7 +148,10 @@ function App() {
   }, [clicked]);
 
   const handleClick = (index) => {
+
+ 
    
+    setClicked(index);
     let imageName = "image" + index;
     console.log(imageName);
 
@@ -154,17 +159,16 @@ function App() {
     console.log(dynamicVariable);
 
     setSelectedImage(dynamicVariable);
-    setClicked(index);
     
   };
 
   return (
-    <Box   id="section" className={classes.root}>
+    <Box className={classes.root}>
       <Grid container spacing={3}>
         <Grid item xs={12} md={9}>
           <Grid container className={classes.grid} spacing={3}>
             <Grid item xs={12}>
-              <Typography className={classes.gridHeading} variant="h5">
+              <Typography  className={classes.gridHeading} variant="h5">
                 Tiles Visualizer <hr className={classes.gridHeadingLine}></hr>
               </Typography>
             </Grid>
@@ -269,7 +273,7 @@ function App() {
               alt="selected"
               id="section"
             />
-            <Box   className={classes.gridBox}
+            <Box id="section"   className={classes.gridBox}
              
               size="small"
             >
