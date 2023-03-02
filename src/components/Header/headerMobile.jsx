@@ -250,7 +250,7 @@ const Navbar = () => {
           />
           <Typography variant="body1">About Us</Typography>
         </ListItem>
-        <Link to="/contactus" style={{textDecoration:"none" , color:"black"}}>
+   
         <ListItem
           disableRipple
           button
@@ -278,8 +278,7 @@ const Navbar = () => {
           />
           <Typography variant="body1">Contact Us</Typography>
         </ListItem>
-        </Link>
-
+        
         <ListItem disableRipple button key="5" component="a">
           <CustomAccordion
             elevation={0}

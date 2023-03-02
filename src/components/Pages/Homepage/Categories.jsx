@@ -52,7 +52,7 @@ const products = [
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    marginTop: "80px",
+    marginTop: "0px",
     width: "100vw",
     overflow: "hidden",
   },

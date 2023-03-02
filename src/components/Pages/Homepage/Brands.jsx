@@ -57,7 +57,7 @@ export default function Overview() {
             overflow: "hidden",
             position: "absolute",
             top: {md:"75px" , xs:"50px"},
-            left:{md: "190px"},
+            left:{md: "190px" , xs:"110px"},
           }}
         >
           <MovingLine></MovingLine>

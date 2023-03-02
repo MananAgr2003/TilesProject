@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
   root1: {
     padding: "20px",
     width: "95vw",
-    height: "810px",
+    height: "850px",
 
     border: "1px solid #ccc",
     borderRadius: "4px",

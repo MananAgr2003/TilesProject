@@ -42,7 +42,7 @@ export default function Text() {
             md: "100vw",
             xs: "100vw",
           },
-          margin: {md:"80px 4rem 0rem 4rem" , xs:"430px 2rem 0rem 2rem"},
+          margin: {md:"80px 4rem 0rem 4rem" , xs:"460px 2rem 0rem 2rem"},
 
           zIndex: "1000",
           fontWeight: 700,
@@ -430,7 +430,7 @@ export default function Text() {
                  span:{
                     color:"red"
                  }
-              }}> Weekend Closed</Typography>
+              }}> </Typography>
            
           </Box>
         </Box>
