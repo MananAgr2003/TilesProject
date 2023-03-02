@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Tooltip from "@material-ui/core/Tooltip";
+import { Paper, Typography, Container, Button, Box } from "@mui/material";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -40,9 +41,9 @@ const VerticalRectangleMob = (props) => {
 
   return (
     <Tooltip title="Tiles" placement="left" onClick={handleClick}>
-      <div className={classes.container}>
+      <Box component="a" href="/comingsoon" className={classes.container}>
         <p className={classes.containerP}>Tiles Visualizer</p>
-      </div>
+      </Box>
     </Tooltip>
   );
 };
