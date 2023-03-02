@@ -19,6 +19,8 @@ import product7 from "../../assets/products/product7.png";
 import product8 from "../../assets/products/product8.png";
 import product9 from "../../assets/products/product9.png";
 import HeightWrapper from "../../AnimationWrapper/Height";
+import MovingLine from "../../cards/line";
+
 const products = [
   {
     image: product1,
@@ -104,6 +106,7 @@ export default function Products() {
           overflow:"hidden"
         }}
       >
+        <Box sx={{position:"relative"}}>
         <Typography
           variant="h4"
           sx={{
@@ -113,6 +116,19 @@ export default function Products() {
         >
           Similar Products
         </Typography>
+        <Box
+                sx={{
+                  height: "50px",
+                  width: {md:"200px" , xs:"130px"},
+                  overflow: "hidden",
+                  position: "absolute",
+                  top:{md: "40px" , xs:"20px"},
+                  left:{md: "65px"  , xs:"40px"},
+                }}
+              >
+                <MovingLine></MovingLine>
+              </Box>
+            </Box>
         <Box
           sx={{
             flexGrow: 1,

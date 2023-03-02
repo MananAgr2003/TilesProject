@@ -346,7 +346,7 @@ const Navbar = () => {
               <ListItem
                 button
                 component="a"
-                href="/"
+                href="/comingsoon"
                 style={{
                   position: "relative",
                   bottom: "20px",

@@ -7,6 +7,8 @@ import { Waypoint } from "react-waypoint";
 import { useSpring, animated } from "react-spring";
 import banner from "../../assets/banner2.png";
 import FadeInWrapper from "../../AnimationWrapper/FadeIn";
+import MovingLine from "../../cards/line";
+
 
 function Number({ n }) {
   const [inView, setInview] = useState(false);
@@ -64,37 +66,56 @@ export default function AboutUs() {
             }}
           >
 
-            <FadeInWrapper>
-            <Typography
-              variant="body2"
+<Box
               sx={{
-                textAlign: { md: "left", xs: "center" },
-                fontSize: {
-                  xs:"1.7rem",md:"2.5rem"},
-                marginLeft: "1.5rem",
-                fontFamily: "unna",
-                span:{
-                  color:"#89a963"
-                },
-                position:{
-                  md:"relative",
-                  xs:"absolute"
+                position: {
+                  md: "relative",
+                  xs: "absolute",
                 },
 
-                top:{
-                  xs:"-50px",
-                  md:"0px"
+                top: {
+                  xs: "-50px",
+                  md: "0px",
                 },
-                left:{
-                  xs:"40px",
-                  md:"0px"
-                }
+                left: {
+                  xs: "40px",
+                  md: "0px",
+                },
               }}
             >
-              Who <span>Are We</span>
-            </Typography>
-            <br></br>
-            </FadeInWrapper>
+              <FadeInWrapper>
+                <Typography
+                  variant="body2"
+                  sx={{
+                    textAlign: { md: "left", xs: "center" },
+                    fontSize: {
+                      xs: "1.7rem",
+                      md: "2.5rem",
+                    },
+                    marginLeft: "1.5rem",
+                    fontFamily: "unna",
+                    span: {
+                      color: "#89a963",
+                    },
+                  }}
+                >
+                  Who <span>Are We</span>
+                </Typography>
+                <br></br>
+              </FadeInWrapper>
+              <Box
+                sx={{
+                  height: "50px",
+                  width: {md:"200px" , xs:"130px"},
+                  overflow: "hidden",
+                  position: "absolute",
+                  top:{md: "40px" , xs:"15px"},
+                  left: "30px",
+                }}
+              >
+                <MovingLine></MovingLine>
+              </Box>
+            </Box>
 
             <Typography
               variant="body2"

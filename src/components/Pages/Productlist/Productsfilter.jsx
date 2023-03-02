@@ -116,7 +116,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     padding: "0rem 1rem 0rem 2rem",
-    marginTop: "3rem",
+    marginTop: "4.2rem",
    
   },
   root1: {
@@ -767,7 +767,7 @@ function ProductFilter() {
             flexDirection: "row",
             position: "absolute",
             top: {md:-75 , xs:10},
-            left: {md:"75vw"  , xs:"18px"},
+            left: {md:"77.5vw"  , xs:"18px"},
             width: {md:"30vw" , xs:"100vw"},
             backgroundColor:"white"
           }}

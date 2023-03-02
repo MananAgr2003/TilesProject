@@ -60,6 +60,8 @@ function Faucets(props) {
               Option 1
             </div>
           </Link>
+          <Link to="/comingsoon" style={{ textDecoration: "none" }}>
+
           <div
             className="navbar-menu-item"
             key="2"
@@ -71,6 +73,7 @@ function Faucets(props) {
           >
             Option 2
           </div>
+          </Link>
           <div
             className="navbar-menu-item"
             key="3"

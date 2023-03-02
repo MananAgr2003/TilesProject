@@ -3,6 +3,17 @@ import { makeStyles } from "@material-ui/core/styles";
 import { useMediaQuery } from "@material-ui/core";
 import { useTheme } from "@material-ui/core/styles";
 import MilestoneMob from "./milestoneMob";
+import MovingLine from "../../cards/line";
+import {
+  Checkbox,
+  FormControlLabel,
+  Paper,
+  Typography,
+  Container,
+  Button,
+  Box,
+} from "@mui/material";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -73,7 +84,22 @@ const Milestone = () => {
         <>
           <>
             <div className={classes.root}>
+              <Box sx={{position:"relative"}}>
+              
               <h1 className={classes.heading}>Milestone</h1>
+              <Box
+                sx={{
+                  height: "50px",
+                  width: {md:"200px" , xs:"130px"},
+                  overflow: "hidden",
+                  position: "absolute",
+                  top:{md: "40px" , xs:"15px"},
+                  left: "0px",
+                }}
+              >
+                <MovingLine></MovingLine>
+              </Box>
+            </Box>
               <div className={classes.mainDiv}>
                 <div className={classes.line}>
                   <div className={classes.dot} style={{ left: "0%" }}></div>
