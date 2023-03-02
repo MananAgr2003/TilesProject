@@ -115,12 +115,12 @@ export default function ProductList() {
           <Box
             sx={{
               height: "10px",
-              width: "100%",
+              width: {md:"200px" , xs:"130px"},
               overflow: "hidden",
               position: "absolute",
               top: {md:"75px" , xs:"40px"},
 
-              left: "5px",
+              left: {xs:"30px" , md:"60px"},
             }}
           >
             <MovingLine></MovingLine>

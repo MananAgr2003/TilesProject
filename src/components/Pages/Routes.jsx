@@ -17,6 +17,7 @@ import LoadingPageTest from "../cards/loadtest";
 import { useMediaQuery } from "@material-ui/core";
 import { useTheme } from "@material-ui/core/styles";
 import Searchpage from "./SearchPage";
+import Comingus from "./comingus";
 
 const RoutesFunc = () => {
 
@@ -63,6 +64,7 @@ const RoutesFunc = () => {
             <Route path="/catalouge" element={<Catalouge />} />
             <Route path="/contactus" element={<Contactus />} />
             <Route path="/searchpage" element={<Searchpage />} />
+            <Route path="/comingsoon" element={<Comingus />} />
           </Routes>
      
       )}

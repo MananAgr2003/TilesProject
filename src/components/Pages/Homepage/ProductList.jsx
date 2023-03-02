@@ -112,12 +112,13 @@ export default function ProductList() {
         </Typography>
         <Box sx={{
               height:"50px",
-              width:"100%",
+              width: {md:"200px" , xs:"130px"},
+
               overflow:"hidden",
               position:"absolute",
-              top: {md:"40px" , xs:"20px"},
+              top: {md:"55px" , xs:"20px"},
 
-             left:"0px"
+             left:{xs:"50px" , md:"85px"}
             }}>
             <MovingLine></MovingLine>
             </Box>

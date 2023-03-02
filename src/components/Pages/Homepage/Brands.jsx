@@ -53,11 +53,11 @@ export default function Overview() {
           <Box
           sx={{
             height: "50px",
-            width: "100%",
+            width: {md:"200px" , xs:"130px"},
             overflow: "hidden",
             position: "absolute",
             top: {md:"75px" , xs:"50px"},
-            left: "5px",
+            left:{md: "190px"},
           }}
         >
           <MovingLine></MovingLine>
