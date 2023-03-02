@@ -194,7 +194,7 @@ export default function AboutUs() {
                   sx={{
                     textAlign: { md: "left", xs: "center" },
 
-                    marginLeft: { md: "1.5rem", xs: "0rem" },
+                    marginLeft: { md: "1.5rem", xs: "-1.2rem" },
                     lineHeight: "1.8rem",
                     fontSize: { md: "1.8rem", xs: "1.4rem" },
                     fontFamily: "unna",
@@ -239,7 +239,7 @@ export default function AboutUs() {
                   sx={{
                     textAlign: { md: "left", xs: "center" },
 
-                    marginLeft: { md: "1.5rem", xs: "0rem" },
+                    marginLeft: { md: "1.5rem", xs: "1.9rem" },
                     lineHeight: "1.8rem",
                     fontSize: { md: "1.8rem", xs: "1.4rem" },
                     fontFamily: "unna",
@@ -289,7 +289,7 @@ export default function AboutUs() {
                   sx={{
                     textAlign: { md: "left", xs: "center" },
 
-                    marginLeft: { md: "1.5rem", xs: "0rem" },
+                    marginLeft: { md: "1.5rem", xs: "-1.2rem" },
                     lineHeight: "1.8rem",
                     fontSize: { md: "1.8rem", xs: "1.4rem" },
                     fontFamily: "unna",
@@ -339,7 +339,7 @@ export default function AboutUs() {
                   sx={{
                     textAlign: { md: "left", xs: "center" },
 
-                    marginLeft: { md: "1.5rem", xs: "0rem" },
+                    marginLeft: { md: "1.5rem", xs: "1rem" },
                     lineHeight: "1.8rem",
                     fontSize: { md: "1.8rem", xs: "1.4rem" },
                     fontFamily: "unna",

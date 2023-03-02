@@ -14,7 +14,7 @@ import t9 from "../../assets/catalouge/t9.png";
 import icon from "../../assets/catalouge/dicon.png";
 import { useMediaQuery } from "@material-ui/core";
 import { useTheme } from "@material-ui/core/styles";
-
+import MovingLine from "../../cards/linegreen";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "column",
-    overflow:"hidden"
+    overflow: "hidden",
   },
   gridHead: {
     color: "#89a963",
@@ -36,8 +36,8 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "unna",
     fontSize: "30px",
     margin: "0px 50px 0px 50px",
-    position:"relative",
-    top:"18px"
+    position: "relative",
+    top: "18px",
   },
   gridMainDiv: {
     padding: "0px 44px 0px 44px",
@@ -58,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
   gridImageTall: {
     width: "100%",
     height: "100%",
-    objectFit: 'cover',
+    objectFit: "cover",
   },
   gridBox: {
     fontFamily: "julius sans one",
@@ -79,6 +79,30 @@ const useStyles = makeStyles((theme) => ({
     opacity: "0.8",
     padding: "0px 10px 0px 10px",
   },
+  MovingLine:{
+
+    height: "10px",
+            width: "200px",
+            overflow: "hidden",
+
+            position:"relative",
+          
+            top: "5px",
+            left: "58px",
+
+  },
+  MovingLineMob:{
+
+    height: "10px",
+            width: "130px",
+            overflow: "hidden",
+
+            position:"relative",
+          
+            top: "15px",
+            left: "50px",
+
+  },
 }));
 
 export default function Gridtiles() {
@@ -88,10 +112,34 @@ export default function Gridtiles() {
   const classes = useStyles();
   return (
     <Box className={classes.root}>
-      <Typography className={!isScreenSmall ? classes.gridHead  : classes.gridHead1 }>Floor Tiles</Typography>
-      <Grid container spacing={!isScreenSmall ? 2 : 1} className={!isScreenSmall ? classes.gridMainDiv : classes.gridMainDiv1}>
+      <Box style={{ position: "relative" }}>
+        <Typography
+          className={!isScreenSmall ? classes.gridHead : classes.gridHead1}
+        >
+          Floor Tiles
+        </Typography>
+        <Box
+
+className={!isScreenSmall ? classes.MovingLine : classes.MovingLineMob}
+
+          style={{
+            
+          }}
+        >
+          <MovingLine></MovingLine>
+        </Box>
+      </Box>
+      <Grid
+        container
+        spacing={!isScreenSmall ? 2 : 1}
+        className={!isScreenSmall ? classes.gridMainDiv : classes.gridMainDiv1}
+      >
         <Grid item xs={6} md={5}>
-          <Paper className={!isScreenSmall ? classes.tallRectangle : classes.tallRectangle1}>
+          <Paper
+            className={
+              !isScreenSmall ? classes.tallRectangle : classes.tallRectangle1
+            }
+          >
             <img src={t1} className={classes.gridImageTall} alt="selected" />
             <Box className={classes.gridBox} size="small">
               Wooden Wall Tile <img src={icon} alt="" />
@@ -99,7 +147,11 @@ export default function Gridtiles() {
           </Paper>
         </Grid>
         <Grid item xs={6} md={3}>
-          <Paper className={!isScreenSmall ? classes.tallRectangle : classes.tallRectangle1}>
+          <Paper
+            className={
+              !isScreenSmall ? classes.tallRectangle : classes.tallRectangle1
+            }
+          >
             <img src={t2} className={classes.gridImageTall} alt="selected" />
             <Box className={classes.gridBox} size="small">
               Wooden Wall Tile <img src={icon} alt="" />
@@ -107,7 +159,11 @@ export default function Gridtiles() {
           </Paper>
         </Grid>
         <Grid item xs={6} md={4}>
-          <Paper className={!isScreenSmall ? classes.tallRectangle : classes.tallRectangle1}>
+          <Paper
+            className={
+              !isScreenSmall ? classes.tallRectangle : classes.tallRectangle1
+            }
+          >
             <img src={t3} className={classes.gridImageTall} alt="selected" />
             <Box className={classes.gridBox} size="small">
               Wooden Wall Tile <img src={icon} alt="" />
@@ -115,7 +171,11 @@ export default function Gridtiles() {
           </Paper>
         </Grid>
         <Grid item xs={6} md={3}>
-          <Paper className={!isScreenSmall ? classes.tallRectangle : classes.tallRectangle1}>
+          <Paper
+            className={
+              !isScreenSmall ? classes.tallRectangle : classes.tallRectangle1
+            }
+          >
             <img src={t4} className={classes.gridImageTall} alt="selected" />
             <Box className={classes.gridBox} size="small">
               Wooden Wall Tile <img src={icon} alt="" />
@@ -123,7 +183,11 @@ export default function Gridtiles() {
           </Paper>
         </Grid>
         <Grid item xs={6} md={4}>
-          <Paper className={!isScreenSmall ? classes.tallRectangle : classes.tallRectangle1}>
+          <Paper
+            className={
+              !isScreenSmall ? classes.tallRectangle : classes.tallRectangle1
+            }
+          >
             <img src={t5} className={classes.gridImageTall} alt="selected" />
             <Box className={classes.gridBox} size="small">
               Wooden Wall Tile <img src={icon} alt="" />
@@ -131,7 +195,11 @@ export default function Gridtiles() {
           </Paper>
         </Grid>
         <Grid item xs={6} md={5}>
-          <Paper className={!isScreenSmall ? classes.tallRectangle : classes.tallRectangle1}>
+          <Paper
+            className={
+              !isScreenSmall ? classes.tallRectangle : classes.tallRectangle1
+            }
+          >
             <img src={t6} className={classes.gridImageTall} alt="selected" />
             <Box className={classes.gridBox} size="small">
               Wooden Wall Tile <img src={icon} alt="" />
@@ -139,7 +207,11 @@ export default function Gridtiles() {
           </Paper>
         </Grid>
         <Grid item xs={6} md={5}>
-          <Paper className={!isScreenSmall ? classes.tallRectangle : classes.tallRectangle1}>
+          <Paper
+            className={
+              !isScreenSmall ? classes.tallRectangle : classes.tallRectangle1
+            }
+          >
             <img src={t7} className={classes.gridImageTall} alt="selected" />
             <Box className={classes.gridBox} size="small">
               Wooden Wall Tile <img src={icon} alt="" />
@@ -147,7 +219,11 @@ export default function Gridtiles() {
           </Paper>
         </Grid>
         <Grid item xs={6} md={4}>
-          <Paper className={!isScreenSmall ? classes.tallRectangle : classes.tallRectangle1}>
+          <Paper
+            className={
+              !isScreenSmall ? classes.tallRectangle : classes.tallRectangle1
+            }
+          >
             <img src={t8} className={classes.gridImageTall} alt="selected" />
             <Box className={classes.gridBox} size="small">
               Wooden Wall Tile <img src={icon} alt="" />
@@ -155,14 +231,17 @@ export default function Gridtiles() {
           </Paper>
         </Grid>
         <Grid item xs={6} md={3}>
-          <Paper className={!isScreenSmall ? classes.tallRectangle : classes.tallRectangle1}>
+          <Paper
+            className={
+              !isScreenSmall ? classes.tallRectangle : classes.tallRectangle1
+            }
+          >
             <img src={t9} className={classes.gridImageTall} alt="selected" />
             <Box className={classes.gridBox} size="small">
               Wooden Wall Tile <img src={icon} alt="" />
             </Box>
           </Paper>
         </Grid>
-        
       </Grid>
     </Box>
   );

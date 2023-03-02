@@ -20,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 99999,
     transform: "rotate(270deg)",
     fontSize: "18px",
+    textDecoration:"none"
   },
   containerP: {},
 }));
