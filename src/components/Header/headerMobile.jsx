@@ -35,12 +35,16 @@ const CustomAccordion = styled(Accordion)({
     margin: 0,
     position:"relative",
     top:"-25px",
-    maxHeight:"230px"
+    maxHeight:"230px",
+
+
   },
 });
 const FirstAccordion = styled(Accordion)({
   "&.Mui-expanded": {
     margin: 0,
+    maxHeight:"230px",
+
     
   },
 });
@@ -289,7 +293,7 @@ const Navbar = () => {
         </ListItem>
         
         <ListItem disableRipple button key="5" component="a">
-          <FirstAccordion
+          <FirstAccordion 
             elevation={0}
             className={classes.accNew}
             sx={{
@@ -1128,9 +1132,9 @@ const Navbar = () => {
             <>
               <a href="/searchpage" style={{
                 textDecoration:"none",
-                position: "relative", right: "-130px",
-                width:"100px" , height:"50px",
-                top:"10px"
+                position: "relative", right: "-140px",
+                width:"40px" , height:"50px",
+                top:"13px"
               }}>
                 <img
                   src={icon4}

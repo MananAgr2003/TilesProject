@@ -10,3 +10,10 @@
     max-width: 100000px;
 }
 
+.MuiCollapse-container {
+  transition-duration:0s!important
+}
+
+.MuiExpansionPanelSummary-expandIcon.Mui-expanded {
+  transform: rotate(0deg);
+}
