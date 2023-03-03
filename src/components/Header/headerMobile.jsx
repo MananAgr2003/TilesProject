@@ -1128,9 +1128,9 @@ const Navbar = () => {
             <>
               <a href="/searchpage" style={{
                 textDecoration:"none",
-                position: "absolute", right: "-30px",
-                width:"100px" , height:"100px",
-                top:"20px"
+                position: "relative", right: "-70px",
+                width:"100px" , height:"50px",
+                top:"10px"
               }}>
                 <img
                   src={icon4}
