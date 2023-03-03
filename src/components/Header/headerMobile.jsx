@@ -33,19 +33,17 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 const CustomAccordion = styled(Accordion)({
   "&.Mui-expanded": {
     margin: 0,
-    position:"relative",
-    top:"-25px",
-    maxHeight:"230px",
+    position: "relative",
+    top: "-25px",
 
-
+    maxHeight: "240px",
   },
+  top:"-25px"
 });
 const FirstAccordion = styled(Accordion)({
   "&.Mui-expanded": {
     margin: 0,
-    maxHeight:"230px",
-
-    
+    maxHeight: "270px",
   },
 });
 const CustomAccordionLast = styled(Accordion)({
@@ -263,7 +261,7 @@ const Navbar = () => {
           />
           <Typography variant="body1">About Us</Typography>
         </ListItem>
-   
+
         <ListItem
           disableRipple
           button
@@ -275,7 +273,7 @@ const Navbar = () => {
             top: "45px",
             left: "15px",
             marginBottom: "15px",
-            zIndex:"999999"
+            zIndex: "999999",
           }}
         >
           <img
@@ -291,9 +289,9 @@ const Navbar = () => {
           />
           <Typography variant="body1">Contact Us</Typography>
         </ListItem>
-        
+
         <ListItem disableRipple button key="5" component="a">
-          <FirstAccordion 
+          <FirstAccordion
             elevation={0}
             className={classes.accNew}
             sx={{
@@ -438,19 +436,25 @@ const Navbar = () => {
         </ListItem>
         <ListItem disableRipple button key="5" component="a">
           <CustomAccordion
+            square
             elevation={0}
             className={classes.accNew}
             sx={{
-              mt: "0rem",
+            
               display: "flex",
               flexDirection: "column",
               backgroundColor: "white",
               position: "relative",
-              marginTop: "-30px",
               "&.Mui-expanded": {
-                marginTop: "-30px",
+                margin: 0,
+                position: "relative",
+                top: "-25px",
+            
+                maxHeight: "275px",
               },
+              
             }}
+           
           >
             <AccordionSummary className={classes.acc1}>
               <img
@@ -589,12 +593,20 @@ const Navbar = () => {
             elevation={0}
             className={classes.accNew}
             sx={{
-              mt: "0rem",
+            
               display: "flex",
               flexDirection: "column",
               backgroundColor: "white",
               position: "relative",
-              marginTop: "-30px",
+              top:"-60px",
+              "&.Mui-expanded": {
+                margin: 0,
+                position: "relative",
+                top: "-65px",
+            
+                maxHeight: "280px",
+              },
+             
             }}
           >
             <AccordionSummary className={classes.acc1}>
@@ -672,6 +684,7 @@ const Navbar = () => {
                   />
                 </ListItemIcon> */}
                 <ListItemText primary="Option2" />
+              
               </ListItem>
               <ListItem
                 button
@@ -733,12 +746,21 @@ const Navbar = () => {
             elevation={0}
             className={classes.accNew}
             sx={{
-              mt: "0rem",
+           
               display: "flex",
               flexDirection: "column",
               backgroundColor: "white",
               position: "relative",
-              marginTop: "-30px",
+              top:"-95px",
+             
+              "&.Mui-expanded": {
+                margin: 0,
+                position: "relative",
+                top: "-100px",
+            
+                maxHeight: "275px",
+              },
+              
             }}
           >
             <AccordionSummary className={classes.acc1}>
@@ -878,12 +900,19 @@ const Navbar = () => {
             elevation={0}
             className={classes.accNew}
             sx={{
-              mt: "0rem",
               display: "flex",
               flexDirection: "column",
               backgroundColor: "white",
               position: "relative",
-              marginTop: "-30px",
+              top:"-125px",
+             
+              "&.Mui-expanded": {
+                margin: 0,
+                position: "relative",
+                top: "-130px",
+            
+                maxHeight: "275px",
+              },
             }}
           >
             <AccordionSummary className={classes.acc1}>
@@ -1025,7 +1054,7 @@ const Navbar = () => {
             elevation={0}
             className={classes.accNew}
             style={{
-              marginTop: "-30px",
+              marginTop: "-270px",
             }}
           >
             <AccordionSummary className={classes.acc1}>
@@ -1057,11 +1086,11 @@ const Navbar = () => {
         <ListItem disableRipple button key="5" component="a" sx={{}}>
           <Box
             component="a"
-            href="/catalouge"
+            href="/comingsoon"
             elevation={0}
             className={classes.accNew}
             style={{
-              marginTop: "-30px",
+              marginTop: "-210px",
             }}
           >
             <AccordionSummary className={classes.acc1}>
@@ -1130,17 +1159,18 @@ const Navbar = () => {
           </Link>
           {isMobile && (
             <>
-              <a href="/searchpage" style={{
-                textDecoration:"none",
-                position: "relative", right: "-120px",
-                width:"40px" , height:"50px",
-                top:"13px"
-              }}>
-                <img
-                  src={icon4}
-                  alt=""
-                  style={{ }}
-                />
+              <a
+                href="/searchpage"
+                style={{
+                  textDecoration: "none",
+                  position: "relative",
+                  right: "-120px",
+                  width: "40px",
+                  height: "50px",
+                  top: "13px",
+                }}
+              >
+                <img src={icon4} alt="" style={{}} />
               </a>
               <IconButton
                 edge="end"
