@@ -33,6 +33,15 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 const CustomAccordion = styled(Accordion)({
   "&.Mui-expanded": {
     margin: 0,
+    position:"relative",
+    top:"-25px",
+    maxHeight:"230px"
+  },
+});
+const FirstAccordion = styled(Accordion)({
+  "&.Mui-expanded": {
+    margin: 0,
+    
   },
 });
 const CustomAccordionLast = styled(Accordion)({
@@ -280,7 +289,7 @@ const Navbar = () => {
         </ListItem>
         
         <ListItem disableRipple button key="5" component="a">
-          <CustomAccordion
+          <FirstAccordion
             elevation={0}
             className={classes.accNew}
             sx={{
@@ -421,7 +430,7 @@ const Navbar = () => {
                 <ListItemText primary="Option4" />
               </ListItem>
             </AccordionDetails>
-          </CustomAccordion>
+          </FirstAccordion>
         </ListItem>
         <ListItem disableRipple button key="5" component="a">
           <CustomAccordion

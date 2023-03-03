@@ -226,6 +226,7 @@ export default function AboutUs() {
                         xs: "#89a963",
                         md: "black",
                       },
+                      width:{md:"180px" , xs:"170px"}
                     }}
                   >
                     Client Satisfcation
@@ -239,7 +240,7 @@ export default function AboutUs() {
                   sx={{
                     textAlign: { md: "left", xs: "center" },
 
-                    marginLeft: { md: "1.5rem", xs: "1.9rem" },
+                    marginLeft: { md: "1.5rem", xs: "-0.8rem" },
                     lineHeight: "1.8rem",
                     fontSize: { md: "1.8rem", xs: "1.4rem" },
                     fontFamily: "unna",
@@ -271,6 +272,8 @@ export default function AboutUs() {
                         xs: "#89a963",
                         md: "black",
                       },
+                      width:{md:"180px" , xs:"170px"}
+
                     }}
                   >
                     Client Satisfcation
@@ -321,6 +324,8 @@ export default function AboutUs() {
                         xs: "#89a963",
                         md: "black",
                       },
+                      width:{md:"180px" , xs:"170px"}
+
                     }}
                   >
                     Client Satisfcation
@@ -339,7 +344,7 @@ export default function AboutUs() {
                   sx={{
                     textAlign: { md: "left", xs: "center" },
 
-                    marginLeft: { md: "1.5rem", xs: "1rem" },
+                    marginLeft: { md: "1.5rem", xs: "0rem" },
                     lineHeight: "1.8rem",
                     fontSize: { md: "1.8rem", xs: "1.4rem" },
                     fontFamily: "unna",
@@ -371,6 +376,8 @@ export default function AboutUs() {
                         xs: "#89a963",
                         md: "black",
                       },
+                      width:{md:"180px" , xs:"170px"}
+
                     }}
                   >
                     Client Satisfcation
