@@ -391,6 +391,10 @@ export default function AboutUs() {
               width: { md: "28vw", xs: "60vw" },
               height: { md: "550px", xs: "250px" },
               marginLeft: { md: "8rem", xs: "1.2rem" },
+              marginBottom:{md:"0px" , xs:"15px"
+              },
+              marginTop:{md:"0px" , xs:"15px"
+              }
             }}
           >
             <img
