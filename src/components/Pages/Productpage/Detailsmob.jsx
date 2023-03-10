@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     position:"absolute",
     display:"flex",
     flexDirection:"row",
-    top:"615px",
+    top:"595px",
     marginTop:"15px",
     marginBottom:"15px"
   },
@@ -177,7 +177,7 @@ const useStyles = makeStyles((theme) => ({
   newTop:{
 
     position:"absolute",
-    top:"90px",
+    top:"85px",
     left:"10px",
     display:"flex",
     flexDirection:"row",
