@@ -78,13 +78,13 @@ const useStyles = makeStyles((theme) => ({
     top: 0,
     left: 0,
     width: "100%",
-    height: "7.5vh",
+    height: "10vh",
     position:"absolute",
-    backgroundColor:"transparent"
+   
   },
   appbarBox: {
     
-      height: "7.5vh",
+      height: "10vh",
       width: "100vw",
       display: "flex",
       justifyContent: "space-between",
@@ -1146,7 +1146,10 @@ const Navbar = () => {
      
       className={classes.appbarBox}
     >
-      <AppBar   className={classes.appbar} >
+      <AppBar style={{
+        backgroundColor:"transparent",
+        boxShadow: "0px 0px 0px 0px rgba(0, 0, 0, 0.5)"
+      }} className={classes.appbar} >
         <Toolbar className={classes.toolbar}>
           <Link to="/">
             <Box
