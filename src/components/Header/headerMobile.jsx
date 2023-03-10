@@ -79,17 +79,17 @@ const useStyles = makeStyles((theme) => ({
     left: 0,
     width: "100%",
     height: "10vh",
-    position:"absolute",
+    position:"fixed",
    
   },
   appbarBox: {
     
-      height: "10vh",
+      height: "8vh",
       width: "100vw",
       display: "flex",
       justifyContent: "space-between",
       backgroundColor: "white",
-      position:"relative"
+     
     
   },
 
