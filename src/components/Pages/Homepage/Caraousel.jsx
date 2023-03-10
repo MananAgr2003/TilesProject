@@ -221,7 +221,7 @@ function SwipeableTextMobileStepper() {
           justifyContent: "center",
           alignItems: "center",
           position: "absolute",
-          top:{md: "45.5rem" , xs:"363px"},
+          top:{md: "45.5rem" , xs:"353px"},
           left: "0rem",
           zIndex: "-1",
         }}
