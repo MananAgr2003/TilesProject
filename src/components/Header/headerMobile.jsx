@@ -74,6 +74,24 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-between",
     padding: "8px",
   },
+  appbar: {
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "10vh",
+    position:"absolute",
+    backgroundColor:"transparent"
+  },
+  appbarBox: {
+    
+      height: "10vh",
+      width: "100vw",
+      display: "flex",
+      justifyContent: "space-between",
+      backgroundColor: "white",
+      position:"relative"
+    
+  },
 
   acc: {
     backgroundColor: "white",
@@ -1125,15 +1143,10 @@ const Navbar = () => {
 
   const renderAppBar = () => (
     <Box
-      sx={{
-        height: "10vh",
-        width: "100vw",
-        display: "flex",
-        justifyContent: "space-between",
-        backgroundColor: "white",
-      }}
+     
+      className={classes.appbarBox}
     >
-      <AppBar position="static">
+      <AppBar   className={classes.appbar} >
         <Toolbar className={classes.toolbar}>
           <Link to="/">
             <Box

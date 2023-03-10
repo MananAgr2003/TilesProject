@@ -1,19 +1,24 @@
 ::-webkit-scrollbar {
-    width: 0;
-   }
+  width: 0;
+}
 
-  .MuiMobileStepper-dot{
-    display:none;
-  }
+.MuiMobileStepper-dot {
+  display: none;
+}
 
-  .MuiContainer-maxWidthLg {
-    max-width: 100000px;
+.MuiContainer-maxWidthLg {
+  max-width: 100000px;
 }
 
 .MuiCollapse-container {
-  transition-duration:0s!important
+  transition-duration: 0s !important;
 }
 
 .MuiExpansionPanelSummary-expandIcon.Mui-expanded {
   transform: rotate(0deg);
+}
+
+.MuiAppBar-colorPrimary {
+  background-color: transparent;
+  border: none;
 }
